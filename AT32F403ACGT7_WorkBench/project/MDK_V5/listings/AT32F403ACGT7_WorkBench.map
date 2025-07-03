@@ -1,0 +1,1757 @@
+Component: ARM Compiler 5.06 update 7 (build 960) Tool: armlink [4d3601]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(i.main) refers to at32f403a_407_wk_config.o(i.wk_system_clock_config) for wk_system_clock_config
+    main.o(i.main) refers to at32f403a_407_wk_config.o(i.wk_periph_clock_config) for wk_periph_clock_config
+    main.o(i.main) refers to wk_debug.o(i.wk_debug_config) for wk_debug_config
+    main.o(i.main) refers to at32f403a_407_wk_config.o(i.wk_nvic_config) for wk_nvic_config
+    main.o(i.main) refers to wk_system.o(i.wk_timebase_init) for wk_timebase_init
+    main.o(i.main) refers to wk_gpio.o(i.wk_gpio_config) for wk_gpio_config
+    main.o(i.main) refers to wk_dma.o(i.wk_dma1_channel1_init) for wk_dma1_channel1_init
+    main.o(i.main) refers to wk_dma.o(i.wk_dma_channel_config) for wk_dma_channel_config
+    main.o(i.main) refers to at32f403a_407_dma.o(i.dma_channel_enable) for dma_channel_enable
+    main.o(i.main) refers to wk_dma.o(i.wk_dma1_channel2_init) for wk_dma1_channel2_init
+    main.o(i.main) refers to wk_spi.o(i.wk_spi1_init) for wk_spi1_init
+    main.o(i.main) refers to wk_acc.o(i.wk_acc_init) for wk_acc_init
+    main.o(i.main) refers to wk_usbfs.o(i.wk_usbfs_init) for wk_usbfs_init
+    main.o(i.main) refers to usb_app.o(i.wk_usb_app_init) for wk_usb_app_init
+    main.o(i.main) refers to at32f403a_407_dma.o(i.dma_interrupt_enable) for dma_interrupt_enable
+    main.o(i.main) refers to usb_app.o(i.wk_usb_app_task) for wk_usb_app_task
+    main.o(i.main) refers to mt6701.o(.data) for mt6701
+    at32f403a_407_wk_config.o(i.wk_nvic_config) refers to at32f403a_407_misc.o(i.nvic_priority_group_config) for nvic_priority_group_config
+    at32f403a_407_wk_config.o(i.wk_nvic_config) refers to at32f403a_407_wk_config.o(i.__NVIC_GetPriorityGrouping) for __NVIC_GetPriorityGrouping
+    at32f403a_407_wk_config.o(i.wk_nvic_config) refers to at32f403a_407_wk_config.o(i.NVIC_EncodePriority) for NVIC_EncodePriority
+    at32f403a_407_wk_config.o(i.wk_nvic_config) refers to at32f403a_407_wk_config.o(i.__NVIC_SetPriority) for __NVIC_SetPriority
+    at32f403a_407_wk_config.o(i.wk_nvic_config) refers to at32f403a_407_misc.o(i.nvic_irq_enable) for nvic_irq_enable
+    at32f403a_407_wk_config.o(i.wk_periph_clock_config) refers to at32f403a_407_crm.o(i.crm_periph_clock_enable) for crm_periph_clock_enable
+    at32f403a_407_wk_config.o(i.wk_system_clock_config) refers to at32f403a_407_crm.o(i.crm_reset) for crm_reset
+    at32f403a_407_wk_config.o(i.wk_system_clock_config) refers to at32f403a_407_crm.o(i.crm_clock_source_enable) for crm_clock_source_enable
+    at32f403a_407_wk_config.o(i.wk_system_clock_config) refers to at32f403a_407_crm.o(i.crm_flag_get) for crm_flag_get
+    at32f403a_407_wk_config.o(i.wk_system_clock_config) refers to at32f403a_407_crm.o(i.crm_hext_stable_wait) for crm_hext_stable_wait
+    at32f403a_407_wk_config.o(i.wk_system_clock_config) refers to at32f403a_407_crm.o(i.crm_pll_config) for crm_pll_config
+    at32f403a_407_wk_config.o(i.wk_system_clock_config) refers to at32f403a_407_crm.o(i.crm_ahb_div_set) for crm_ahb_div_set
+    at32f403a_407_wk_config.o(i.wk_system_clock_config) refers to at32f403a_407_crm.o(i.crm_apb2_div_set) for crm_apb2_div_set
+    at32f403a_407_wk_config.o(i.wk_system_clock_config) refers to at32f403a_407_crm.o(i.crm_apb1_div_set) for crm_apb1_div_set
+    at32f403a_407_wk_config.o(i.wk_system_clock_config) refers to at32f403a_407_crm.o(i.crm_auto_step_mode_enable) for crm_auto_step_mode_enable
+    at32f403a_407_wk_config.o(i.wk_system_clock_config) refers to at32f403a_407_crm.o(i.crm_sysclk_switch) for crm_sysclk_switch
+    at32f403a_407_wk_config.o(i.wk_system_clock_config) refers to at32f403a_407_crm.o(i.crm_sysclk_switch_status_get) for crm_sysclk_switch_status_get
+    at32f403a_407_wk_config.o(i.wk_system_clock_config) refers to system_at32f403a_407.o(i.system_core_clock_update) for system_core_clock_update
+    at32f403a_407_int.o(i.DMA1_Channel1_IRQHandler) refers to at32f403a_407_dma.o(i.dma_flag_get) for dma_flag_get
+    at32f403a_407_int.o(i.DMA1_Channel1_IRQHandler) refers to at32f403a_407_dma.o(i.dma_flag_clear) for dma_flag_clear
+    at32f403a_407_int.o(i.DMA1_Channel1_IRQHandler) refers to at32f403a_407_dma.o(i.dma_channel_enable) for dma_channel_enable
+    at32f403a_407_int.o(i.DMA1_Channel1_IRQHandler) refers to at32f403a_407_gpio.o(i.gpio_bits_set) for gpio_bits_set
+    at32f403a_407_int.o(i.DMA1_Channel1_IRQHandler) refers to mt6701.o(.data) for mt6701
+    at32f403a_407_int.o(i.USBFS_MAPL_IRQHandler) refers to usb_app.o(i.wk_usbfs_irq_handler) for wk_usbfs_irq_handler
+    wk_system.o(i.wk_delay_ms) refers to wk_system.o(i.wk_delay_us) for wk_delay_us
+    wk_system.o(i.wk_delay_us) refers to wk_system.o(.data) for ticks_count_us
+    wk_system.o(i.wk_timebase_init) refers to at32f403a_407_crm.o(i.crm_clocks_freq_get) for crm_clocks_freq_get
+    wk_system.o(i.wk_timebase_init) refers to at32f403a_407_misc.o(i.systick_clock_source_config) for systick_clock_source_config
+    wk_system.o(i.wk_timebase_init) refers to wk_system.o(.data) for ticks_count_us
+    wk_debug.o(i.wk_debug_config) refers to at32f403a_407_gpio.o(i.gpio_pin_remap_config) for gpio_pin_remap_config
+    usb_app.o(i.usb_delay_ms) refers to wk_system.o(i.wk_delay_ms) for wk_delay_ms
+    usb_app.o(i.wk_usb_app_init) refers to usbd_core.o(i.usbd_core_init) for usbd_core_init
+    usb_app.o(i.wk_usb_app_init) refers to usbd_core.o(i.usbd_connect) for usbd_connect
+    usb_app.o(i.wk_usb_app_init) refers to cdc_desc.o(.data) for cdc_desc_handler
+    usb_app.o(i.wk_usb_app_init) refers to cdc_class.o(.data) for cdc_class_handler
+    usb_app.o(i.wk_usb_app_init) refers to usb_app.o(.bss) for usb_core_dev
+    usb_app.o(i.wk_usb_app_task) refers to mt6701.o(i.MT6701_GetAngle) for MT6701_GetAngle
+    usb_app.o(i.wk_usb_app_task) refers to log.o(i.PackFloatArrayToBytes) for PackFloatArrayToBytes
+    usb_app.o(i.wk_usb_app_task) refers to cdc_class.o(i.usb_vcp_send_data) for usb_vcp_send_data
+    usb_app.o(i.wk_usb_app_task) refers to cdc_class.o(i.usb_vcp_get_rxdata) for usb_vcp_get_rxdata
+    usb_app.o(i.wk_usb_app_task) refers to mt6701.o(.data) for mt6701
+    usb_app.o(i.wk_usb_app_task) refers to usb_app.o(.bss) for usb_core_dev
+    usb_app.o(i.wk_usb_app_task) refers to usb_app.o(.data) for send_zero_packet
+    usb_app.o(i.wk_usbfs_irq_handler) refers to usbd_int.o(i.usbd_irq_handler) for usbd_irq_handler
+    usb_app.o(i.wk_usbfs_irq_handler) refers to usb_app.o(.bss) for usb_core_dev
+    wk_usbfs.o(i.wk_usbfs_init) refers to at32f403a_407_crm.o(i.crm_usb_interrupt_remapping_set) for crm_usb_interrupt_remapping_set
+    wk_usbfs.o(i.wk_usbfs_init) refers to at32f403a_407_crm.o(i.crm_usb_clock_source_select) for crm_usb_clock_source_select
+    wk_acc.o(i.wk_acc_init) refers to at32f403a_407_acc.o(i.acc_write_c1) for acc_write_c1
+    wk_acc.o(i.wk_acc_init) refers to at32f403a_407_acc.o(i.acc_write_c2) for acc_write_c2
+    wk_acc.o(i.wk_acc_init) refers to at32f403a_407_acc.o(i.acc_write_c3) for acc_write_c3
+    wk_acc.o(i.wk_acc_init) refers to at32f403a_407_acc.o(i.acc_calibration_mode_enable) for acc_calibration_mode_enable
+    wk_spi.o(i.wk_spi1_init) refers to at32f403a_407_gpio.o(i.gpio_default_para_init) for gpio_default_para_init
+    wk_spi.o(i.wk_spi1_init) refers to at32f403a_407_spi.o(i.spi_default_para_init) for spi_default_para_init
+    wk_spi.o(i.wk_spi1_init) refers to at32f403a_407_gpio.o(i.gpio_init) for gpio_init
+    wk_spi.o(i.wk_spi1_init) refers to at32f403a_407_spi.o(i.spi_init) for spi_init
+    wk_spi.o(i.wk_spi1_init) refers to at32f403a_407_spi.o(i.spi_crc_polynomial_set) for spi_crc_polynomial_set
+    wk_spi.o(i.wk_spi1_init) refers to at32f403a_407_spi.o(i.spi_crc_enable) for spi_crc_enable
+    wk_spi.o(i.wk_spi1_init) refers to at32f403a_407_spi.o(i.spi_i2s_dma_transmitter_enable) for spi_i2s_dma_transmitter_enable
+    wk_spi.o(i.wk_spi1_init) refers to at32f403a_407_spi.o(i.spi_i2s_dma_receiver_enable) for spi_i2s_dma_receiver_enable
+    wk_spi.o(i.wk_spi1_init) refers to at32f403a_407_spi.o(i.spi_enable) for spi_enable
+    wk_dma.o(i.wk_dma1_channel1_init) refers to at32f403a_407_dma.o(i.dma_reset) for dma_reset
+    wk_dma.o(i.wk_dma1_channel1_init) refers to at32f403a_407_dma.o(i.dma_default_para_init) for dma_default_para_init
+    wk_dma.o(i.wk_dma1_channel1_init) refers to at32f403a_407_dma.o(i.dma_init) for dma_init
+    wk_dma.o(i.wk_dma1_channel1_init) refers to at32f403a_407_dma.o(i.dma_flexible_config) for dma_flexible_config
+    wk_dma.o(i.wk_dma1_channel2_init) refers to at32f403a_407_dma.o(i.dma_reset) for dma_reset
+    wk_dma.o(i.wk_dma1_channel2_init) refers to at32f403a_407_dma.o(i.dma_default_para_init) for dma_default_para_init
+    wk_dma.o(i.wk_dma1_channel2_init) refers to at32f403a_407_dma.o(i.dma_init) for dma_init
+    wk_dma.o(i.wk_dma1_channel2_init) refers to at32f403a_407_dma.o(i.dma_flexible_config) for dma_flexible_config
+    wk_gpio.o(i.wk_gpio_config) refers to at32f403a_407_gpio.o(i.gpio_default_para_init) for gpio_default_para_init
+    wk_gpio.o(i.wk_gpio_config) refers to at32f403a_407_gpio.o(i.gpio_bits_reset) for gpio_bits_reset
+    wk_gpio.o(i.wk_gpio_config) refers to at32f403a_407_gpio.o(i.gpio_init) for gpio_init
+    at32f403a_407_crm.o(i.crm_clocks_freq_get) refers to at32f403a_407_crm.o(i.crm_sysclk_switch_status_get) for crm_sysclk_switch_status_get
+    at32f403a_407_crm.o(i.crm_clocks_freq_get) refers to at32f403a_407_crm.o(.constdata) for sclk_ahb_div_table
+    at32f403a_407_crm.o(i.crm_hext_stable_wait) refers to at32f403a_407_crm.o(i.crm_flag_get) for crm_flag_get
+    at32f403a_407_crm.o(i.crm_hick_sclk_frequency_select) refers to at32f403a_407_crm.o(i.crm_hick_divider_select) for crm_hick_divider_select
+    at32f403a_407_crm.o(i.crm_usb_clock_source_select) refers to at32f403a_407_crm.o(i.crm_hick_sclk_frequency_select) for crm_hick_sclk_frequency_select
+    at32f403a_407_gpio.o(i.gpio_iomux_reset) refers to at32f403a_407_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f403a_407_gpio.o(i.gpio_reset) refers to at32f403a_407_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f403a_407_pwc.o(i.pwc_reset) refers to at32f403a_407_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f403a_407_spi.o(i.i2s_init) refers to at32f403a_407_crm.o(i.crm_clocks_freq_get) for crm_clocks_freq_get
+    at32f403a_407_spi.o(i.spi_i2s_reset) refers to at32f403a_407_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f403a_407_flash.o(i.flash_bank1_erase) refers to at32f403a_407_flash.o(i.flash_bank1_operation_wait_for) for flash_bank1_operation_wait_for
+    at32f403a_407_flash.o(i.flash_bank1_operation_wait_for) refers to at32f403a_407_flash.o(i.flash_bank1_operation_status_get) for flash_bank1_operation_status_get
+    at32f403a_407_flash.o(i.flash_bank2_erase) refers to at32f403a_407_flash.o(i.flash_bank2_operation_wait_for) for flash_bank2_operation_wait_for
+    at32f403a_407_flash.o(i.flash_bank2_operation_wait_for) refers to at32f403a_407_flash.o(i.flash_bank2_operation_status_get) for flash_bank2_operation_status_get
+    at32f403a_407_flash.o(i.flash_byte_program) refers to at32f403a_407_flash.o(i.flash_bank1_operation_wait_for) for flash_bank1_operation_wait_for
+    at32f403a_407_flash.o(i.flash_byte_program) refers to at32f403a_407_flash.o(i.flash_bank2_operation_wait_for) for flash_bank2_operation_wait_for
+    at32f403a_407_flash.o(i.flash_crc_calibrate) refers to at32f403a_407_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f403a_407_flash.o(i.flash_epp_set) refers to at32f403a_407_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f403a_407_flash.o(i.flash_epp_set) refers to at32f403a_407_flash.o(.constdata) for .constdata
+    at32f403a_407_flash.o(i.flash_fap_enable) refers to at32f403a_407_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f403a_407_flash.o(i.flash_halfword_program) refers to at32f403a_407_flash.o(i.flash_bank1_operation_wait_for) for flash_bank1_operation_wait_for
+    at32f403a_407_flash.o(i.flash_halfword_program) refers to at32f403a_407_flash.o(i.flash_bank2_operation_wait_for) for flash_bank2_operation_wait_for
+    at32f403a_407_flash.o(i.flash_halfword_program) refers to at32f403a_407_flash.o(i.flash_spim_operation_wait_for) for flash_spim_operation_wait_for
+    at32f403a_407_flash.o(i.flash_halfword_program) refers to at32f403a_407_flash.o(i.flash_spim_dummy_read) for flash_spim_dummy_read
+    at32f403a_407_flash.o(i.flash_internal_all_erase) refers to at32f403a_407_flash.o(i.flash_bank1_operation_wait_for) for flash_bank1_operation_wait_for
+    at32f403a_407_flash.o(i.flash_internal_all_erase) refers to at32f403a_407_flash.o(i.flash_bank2_operation_wait_for) for flash_bank2_operation_wait_for
+    at32f403a_407_flash.o(i.flash_operation_wait_for) refers to at32f403a_407_flash.o(i.flash_operation_status_get) for flash_operation_status_get
+    at32f403a_407_flash.o(i.flash_sector_erase) refers to at32f403a_407_flash.o(i.flash_bank1_operation_wait_for) for flash_bank1_operation_wait_for
+    at32f403a_407_flash.o(i.flash_sector_erase) refers to at32f403a_407_flash.o(i.flash_bank2_operation_wait_for) for flash_bank2_operation_wait_for
+    at32f403a_407_flash.o(i.flash_sector_erase) refers to at32f403a_407_flash.o(i.flash_spim_operation_wait_for) for flash_spim_operation_wait_for
+    at32f403a_407_flash.o(i.flash_sector_erase) refers to at32f403a_407_flash.o(i.flash_spim_dummy_read) for flash_spim_dummy_read
+    at32f403a_407_flash.o(i.flash_slib_disable) refers to at32f403a_407_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f403a_407_flash.o(i.flash_slib_enable) refers to at32f403a_407_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f403a_407_flash.o(i.flash_spim_all_erase) refers to at32f403a_407_flash.o(i.flash_spim_operation_wait_for) for flash_spim_operation_wait_for
+    at32f403a_407_flash.o(i.flash_spim_all_erase) refers to at32f403a_407_flash.o(i.flash_spim_dummy_read) for flash_spim_dummy_read
+    at32f403a_407_flash.o(i.flash_spim_mass_program) refers to at32f403a_407_flash.o(i.flash_spim_operation_wait_for) for flash_spim_operation_wait_for
+    at32f403a_407_flash.o(i.flash_spim_mass_program) refers to at32f403a_407_flash.o(i.flash_spim_dummy_read) for flash_spim_dummy_read
+    at32f403a_407_flash.o(i.flash_spim_model_select) refers to at32f403a_407_flash.o(i.flash_spim_dummy_read) for flash_spim_dummy_read
+    at32f403a_407_flash.o(i.flash_spim_operation_wait_for) refers to at32f403a_407_flash.o(i.flash_spim_operation_status_get) for flash_spim_operation_status_get
+    at32f403a_407_flash.o(i.flash_ssb_set) refers to at32f403a_407_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f403a_407_flash.o(i.flash_user_system_data_erase) refers to at32f403a_407_flash.o(i.flash_fap_status_get) for flash_fap_status_get
+    at32f403a_407_flash.o(i.flash_user_system_data_erase) refers to at32f403a_407_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f403a_407_flash.o(i.flash_user_system_data_program) refers to at32f403a_407_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f403a_407_flash.o(i.flash_word_program) refers to at32f403a_407_flash.o(i.flash_bank1_operation_wait_for) for flash_bank1_operation_wait_for
+    at32f403a_407_flash.o(i.flash_word_program) refers to at32f403a_407_flash.o(i.flash_bank2_operation_wait_for) for flash_bank2_operation_wait_for
+    at32f403a_407_flash.o(i.flash_word_program) refers to at32f403a_407_flash.o(i.flash_spim_operation_wait_for) for flash_spim_operation_wait_for
+    at32f403a_407_flash.o(i.flash_word_program) refers to at32f403a_407_flash.o(i.flash_spim_dummy_read) for flash_spim_dummy_read
+    at32f403a_407_usb.o(i.usb_buffer_free) refers to at32f403a_407_usb.o(.data) for g_usb_offset_addr
+    at32f403a_407_usb.o(i.usb_buffer_malloc) refers to at32f403a_407_usb.o(.data) for g_usb_offset_addr
+    at32f403a_407_usb.o(i.usb_dev_init) refers to at32f403a_407_usb.o(i.usb_interrupt_enable) for usb_interrupt_enable
+    at32f403a_407_usb.o(i.usb_ept_open) refers to at32f403a_407_usb.o(.data) for g_usb_packet_address
+    at32f403a_407_usb.o(i.usb_read_packet) refers to at32f403a_407_usb.o(.data) for g_usb_packet_address
+    at32f403a_407_usb.o(i.usb_usbbufs_enable) refers to at32f403a_407_usb.o(.data) for g_usb_packet_address
+    at32f403a_407_usb.o(i.usb_write_packet) refers to at32f403a_407_usb.o(.data) for g_usb_packet_address
+    startup_at32f403a_407.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_at32f403a_407.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_at32f403a_407.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_at32f403a_407.o(RESET) refers to startup_at32f403a_407.o(STACK) for __initial_sp
+    startup_at32f403a_407.o(RESET) refers to startup_at32f403a_407.o(.text) for Reset_Handler
+    startup_at32f403a_407.o(RESET) refers to at32f403a_407_int.o(i.NMI_Handler) for NMI_Handler
+    startup_at32f403a_407.o(RESET) refers to at32f403a_407_int.o(i.HardFault_Handler) for HardFault_Handler
+    startup_at32f403a_407.o(RESET) refers to at32f403a_407_int.o(i.MemManage_Handler) for MemManage_Handler
+    startup_at32f403a_407.o(RESET) refers to at32f403a_407_int.o(i.BusFault_Handler) for BusFault_Handler
+    startup_at32f403a_407.o(RESET) refers to at32f403a_407_int.o(i.UsageFault_Handler) for UsageFault_Handler
+    startup_at32f403a_407.o(RESET) refers to at32f403a_407_int.o(i.SVC_Handler) for SVC_Handler
+    startup_at32f403a_407.o(RESET) refers to at32f403a_407_int.o(i.DebugMon_Handler) for DebugMon_Handler
+    startup_at32f403a_407.o(RESET) refers to at32f403a_407_int.o(i.PendSV_Handler) for PendSV_Handler
+    startup_at32f403a_407.o(RESET) refers to at32f403a_407_int.o(i.SysTick_Handler) for SysTick_Handler
+    startup_at32f403a_407.o(RESET) refers to at32f403a_407_int.o(i.DMA1_Channel1_IRQHandler) for DMA1_Channel1_IRQHandler
+    startup_at32f403a_407.o(RESET) refers to at32f403a_407_int.o(i.USBFS_MAPL_IRQHandler) for USBFS_MAPL_IRQHandler
+    startup_at32f403a_407.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_at32f403a_407.o(.text) refers to system_at32f403a_407.o(i.SystemInit) for SystemInit
+    startup_at32f403a_407.o(.text) refers to __main.o(!!!main) for __main
+    startup_at32f403a_407.o(.text) refers to startup_at32f403a_407.o(HEAP) for Heap_Mem
+    startup_at32f403a_407.o(.text) refers to startup_at32f403a_407.o(STACK) for Stack_Mem
+    system_at32f403a_407.o(i.system_core_clock_update) refers to at32f403a_407_crm.o(i.crm_sysclk_switch_status_get) for crm_sysclk_switch_status_get
+    system_at32f403a_407.o(i.system_core_clock_update) refers to system_at32f403a_407.o(.data) for system_core_clock
+    system_at32f403a_407.o(i.system_core_clock_update) refers to system_at32f403a_407.o(.constdata) for sys_ahb_div_table
+    usbd_core.o(i.usbd_connect) refers to at32f403a_407_usb.o(i.usb_connect) for usb_connect
+    usbd_core.o(i.usbd_core_in_handler) refers to usbd_core.o(i.usbd_ept_send) for usbd_ept_send
+    usbd_core.o(i.usbd_core_in_handler) refers to usbd_core.o(i.usbd_ept_recv) for usbd_ept_recv
+    usbd_core.o(i.usbd_core_in_handler) refers to usbd_core.o(i.usbd_ctrl_recv_status) for usbd_ctrl_recv_status
+    usbd_core.o(i.usbd_core_init) refers to usbd_core.o(i.usbd_ept_defaut_init) for usbd_ept_defaut_init
+    usbd_core.o(i.usbd_core_init) refers to at32f403a_407_usb.o(i.usb_dev_init) for usb_dev_init
+    usbd_core.o(i.usbd_core_out_handler) refers to usbd_core.o(i.usbd_ept_recv) for usbd_ept_recv
+    usbd_core.o(i.usbd_core_out_handler) refers to usbd_core.o(i.usbd_ctrl_send_status) for usbd_ctrl_send_status
+    usbd_core.o(i.usbd_core_setup_handler) refers to usbd_sdr.o(i.usbd_setup_request_parse) for usbd_setup_request_parse
+    usbd_core.o(i.usbd_core_setup_handler) refers to usbd_sdr.o(i.usbd_device_request) for usbd_device_request
+    usbd_core.o(i.usbd_core_setup_handler) refers to usbd_sdr.o(i.usbd_interface_request) for usbd_interface_request
+    usbd_core.o(i.usbd_core_setup_handler) refers to usbd_sdr.o(i.usbd_endpoint_request) for usbd_endpoint_request
+    usbd_core.o(i.usbd_ctrl_recv) refers to usbd_core.o(i.usbd_ept_recv) for usbd_ept_recv
+    usbd_core.o(i.usbd_ctrl_recv_status) refers to usbd_core.o(i.usbd_ept_recv) for usbd_ept_recv
+    usbd_core.o(i.usbd_ctrl_send) refers to usbd_core.o(i.usbd_ept_send) for usbd_ept_send
+    usbd_core.o(i.usbd_ctrl_send_status) refers to usbd_core.o(i.usbd_ept_send) for usbd_ept_send
+    usbd_core.o(i.usbd_ctrl_unsupport) refers to usbd_core.o(i.usbd_set_stall) for usbd_set_stall
+    usbd_core.o(i.usbd_disconnect) refers to at32f403a_407_usb.o(i.usb_disconnect) for usb_disconnect
+    usbd_core.o(i.usbd_enter_suspend) refers to at32f403a_407_usb.o(i.usb_enter_suspend) for usb_enter_suspend
+    usbd_core.o(i.usbd_ept_buf_auto_define) refers to at32f403a_407_usb.o(i.usb_buffer_malloc) for usb_buffer_malloc
+    usbd_core.o(i.usbd_ept_close) refers to at32f403a_407_usb.o(i.usb_ept_close) for usb_ept_close
+    usbd_core.o(i.usbd_ept_open) refers to usbd_core.o(i.usbd_ept_buf_auto_define) for usbd_ept_buf_auto_define
+    usbd_core.o(i.usbd_ept_open) refers to at32f403a_407_usb.o(i.usb_ept_open) for usb_ept_open
+    usbd_core.o(i.usbd_ept_send) refers to at32f403a_407_usb.o(i.usb_write_packet) for usb_write_packet
+    usbd_core.o(i.usbd_ept_send) refers to at32f403a_407_usb.o(.data) for g_usb_packet_address
+    usbd_core.o(i.usbd_remote_wakeup) refers to at32f403a_407_usb.o(i.usb_exit_suspend) for usb_exit_suspend
+    usbd_core.o(i.usbd_remote_wakeup) refers to at32f403a_407_usb.o(i.usb_remote_wkup_set) for usb_remote_wkup_set
+    usbd_core.o(i.usbd_remote_wakeup) refers to usb_app.o(i.usb_delay_ms) for usb_delay_ms
+    usbd_core.o(i.usbd_remote_wakeup) refers to at32f403a_407_usb.o(i.usb_remote_wkup_clear) for usb_remote_wkup_clear
+    usbd_core.o(i.usbd_set_device_addr) refers to at32f403a_407_usb.o(i.usb_set_address) for usb_set_address
+    usbd_int.o(i.usbd_ept_loop_handler) refers to usbd_int.o(i.usbd_eptn_handler) for usbd_eptn_handler
+    usbd_int.o(i.usbd_eptn_handler) refers to usbd_core.o(i.usbd_core_in_handler) for usbd_core_in_handler
+    usbd_int.o(i.usbd_eptn_handler) refers to usbd_core.o(i.usbd_ept_send) for usbd_ept_send
+    usbd_int.o(i.usbd_eptn_handler) refers to at32f403a_407_usb.o(i.usb_set_address) for usb_set_address
+    usbd_int.o(i.usbd_eptn_handler) refers to at32f403a_407_usb.o(i.usb_read_packet) for usb_read_packet
+    usbd_int.o(i.usbd_eptn_handler) refers to usbd_core.o(i.usbd_core_setup_handler) for usbd_core_setup_handler
+    usbd_int.o(i.usbd_eptn_handler) refers to usbd_core.o(i.usbd_core_out_handler) for usbd_core_out_handler
+    usbd_int.o(i.usbd_eptn_handler) refers to usbd_core.o(i.usbd_ept_recv) for usbd_ept_recv
+    usbd_int.o(i.usbd_eptn_handler) refers to at32f403a_407_usb.o(.data) for g_usb_packet_address
+    usbd_int.o(i.usbd_irq_handler) refers to usbd_int.o(i.usbd_ept_loop_handler) for usbd_ept_loop_handler
+    usbd_int.o(i.usbd_irq_handler) refers to at32f403a_407_usb.o(i.usb_flag_clear) for usb_flag_clear
+    usbd_int.o(i.usbd_irq_handler) refers to usbd_int.o(i.usbd_reset_handler) for usbd_reset_handler
+    usbd_int.o(i.usbd_irq_handler) refers to usbd_int.o(i.usbd_sof_handler) for usbd_sof_handler
+    usbd_int.o(i.usbd_irq_handler) refers to usbd_int.o(i.usbd_suspend_handler) for usbd_suspend_handler
+    usbd_int.o(i.usbd_irq_handler) refers to usbd_int.o(i.usbd_wakeup_handler) for usbd_wakeup_handler
+    usbd_int.o(i.usbd_reset_handler) refers to at32f403a_407_usb.o(i.usb_buffer_free) for usb_buffer_free
+    usbd_int.o(i.usbd_reset_handler) refers to usbd_core.o(i.usbd_ept_defaut_init) for usbd_ept_defaut_init
+    usbd_int.o(i.usbd_reset_handler) refers to usbd_core.o(i.usbd_ept_open) for usbd_ept_open
+    usbd_int.o(i.usbd_reset_handler) refers to at32f403a_407_usb.o(i.usb_set_address) for usb_set_address
+    usbd_int.o(i.usbd_suspend_handler) refers to usbd_core.o(i.usbd_enter_suspend) for usbd_enter_suspend
+    usbd_int.o(i.usbd_wakeup_handler) refers to at32f403a_407_usb.o(i.usb_exit_suspend) for usb_exit_suspend
+    usbd_sdr.o(i.usbd_clear_feature) refers to usbd_core.o(i.usbd_ctrl_send_status) for usbd_ctrl_send_status
+    usbd_sdr.o(i.usbd_clear_feature) refers to usbd_core.o(i.usbd_ctrl_unsupport) for usbd_ctrl_unsupport
+    usbd_sdr.o(i.usbd_device_request) refers to usbd_sdr.o(i.usbd_get_status) for usbd_get_status
+    usbd_sdr.o(i.usbd_device_request) refers to usbd_sdr.o(i.usbd_clear_feature) for usbd_clear_feature
+    usbd_sdr.o(i.usbd_device_request) refers to usbd_sdr.o(i.usbd_set_feature) for usbd_set_feature
+    usbd_sdr.o(i.usbd_device_request) refers to usbd_sdr.o(i.usbd_set_address) for usbd_set_address
+    usbd_sdr.o(i.usbd_device_request) refers to usbd_sdr.o(i.usbd_get_descriptor) for usbd_get_descriptor
+    usbd_sdr.o(i.usbd_device_request) refers to usbd_sdr.o(i.usbd_get_configuration) for usbd_get_configuration
+    usbd_sdr.o(i.usbd_device_request) refers to usbd_sdr.o(i.usbd_set_configuration) for usbd_set_configuration
+    usbd_sdr.o(i.usbd_device_request) refers to usbd_core.o(i.usbd_ctrl_unsupport) for usbd_ctrl_unsupport
+    usbd_sdr.o(i.usbd_endpoint_request) refers to usbd_core.o(i.usbd_set_stall) for usbd_set_stall
+    usbd_sdr.o(i.usbd_endpoint_request) refers to usbd_core.o(i.usbd_ctrl_send) for usbd_ctrl_send
+    usbd_sdr.o(i.usbd_endpoint_request) refers to usbd_core.o(i.usbd_ctrl_unsupport) for usbd_ctrl_unsupport
+    usbd_sdr.o(i.usbd_endpoint_request) refers to usbd_core.o(i.usbd_clear_stall) for usbd_clear_stall
+    usbd_sdr.o(i.usbd_endpoint_request) refers to usbd_core.o(i.usbd_ctrl_send_status) for usbd_ctrl_send_status
+    usbd_sdr.o(i.usbd_get_configuration) refers to usbd_core.o(i.usbd_ctrl_unsupport) for usbd_ctrl_unsupport
+    usbd_sdr.o(i.usbd_get_configuration) refers to usbd_core.o(i.usbd_ctrl_send) for usbd_ctrl_send
+    usbd_sdr.o(i.usbd_get_descriptor) refers to usbd_core.o(i.usbd_ctrl_unsupport) for usbd_ctrl_unsupport
+    usbd_sdr.o(i.usbd_get_descriptor) refers to usbd_core.o(i.usbd_ctrl_send) for usbd_ctrl_send
+    usbd_sdr.o(i.usbd_get_status) refers to usbd_core.o(i.usbd_ctrl_send) for usbd_ctrl_send
+    usbd_sdr.o(i.usbd_get_status) refers to usbd_core.o(i.usbd_ctrl_unsupport) for usbd_ctrl_unsupport
+    usbd_sdr.o(i.usbd_interface_request) refers to usbd_core.o(i.usbd_ctrl_send_status) for usbd_ctrl_send_status
+    usbd_sdr.o(i.usbd_interface_request) refers to usbd_core.o(i.usbd_ctrl_unsupport) for usbd_ctrl_unsupport
+    usbd_sdr.o(i.usbd_set_address) refers to usbd_core.o(i.usbd_ctrl_unsupport) for usbd_ctrl_unsupport
+    usbd_sdr.o(i.usbd_set_address) refers to usbd_core.o(i.usbd_ctrl_send_status) for usbd_ctrl_send_status
+    usbd_sdr.o(i.usbd_set_configuration) refers to usbd_core.o(i.usbd_ctrl_send_status) for usbd_ctrl_send_status
+    usbd_sdr.o(i.usbd_set_configuration) refers to usbd_core.o(i.usbd_ctrl_unsupport) for usbd_ctrl_unsupport
+    usbd_sdr.o(i.usbd_set_configuration) refers to usbd_sdr.o(.data) for config_value
+    usbd_sdr.o(i.usbd_set_feature) refers to usbd_core.o(i.usbd_ctrl_send_status) for usbd_ctrl_send_status
+    usbd_sdr.o(i.usbd_set_feature) refers to usbd_core.o(i.usbd_ctrl_unsupport) for usbd_ctrl_unsupport
+    mt6701.o(i.MT6701_GetAngle) refers to mt6701.o(i.MT6701_StartRead) for MT6701_StartRead
+    mt6701.o(i.MT6701_StartRead) refers to at32f403a_407_gpio.o(i.gpio_bits_reset) for gpio_bits_reset
+    mt6701.o(i.MT6701_StartRead) refers to at32f403a_407_dma.o(i.dma_channel_enable) for dma_channel_enable
+    mt6701.o(i.MT6701_StartRead) refers to at32f403a_407_spi.o(i.spi_i2s_flag_get) for spi_i2s_flag_get
+    mt6701.o(i.MT6701_StartRead) refers to at32f403a_407_spi.o(i.spi_i2s_data_transmit) for spi_i2s_data_transmit
+    cdc_class.o(i.cdc_struct_init) refers to cdc_class.o(.data) for linecoding
+    cdc_class.o(i.class_clear_handler) refers to usbd_core.o(i.usbd_ept_close) for usbd_ept_close
+    cdc_class.o(i.class_ept0_rx_handler) refers to usbd_core.o(i.usbd_get_recv_len) for usbd_get_recv_len
+    cdc_class.o(i.class_ept0_rx_handler) refers to cdc_class.o(i.usb_vcp_cmd_process) for usb_vcp_cmd_process
+    cdc_class.o(i.class_init_handler) refers to usbd_core.o(i.usbd_ept_open) for usbd_ept_open
+    cdc_class.o(i.class_init_handler) refers to usbd_core.o(i.usbd_ept_recv) for usbd_ept_recv
+    cdc_class.o(i.class_init_handler) refers to cdc_class.o(i.cdc_struct_init) for cdc_struct_init
+    cdc_class.o(i.class_out_handler) refers to usbd_core.o(i.usbd_get_recv_len) for usbd_get_recv_len
+    cdc_class.o(i.class_setup_handler) refers to cdc_class.o(i.usb_vcp_cmd_process) for usb_vcp_cmd_process
+    cdc_class.o(i.class_setup_handler) refers to usbd_core.o(i.usbd_ctrl_send) for usbd_ctrl_send
+    cdc_class.o(i.class_setup_handler) refers to usbd_core.o(i.usbd_ctrl_recv) for usbd_ctrl_recv
+    cdc_class.o(i.class_setup_handler) refers to usbd_core.o(i.usbd_ctrl_unsupport) for usbd_ctrl_unsupport
+    cdc_class.o(i.usb_vcp_get_rxdata) refers to usbd_core.o(i.usbd_ept_recv) for usbd_ept_recv
+    cdc_class.o(i.usb_vcp_send_data) refers to usbd_core.o(i.usbd_ept_send) for usbd_ept_send
+    cdc_class.o(.data) refers to cdc_class.o(i.class_init_handler) for class_init_handler
+    cdc_class.o(.data) refers to cdc_class.o(i.class_clear_handler) for class_clear_handler
+    cdc_class.o(.data) refers to cdc_class.o(i.class_setup_handler) for class_setup_handler
+    cdc_class.o(.data) refers to cdc_class.o(i.class_ept0_tx_handler) for class_ept0_tx_handler
+    cdc_class.o(.data) refers to cdc_class.o(i.class_ept0_rx_handler) for class_ept0_rx_handler
+    cdc_class.o(.data) refers to cdc_class.o(i.class_in_handler) for class_in_handler
+    cdc_class.o(.data) refers to cdc_class.o(i.class_out_handler) for class_out_handler
+    cdc_class.o(.data) refers to cdc_class.o(i.class_sof_handler) for class_sof_handler
+    cdc_class.o(.data) refers to cdc_class.o(i.class_event_handler) for class_event_handler
+    cdc_class.o(.data) refers to cdc_class.o(.bss) for cdc_struct
+    cdc_desc.o(i.get_device_config_string) refers to cdc_desc.o(i.usbd_unicode_convert) for usbd_unicode_convert
+    cdc_desc.o(i.get_device_config_string) refers to cdc_desc.o(.bss) for g_usbd_desc_buffer
+    cdc_desc.o(i.get_device_config_string) refers to cdc_desc.o(.data) for vp_desc
+    cdc_desc.o(i.get_device_configuration) refers to cdc_desc.o(.data) for config_descriptor
+    cdc_desc.o(i.get_device_descriptor) refers to cdc_desc.o(.data) for device_descriptor
+    cdc_desc.o(i.get_device_interface_string) refers to cdc_desc.o(i.usbd_unicode_convert) for usbd_unicode_convert
+    cdc_desc.o(i.get_device_interface_string) refers to cdc_desc.o(.bss) for g_usbd_desc_buffer
+    cdc_desc.o(i.get_device_interface_string) refers to cdc_desc.o(.data) for vp_desc
+    cdc_desc.o(i.get_device_lang_id) refers to cdc_desc.o(.data) for langid_descriptor
+    cdc_desc.o(i.get_device_manufacturer_string) refers to cdc_desc.o(i.usbd_unicode_convert) for usbd_unicode_convert
+    cdc_desc.o(i.get_device_manufacturer_string) refers to cdc_desc.o(.bss) for g_usbd_desc_buffer
+    cdc_desc.o(i.get_device_manufacturer_string) refers to cdc_desc.o(.data) for vp_desc
+    cdc_desc.o(i.get_device_product_string) refers to cdc_desc.o(i.usbd_unicode_convert) for usbd_unicode_convert
+    cdc_desc.o(i.get_device_product_string) refers to cdc_desc.o(.bss) for g_usbd_desc_buffer
+    cdc_desc.o(i.get_device_product_string) refers to cdc_desc.o(.data) for vp_desc
+    cdc_desc.o(i.get_device_serial_string) refers to cdc_desc.o(i.get_serial_num) for get_serial_num
+    cdc_desc.o(i.get_device_serial_string) refers to cdc_desc.o(.data) for serial_descriptor
+    cdc_desc.o(i.get_serial_num) refers to cdc_desc.o(i.usbd_int_to_unicode) for usbd_int_to_unicode
+    cdc_desc.o(i.get_serial_num) refers to cdc_desc.o(.data) for g_string_serial
+    cdc_desc.o(.data) refers to cdc_desc.o(i.get_device_descriptor) for get_device_descriptor
+    cdc_desc.o(.data) refers to cdc_desc.o(i.get_device_qualifier) for get_device_qualifier
+    cdc_desc.o(.data) refers to cdc_desc.o(i.get_device_configuration) for get_device_configuration
+    cdc_desc.o(.data) refers to cdc_desc.o(i.get_device_other_speed) for get_device_other_speed
+    cdc_desc.o(.data) refers to cdc_desc.o(i.get_device_lang_id) for get_device_lang_id
+    cdc_desc.o(.data) refers to cdc_desc.o(i.get_device_manufacturer_string) for get_device_manufacturer_string
+    cdc_desc.o(.data) refers to cdc_desc.o(i.get_device_product_string) for get_device_product_string
+    cdc_desc.o(.data) refers to cdc_desc.o(i.get_device_serial_string) for get_device_serial_string
+    cdc_desc.o(.data) refers to cdc_desc.o(i.get_device_interface_string) for get_device_interface_string
+    cdc_desc.o(.data) refers to cdc_desc.o(i.get_device_config_string) for get_device_config_string
+    __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to main.o(i.main) for main
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    __rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    __rtentry4.o(.ARM.exidx) refers to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to startup_at32f403a_407.o(.text) for __user_initial_stackheap
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002C) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000032) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000001) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000004) for __rt_lib_init_preinit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000033) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000025) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_user_alloc_1
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    libinit2.o(.ARM.Collect$$libinit$$00000001) refers to fpinit.o(x$fpl$fpinit) for _fp_init
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000026) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000027) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    argv_veneer.o(.emb_text) refers to no_argv.o(.text) for __ARM_get_argv
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000004) for __rt_lib_shutdown_cpp_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000002) for __rt_lib_shutdown_fini_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000009) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000011) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000012) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000006) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E) for __rt_lib_shutdown_user_alloc_1
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing main.o(.rrx_text), (6 bytes).
+    Removing at32f403a_407_wk_config.o(.rev16_text), (4 bytes).
+    Removing at32f403a_407_wk_config.o(.revsh_text), (4 bytes).
+    Removing at32f403a_407_wk_config.o(.rrx_text), (6 bytes).
+    Removing at32f403a_407_int.o(.rev16_text), (4 bytes).
+    Removing at32f403a_407_int.o(.revsh_text), (4 bytes).
+    Removing at32f403a_407_int.o(.rrx_text), (6 bytes).
+    Removing wk_system.o(.rev16_text), (4 bytes).
+    Removing wk_system.o(.revsh_text), (4 bytes).
+    Removing wk_system.o(.rrx_text), (6 bytes).
+    Removing wk_system.o(i.wk_delay_ms), (42 bytes).
+    Removing wk_system.o(i.wk_delay_us), (56 bytes).
+    Removing wk_debug.o(.rev16_text), (4 bytes).
+    Removing wk_debug.o(.revsh_text), (4 bytes).
+    Removing wk_debug.o(.rrx_text), (6 bytes).
+    Removing usb_app.o(.rev16_text), (4 bytes).
+    Removing usb_app.o(.revsh_text), (4 bytes).
+    Removing usb_app.o(.rrx_text), (6 bytes).
+    Removing usb_app.o(i.usb_delay_ms), (12 bytes).
+    Removing wk_usbfs.o(.rev16_text), (4 bytes).
+    Removing wk_usbfs.o(.revsh_text), (4 bytes).
+    Removing wk_usbfs.o(.rrx_text), (6 bytes).
+    Removing wk_acc.o(.rev16_text), (4 bytes).
+    Removing wk_acc.o(.revsh_text), (4 bytes).
+    Removing wk_acc.o(.rrx_text), (6 bytes).
+    Removing wk_spi.o(.rev16_text), (4 bytes).
+    Removing wk_spi.o(.revsh_text), (4 bytes).
+    Removing wk_spi.o(.rrx_text), (6 bytes).
+    Removing wk_dma.o(.rev16_text), (4 bytes).
+    Removing wk_dma.o(.revsh_text), (4 bytes).
+    Removing wk_dma.o(.rrx_text), (6 bytes).
+    Removing wk_gpio.o(.rev16_text), (4 bytes).
+    Removing wk_gpio.o(.revsh_text), (4 bytes).
+    Removing wk_gpio.o(.rrx_text), (6 bytes).
+    Removing at32f403a_407_crm.o(.rev16_text), (4 bytes).
+    Removing at32f403a_407_crm.o(.revsh_text), (4 bytes).
+    Removing at32f403a_407_crm.o(.rrx_text), (6 bytes).
+    Removing at32f403a_407_crm.o(i.crm_adc_clock_div_set), (32 bytes).
+    Removing at32f403a_407_crm.o(i.crm_battery_powered_domain_reset), (20 bytes).
+    Removing at32f403a_407_crm.o(i.crm_clkout_div_set), (20 bytes).
+    Removing at32f403a_407_crm.o(i.crm_clkout_to_tmr10_enable), (20 bytes).
+    Removing at32f403a_407_crm.o(i.crm_clock_failure_detection_enable), (20 bytes).
+    Removing at32f403a_407_crm.o(i.crm_clock_out_set), (32 bytes).
+    Removing at32f403a_407_crm.o(i.crm_flag_clear), (212 bytes).
+    Removing at32f403a_407_crm.o(i.crm_hext_bypass), (20 bytes).
+    Removing at32f403a_407_crm.o(i.crm_hext_clock_div_set), (20 bytes).
+    Removing at32f403a_407_crm.o(i.crm_hick_clock_calibration_set), (40 bytes).
+    Removing at32f403a_407_crm.o(i.crm_hick_clock_trimming_set), (20 bytes).
+    Removing at32f403a_407_crm.o(i.crm_interrupt_enable), (32 bytes).
+    Removing at32f403a_407_crm.o(i.crm_interrupt_flag_get), (176 bytes).
+    Removing at32f403a_407_crm.o(i.crm_lext_bypass), (20 bytes).
+    Removing at32f403a_407_crm.o(i.crm_periph_reset), (68 bytes).
+    Removing at32f403a_407_crm.o(i.crm_periph_sleep_mode_clock_enable), (68 bytes).
+    Removing at32f403a_407_crm.o(i.crm_rtc_clock_enable), (20 bytes).
+    Removing at32f403a_407_crm.o(i.crm_rtc_clock_select), (20 bytes).
+    Removing at32f403a_407_crm.o(i.crm_usb_clock_div_set), (32 bytes).
+    Removing at32f403a_407_gpio.o(.rev16_text), (4 bytes).
+    Removing at32f403a_407_gpio.o(.revsh_text), (4 bytes).
+    Removing at32f403a_407_gpio.o(.rrx_text), (6 bytes).
+    Removing at32f403a_407_gpio.o(i.gpio_bits_write), (10 bytes).
+    Removing at32f403a_407_gpio.o(i.gpio_event_output_config), (28 bytes).
+    Removing at32f403a_407_gpio.o(i.gpio_event_output_enable), (20 bytes).
+    Removing at32f403a_407_gpio.o(i.gpio_exint_line_config), (164 bytes).
+    Removing at32f403a_407_gpio.o(i.gpio_input_data_bit_read), (18 bytes).
+    Removing at32f403a_407_gpio.o(i.gpio_input_data_read), (8 bytes).
+    Removing at32f403a_407_gpio.o(i.gpio_iomux_reset), (24 bytes).
+    Removing at32f403a_407_gpio.o(i.gpio_output_data_bit_read), (18 bytes).
+    Removing at32f403a_407_gpio.o(i.gpio_output_data_read), (8 bytes).
+    Removing at32f403a_407_gpio.o(i.gpio_pin_wp_config), (18 bytes).
+    Removing at32f403a_407_gpio.o(i.gpio_pins_huge_driven_config), (18 bytes).
+    Removing at32f403a_407_gpio.o(i.gpio_port_write), (4 bytes).
+    Removing at32f403a_407_gpio.o(i.gpio_reset), (164 bytes).
+    Removing at32f403a_407_pwc.o(.rev16_text), (4 bytes).
+    Removing at32f403a_407_pwc.o(.revsh_text), (4 bytes).
+    Removing at32f403a_407_pwc.o(.rrx_text), (6 bytes).
+    Removing at32f403a_407_pwc.o(i.pwc_battery_powered_domain_access), (20 bytes).
+    Removing at32f403a_407_pwc.o(i.pwc_deep_sleep_mode_enter), (48 bytes).
+    Removing at32f403a_407_pwc.o(i.pwc_flag_clear), (48 bytes).
+    Removing at32f403a_407_pwc.o(i.pwc_flag_get), (24 bytes).
+    Removing at32f403a_407_pwc.o(i.pwc_power_voltage_monitor_enable), (20 bytes).
+    Removing at32f403a_407_pwc.o(i.pwc_pvm_level_select), (20 bytes).
+    Removing at32f403a_407_pwc.o(i.pwc_reset), (24 bytes).
+    Removing at32f403a_407_pwc.o(i.pwc_sleep_mode_enter), (36 bytes).
+    Removing at32f403a_407_pwc.o(i.pwc_standby_mode_enter), (56 bytes).
+    Removing at32f403a_407_pwc.o(i.pwc_voltage_regulate_set), (20 bytes).
+    Removing at32f403a_407_pwc.o(i.pwc_wakeup_pin_enable), (32 bytes).
+    Removing at32f403a_407_spi.o(.rev16_text), (4 bytes).
+    Removing at32f403a_407_spi.o(.revsh_text), (4 bytes).
+    Removing at32f403a_407_spi.o(.rrx_text), (6 bytes).
+    Removing at32f403a_407_spi.o(i.i2s_default_para_init), (22 bytes).
+    Removing at32f403a_407_spi.o(i.i2s_enable), (10 bytes).
+    Removing at32f403a_407_spi.o(i.i2s_init), (554 bytes).
+    Removing at32f403a_407_spi.o(i.spi_crc_next_transmit), (14 bytes).
+    Removing at32f403a_407_spi.o(i.spi_crc_polynomial_get), (8 bytes).
+    Removing at32f403a_407_spi.o(i.spi_crc_value_get), (18 bytes).
+    Removing at32f403a_407_spi.o(i.spi_frame_bit_num_set), (10 bytes).
+    Removing at32f403a_407_spi.o(i.spi_half_duplex_direction_set), (10 bytes).
+    Removing at32f403a_407_spi.o(i.spi_hardware_cs_output_enable), (10 bytes).
+    Removing at32f403a_407_spi.o(i.spi_i2s_data_receive), (8 bytes).
+    Removing at32f403a_407_spi.o(i.spi_i2s_flag_clear), (48 bytes).
+    Removing at32f403a_407_spi.o(i.spi_i2s_interrupt_enable), (18 bytes).
+    Removing at32f403a_407_spi.o(i.spi_i2s_interrupt_flag_get), (160 bytes).
+    Removing at32f403a_407_spi.o(i.spi_i2s_reset), (120 bytes).
+    Removing at32f403a_407_spi.o(i.spi_software_cs_internal_level_set), (10 bytes).
+    Removing at32f403a_407_dma.o(.rev16_text), (4 bytes).
+    Removing at32f403a_407_dma.o(.revsh_text), (4 bytes).
+    Removing at32f403a_407_dma.o(.rrx_text), (6 bytes).
+    Removing at32f403a_407_dma.o(i.dma_data_number_get), (8 bytes).
+    Removing at32f403a_407_dma.o(i.dma_data_number_set), (4 bytes).
+    Removing at32f403a_407_dma.o(i.dma_interrupt_flag_get), (44 bytes).
+    Removing at32f403a_407_flash.o(.rev16_text), (4 bytes).
+    Removing at32f403a_407_flash.o(.revsh_text), (4 bytes).
+    Removing at32f403a_407_flash.o(.rrx_text), (6 bytes).
+    Removing at32f403a_407_flash.o(i.flash_bank1_erase), (60 bytes).
+    Removing at32f403a_407_flash.o(i.flash_bank1_lock), (20 bytes).
+    Removing at32f403a_407_flash.o(i.flash_bank1_operation_status_get), (52 bytes).
+    Removing at32f403a_407_flash.o(i.flash_bank1_operation_wait_for), (36 bytes).
+    Removing at32f403a_407_flash.o(i.flash_bank1_unlock), (24 bytes).
+    Removing at32f403a_407_flash.o(i.flash_bank2_erase), (60 bytes).
+    Removing at32f403a_407_flash.o(i.flash_bank2_lock), (20 bytes).
+    Removing at32f403a_407_flash.o(i.flash_bank2_operation_status_get), (52 bytes).
+    Removing at32f403a_407_flash.o(i.flash_bank2_operation_wait_for), (36 bytes).
+    Removing at32f403a_407_flash.o(i.flash_bank2_unlock), (24 bytes).
+    Removing at32f403a_407_flash.o(i.flash_byte_program), (124 bytes).
+    Removing at32f403a_407_flash.o(i.flash_crc_calibrate), (72 bytes).
+    Removing at32f403a_407_flash.o(i.flash_epp_set), (220 bytes).
+    Removing at32f403a_407_flash.o(i.flash_epp_status_get), (12 bytes).
+    Removing at32f403a_407_flash.o(i.flash_fap_enable), (140 bytes).
+    Removing at32f403a_407_flash.o(i.flash_fap_status_get), (16 bytes).
+    Removing at32f403a_407_flash.o(i.flash_flag_clear), (56 bytes).
+    Removing at32f403a_407_flash.o(i.flash_flag_get), (96 bytes).
+    Removing at32f403a_407_flash.o(i.flash_halfword_program), (184 bytes).
+    Removing at32f403a_407_flash.o(i.flash_internal_all_erase), (108 bytes).
+    Removing at32f403a_407_flash.o(i.flash_interrupt_enable), (124 bytes).
+    Removing at32f403a_407_flash.o(i.flash_lock), (32 bytes).
+    Removing at32f403a_407_flash.o(i.flash_operation_status_get), (52 bytes).
+    Removing at32f403a_407_flash.o(i.flash_operation_wait_for), (36 bytes).
+    Removing at32f403a_407_flash.o(i.flash_sector_erase), (224 bytes).
+    Removing at32f403a_407_flash.o(i.flash_slib_datastart_sector_get), (16 bytes).
+    Removing at32f403a_407_flash.o(i.flash_slib_disable), (52 bytes).
+    Removing at32f403a_407_flash.o(i.flash_slib_enable), (148 bytes).
+    Removing at32f403a_407_flash.o(i.flash_slib_end_sector_get), (12 bytes).
+    Removing at32f403a_407_flash.o(i.flash_slib_remaining_count_get), (16 bytes).
+    Removing at32f403a_407_flash.o(i.flash_slib_start_sector_get), (16 bytes).
+    Removing at32f403a_407_flash.o(i.flash_slib_state_get), (24 bytes).
+    Removing at32f403a_407_flash.o(i.flash_spim_all_erase), (76 bytes).
+    Removing at32f403a_407_flash.o(i.flash_spim_dummy_read), (24 bytes).
+    Removing at32f403a_407_flash.o(i.flash_spim_encryption_range_set), (12 bytes).
+    Removing at32f403a_407_flash.o(i.flash_spim_lock), (24 bytes).
+    Removing at32f403a_407_flash.o(i.flash_spim_mass_program), (144 bytes).
+    Removing at32f403a_407_flash.o(i.flash_spim_model_select), (20 bytes).
+    Removing at32f403a_407_flash.o(i.flash_spim_operation_status_get), (52 bytes).
+    Removing at32f403a_407_flash.o(i.flash_spim_operation_wait_for), (36 bytes).
+    Removing at32f403a_407_flash.o(i.flash_spim_unlock), (40 bytes).
+    Removing at32f403a_407_flash.o(i.flash_ssb_set), (92 bytes).
+    Removing at32f403a_407_flash.o(i.flash_ssb_status_get), (16 bytes).
+    Removing at32f403a_407_flash.o(i.flash_unlock), (32 bytes).
+    Removing at32f403a_407_flash.o(i.flash_user_system_data_erase), (152 bytes).
+    Removing at32f403a_407_flash.o(i.flash_user_system_data_program), (104 bytes).
+    Removing at32f403a_407_flash.o(i.flash_word_program), (184 bytes).
+    Removing at32f403a_407_flash.o(.constdata), (8 bytes).
+    Removing at32f403a_407_exint.o(.rev16_text), (4 bytes).
+    Removing at32f403a_407_exint.o(.revsh_text), (4 bytes).
+    Removing at32f403a_407_exint.o(.rrx_text), (6 bytes).
+    Removing at32f403a_407_exint.o(i.exint_default_para_init), (14 bytes).
+    Removing at32f403a_407_exint.o(i.exint_event_enable), (32 bytes).
+    Removing at32f403a_407_exint.o(i.exint_flag_clear), (32 bytes).
+    Removing at32f403a_407_exint.o(i.exint_flag_get), (28 bytes).
+    Removing at32f403a_407_exint.o(i.exint_init), (152 bytes).
+    Removing at32f403a_407_exint.o(i.exint_interrupt_enable), (32 bytes).
+    Removing at32f403a_407_exint.o(i.exint_interrupt_flag_get), (36 bytes).
+    Removing at32f403a_407_exint.o(i.exint_reset), (40 bytes).
+    Removing at32f403a_407_exint.o(i.exint_software_interrupt_event_generate), (16 bytes).
+    Removing at32f403a_407_misc.o(.rev16_text), (4 bytes).
+    Removing at32f403a_407_misc.o(.revsh_text), (4 bytes).
+    Removing at32f403a_407_misc.o(.rrx_text), (6 bytes).
+    Removing at32f403a_407_misc.o(i.nvic_irq_disable), (44 bytes).
+    Removing at32f403a_407_misc.o(i.nvic_lowpower_mode_config), (32 bytes).
+    Removing at32f403a_407_misc.o(i.nvic_system_reset), (44 bytes).
+    Removing at32f403a_407_misc.o(i.nvic_vector_table_set), (20 bytes).
+    Removing at32f403a_407_usb.o(.rev16_text), (4 bytes).
+    Removing at32f403a_407_usb.o(.revsh_text), (4 bytes).
+    Removing at32f403a_407_usb.o(.rrx_text), (6 bytes).
+    Removing at32f403a_407_usb.o(i.usb_disconnect), (22 bytes).
+    Removing at32f403a_407_usb.o(i.usb_ept_stall), (108 bytes).
+    Removing at32f403a_407_usb.o(i.usb_flag_get), (16 bytes).
+    Removing at32f403a_407_usb.o(i.usb_interrupt_flag_get), (38 bytes).
+    Removing at32f403a_407_usb.o(i.usb_remote_wkup_clear), (10 bytes).
+    Removing at32f403a_407_usb.o(i.usb_remote_wkup_set), (12 bytes).
+    Removing at32f403a_407_usb.o(i.usb_usbbufs_enable), (64 bytes).
+    Removing at32f403a_407_acc.o(.rev16_text), (4 bytes).
+    Removing at32f403a_407_acc.o(.revsh_text), (4 bytes).
+    Removing at32f403a_407_acc.o(.rrx_text), (6 bytes).
+    Removing at32f403a_407_acc.o(i.acc_flag_clear), (12 bytes).
+    Removing at32f403a_407_acc.o(i.acc_flag_get), (32 bytes).
+    Removing at32f403a_407_acc.o(i.acc_hickcal_get), (12 bytes).
+    Removing at32f403a_407_acc.o(i.acc_hicktrim_get), (16 bytes).
+    Removing at32f403a_407_acc.o(i.acc_interrupt_enable), (36 bytes).
+    Removing at32f403a_407_acc.o(i.acc_interrupt_flag_get), (72 bytes).
+    Removing at32f403a_407_acc.o(i.acc_read_c1), (12 bytes).
+    Removing at32f403a_407_acc.o(i.acc_read_c2), (12 bytes).
+    Removing at32f403a_407_acc.o(i.acc_read_c3), (12 bytes).
+    Removing at32f403a_407_acc.o(i.acc_step_set), (20 bytes).
+    Removing at32f403a_407_debug.o(.rev16_text), (4 bytes).
+    Removing at32f403a_407_debug.o(.revsh_text), (4 bytes).
+    Removing at32f403a_407_debug.o(.rrx_text), (6 bytes).
+    Removing at32f403a_407_debug.o(i.debug_device_id_get), (12 bytes).
+    Removing at32f403a_407_debug.o(i.debug_periph_mode_set), (32 bytes).
+    Removing system_at32f403a_407.o(.rev16_text), (4 bytes).
+    Removing system_at32f403a_407.o(.revsh_text), (4 bytes).
+    Removing system_at32f403a_407.o(.rrx_text), (6 bytes).
+    Removing usbd_core.o(.rev16_text), (4 bytes).
+    Removing usbd_core.o(.revsh_text), (4 bytes).
+    Removing usbd_core.o(.rrx_text), (6 bytes).
+    Removing usbd_core.o(i.usbd_connect_state_get), (8 bytes).
+    Removing usbd_core.o(i.usbd_disconnect), (12 bytes).
+    Removing usbd_core.o(i.usbd_ept_buf_custom_define), (68 bytes).
+    Removing usbd_core.o(i.usbd_ept_dbuffer_enable), (40 bytes).
+    Removing usbd_core.o(i.usbd_remote_wakeup), (38 bytes).
+    Removing usbd_core.o(i.usbd_set_device_addr), (16 bytes).
+    Removing usbd_int.o(.rev16_text), (4 bytes).
+    Removing usbd_int.o(.revsh_text), (4 bytes).
+    Removing usbd_int.o(.rrx_text), (6 bytes).
+    Removing usbd_sdr.o(.rev16_text), (4 bytes).
+    Removing usbd_sdr.o(.revsh_text), (4 bytes).
+    Removing usbd_sdr.o(.rrx_text), (6 bytes).
+    Removing log.o(.rev16_text), (4 bytes).
+    Removing log.o(.revsh_text), (4 bytes).
+    Removing log.o(.rrx_text), (6 bytes).
+    Removing log.o(.constdata), (4 bytes).
+    Removing mt6701.o(.rev16_text), (4 bytes).
+    Removing mt6701.o(.revsh_text), (4 bytes).
+    Removing mt6701.o(.rrx_text), (6 bytes).
+    Removing cdc_class.o(.rev16_text), (4 bytes).
+    Removing cdc_class.o(.revsh_text), (4 bytes).
+    Removing cdc_class.o(.rrx_text), (6 bytes).
+    Removing cdc_desc.o(.rev16_text), (4 bytes).
+    Removing cdc_desc.o(.revsh_text), (4 bytes).
+    Removing cdc_desc.o(.rrx_text), (6 bytes).
+
+241 unused section(s) (total 7786 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../../middlewares/usbd_drivers/src/usbd_core.c 0x00000000   Number         0  usbd_core.o ABSOLUTE
+    ../../middlewares/usbd_drivers/src/usbd_int.c 0x00000000   Number         0  usbd_int.o ABSOLUTE
+    ../../middlewares/usbd_drivers/src/usbd_sdr.c 0x00000000   Number         0  usbd_sdr.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/dczerorl2.s                0x00000000   Number         0  __dczerorl2.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
+    ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
+    ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
+    ../fplib/fpinit.s                        0x00000000   Number         0  fpinit.o ABSOLUTE
+    ../src/cdc_class.c                       0x00000000   Number         0  cdc_class.o ABSOLUTE
+    ../src/cdc_desc.c                        0x00000000   Number         0  cdc_desc.o ABSOLUTE
+    ../src/usb_app.c                         0x00000000   Number         0  usb_app.o ABSOLUTE
+    ..\..\libraries\cmsis\cm4\device_support\system_at32f403a_407.c 0x00000000   Number         0  system_at32f403a_407.o ABSOLUTE
+    ..\..\libraries\drivers\src\at32f403a_407_acc.c 0x00000000   Number         0  at32f403a_407_acc.o ABSOLUTE
+    ..\..\libraries\drivers\src\at32f403a_407_crm.c 0x00000000   Number         0  at32f403a_407_crm.o ABSOLUTE
+    ..\..\libraries\drivers\src\at32f403a_407_debug.c 0x00000000   Number         0  at32f403a_407_debug.o ABSOLUTE
+    ..\..\libraries\drivers\src\at32f403a_407_dma.c 0x00000000   Number         0  at32f403a_407_dma.o ABSOLUTE
+    ..\..\libraries\drivers\src\at32f403a_407_exint.c 0x00000000   Number         0  at32f403a_407_exint.o ABSOLUTE
+    ..\..\libraries\drivers\src\at32f403a_407_flash.c 0x00000000   Number         0  at32f403a_407_flash.o ABSOLUTE
+    ..\..\libraries\drivers\src\at32f403a_407_gpio.c 0x00000000   Number         0  at32f403a_407_gpio.o ABSOLUTE
+    ..\..\libraries\drivers\src\at32f403a_407_misc.c 0x00000000   Number         0  at32f403a_407_misc.o ABSOLUTE
+    ..\..\libraries\drivers\src\at32f403a_407_pwc.c 0x00000000   Number         0  at32f403a_407_pwc.o ABSOLUTE
+    ..\..\libraries\drivers\src\at32f403a_407_spi.c 0x00000000   Number         0  at32f403a_407_spi.o ABSOLUTE
+    ..\..\libraries\drivers\src\at32f403a_407_usb.c 0x00000000   Number         0  at32f403a_407_usb.o ABSOLUTE
+    ..\..\middlewares\usbd_drivers\src\usbd_core.c 0x00000000   Number         0  usbd_core.o ABSOLUTE
+    ..\..\middlewares\usbd_drivers\src\usbd_int.c 0x00000000   Number         0  usbd_int.o ABSOLUTE
+    ..\..\middlewares\usbd_drivers\src\usbd_sdr.c 0x00000000   Number         0  usbd_sdr.o ABSOLUTE
+    ..\\..\\libraries\\cmsis\\cm4\\device_support\\system_at32f403a_407.c 0x00000000   Number         0  system_at32f403a_407.o ABSOLUTE
+    ..\\..\\libraries\\drivers\\src\\at32f403a_407_acc.c 0x00000000   Number         0  at32f403a_407_acc.o ABSOLUTE
+    ..\\..\\libraries\\drivers\\src\\at32f403a_407_crm.c 0x00000000   Number         0  at32f403a_407_crm.o ABSOLUTE
+    ..\\..\\libraries\\drivers\\src\\at32f403a_407_debug.c 0x00000000   Number         0  at32f403a_407_debug.o ABSOLUTE
+    ..\\..\\libraries\\drivers\\src\\at32f403a_407_dma.c 0x00000000   Number         0  at32f403a_407_dma.o ABSOLUTE
+    ..\\..\\libraries\\drivers\\src\\at32f403a_407_exint.c 0x00000000   Number         0  at32f403a_407_exint.o ABSOLUTE
+    ..\\..\\libraries\\drivers\\src\\at32f403a_407_flash.c 0x00000000   Number         0  at32f403a_407_flash.o ABSOLUTE
+    ..\\..\\libraries\\drivers\\src\\at32f403a_407_gpio.c 0x00000000   Number         0  at32f403a_407_gpio.o ABSOLUTE
+    ..\\..\\libraries\\drivers\\src\\at32f403a_407_misc.c 0x00000000   Number         0  at32f403a_407_misc.o ABSOLUTE
+    ..\\..\\libraries\\drivers\\src\\at32f403a_407_pwc.c 0x00000000   Number         0  at32f403a_407_pwc.o ABSOLUTE
+    ..\\..\\libraries\\drivers\\src\\at32f403a_407_spi.c 0x00000000   Number         0  at32f403a_407_spi.o ABSOLUTE
+    ..\\..\\libraries\\drivers\\src\\at32f403a_407_usb.c 0x00000000   Number         0  at32f403a_407_usb.o ABSOLUTE
+    ..\\app\\MT6701\\mt6701.c                0x00000000   Number         0  mt6701.o ABSOLUTE
+    ..\\src\\at32f403a_407_int.c             0x00000000   Number         0  at32f403a_407_int.o ABSOLUTE
+    ..\\src\\at32f403a_407_wk_config.c       0x00000000   Number         0  at32f403a_407_wk_config.o ABSOLUTE
+    ..\\src\\main.c                          0x00000000   Number         0  main.o ABSOLUTE
+    ..\\src\\wk_acc.c                        0x00000000   Number         0  wk_acc.o ABSOLUTE
+    ..\\src\\wk_debug.c                      0x00000000   Number         0  wk_debug.o ABSOLUTE
+    ..\\src\\wk_dma.c                        0x00000000   Number         0  wk_dma.o ABSOLUTE
+    ..\\src\\wk_gpio.c                       0x00000000   Number         0  wk_gpio.o ABSOLUTE
+    ..\\src\\wk_spi.c                        0x00000000   Number         0  wk_spi.o ABSOLUTE
+    ..\\src\\wk_system.c                     0x00000000   Number         0  wk_system.o ABSOLUTE
+    ..\\src\\wk_usbfs.c                      0x00000000   Number         0  wk_usbfs.o ABSOLUTE
+    ..\\tools\\LOG\\LOG.c                    0x00000000   Number         0  log.o ABSOLUTE
+    ..\app\MT6701\mt6701.c                   0x00000000   Number         0  mt6701.o ABSOLUTE
+    ..\src\at32f403a_407_int.c               0x00000000   Number         0  at32f403a_407_int.o ABSOLUTE
+    ..\src\at32f403a_407_wk_config.c         0x00000000   Number         0  at32f403a_407_wk_config.o ABSOLUTE
+    ..\src\cdc_class.c                       0x00000000   Number         0  cdc_class.o ABSOLUTE
+    ..\src\cdc_desc.c                        0x00000000   Number         0  cdc_desc.o ABSOLUTE
+    ..\src\main.c                            0x00000000   Number         0  main.o ABSOLUTE
+    ..\src\usb_app.c                         0x00000000   Number         0  usb_app.o ABSOLUTE
+    ..\src\wk_acc.c                          0x00000000   Number         0  wk_acc.o ABSOLUTE
+    ..\src\wk_debug.c                        0x00000000   Number         0  wk_debug.o ABSOLUTE
+    ..\src\wk_dma.c                          0x00000000   Number         0  wk_dma.o ABSOLUTE
+    ..\src\wk_gpio.c                         0x00000000   Number         0  wk_gpio.o ABSOLUTE
+    ..\src\wk_spi.c                          0x00000000   Number         0  wk_spi.o ABSOLUTE
+    ..\src\wk_system.c                       0x00000000   Number         0  wk_system.o ABSOLUTE
+    ..\src\wk_usbfs.c                        0x00000000   Number         0  wk_usbfs.o ABSOLUTE
+    ..\tools\LOG\LOG.c                       0x00000000   Number         0  log.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    startup_at32f403a_407.s                  0x00000000   Number         0  startup_at32f403a_407.o ABSOLUTE
+    RESET                                    0x08000000   Section      388  startup_at32f403a_407.o(RESET)
+    !!!main                                  0x08000184   Section        8  __main.o(!!!main)
+    !!!scatter                               0x0800018c   Section       52  __scatter.o(!!!scatter)
+    !!dczerorl2                              0x080001c0   Section       90  __dczerorl2.o(!!dczerorl2)
+    !!handler_zi                             0x0800021c   Section       28  __scatter_zi.o(!!handler_zi)
+    .ARM.Collect$$libinit$$00000000          0x08000238   Section        2  libinit.o(.ARM.Collect$$libinit$$00000000)
+    .ARM.Collect$$libinit$$00000001          0x0800023a   Section        4  libinit2.o(.ARM.Collect$$libinit$$00000001)
+    .ARM.Collect$$libinit$$00000004          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    .ARM.Collect$$libinit$$0000000A          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    .ARM.Collect$$libinit$$0000000C          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    .ARM.Collect$$libinit$$0000000E          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    .ARM.Collect$$libinit$$00000011          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    .ARM.Collect$$libinit$$00000013          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    .ARM.Collect$$libinit$$00000015          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    .ARM.Collect$$libinit$$00000017          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    .ARM.Collect$$libinit$$00000019          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    .ARM.Collect$$libinit$$0000001B          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    .ARM.Collect$$libinit$$0000001D          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    .ARM.Collect$$libinit$$0000001F          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    .ARM.Collect$$libinit$$00000021          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    .ARM.Collect$$libinit$$00000023          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    .ARM.Collect$$libinit$$00000025          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    .ARM.Collect$$libinit$$0000002C          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    .ARM.Collect$$libinit$$0000002E          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    .ARM.Collect$$libinit$$00000030          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    .ARM.Collect$$libinit$$00000032          0x0800023e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    .ARM.Collect$$libinit$$00000033          0x0800023e   Section        2  libinit2.o(.ARM.Collect$$libinit$$00000033)
+    .ARM.Collect$$libshutdown$$00000000      0x08000240   Section        2  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    .ARM.Collect$$libshutdown$$00000002      0x08000242   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    .ARM.Collect$$libshutdown$$00000004      0x08000242   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    .ARM.Collect$$libshutdown$$00000006      0x08000242   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000006)
+    .ARM.Collect$$libshutdown$$00000009      0x08000242   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000009)
+    .ARM.Collect$$libshutdown$$0000000C      0x08000242   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    .ARM.Collect$$libshutdown$$0000000E      0x08000242   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E)
+    .ARM.Collect$$libshutdown$$00000011      0x08000242   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000011)
+    .ARM.Collect$$libshutdown$$00000012      0x08000242   Section        2  libshutdown2.o(.ARM.Collect$$libshutdown$$00000012)
+    .ARM.Collect$$rtentry$$00000000          0x08000244   Section        0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    .ARM.Collect$$rtentry$$00000002          0x08000244   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    .ARM.Collect$$rtentry$$00000004          0x08000244   Section        6  __rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    .ARM.Collect$$rtentry$$00000009          0x0800024a   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    .ARM.Collect$$rtentry$$0000000A          0x0800024a   Section        4  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    .ARM.Collect$$rtentry$$0000000C          0x0800024e   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    .ARM.Collect$$rtentry$$0000000D          0x0800024e   Section        8  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    .ARM.Collect$$rtexit$$00000000           0x08000256   Section        2  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    .ARM.Collect$$rtexit$$00000002           0x08000258   Section        0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    .ARM.Collect$$rtexit$$00000003           0x08000258   Section        4  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    .ARM.Collect$$rtexit$$00000004           0x0800025c   Section        6  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    .text                                    0x08000264   Section       64  startup_at32f403a_407.o(.text)
+    $v0                                      0x08000264   Number         0  startup_at32f403a_407.o(.text)
+    .text                                    0x080002a4   Section        0  heapauxi.o(.text)
+    .text                                    0x080002aa   Section       74  sys_stackheap_outer.o(.text)
+    .text                                    0x080002f4   Section        0  exit.o(.text)
+    .text                                    0x08000308   Section        8  libspace.o(.text)
+    .text                                    0x08000310   Section        0  sys_exit.o(.text)
+    .text                                    0x0800031c   Section        2  use_no_semi.o(.text)
+    .text                                    0x0800031e   Section        0  indicate_semi.o(.text)
+    i.BusFault_Handler                       0x0800031e   Section        0  at32f403a_407_int.o(i.BusFault_Handler)
+    i.DMA1_Channel1_IRQHandler               0x08000324   Section        0  at32f403a_407_int.o(i.DMA1_Channel1_IRQHandler)
+    i.DebugMon_Handler                       0x08000360   Section        0  at32f403a_407_int.o(i.DebugMon_Handler)
+    i.HardFault_Handler                      0x08000362   Section        0  at32f403a_407_int.o(i.HardFault_Handler)
+    i.MT6701_GetAngle                        0x08000368   Section        0  mt6701.o(i.MT6701_GetAngle)
+    i.MT6701_StartRead                       0x080003ac   Section        0  mt6701.o(i.MT6701_StartRead)
+    i.MemManage_Handler                      0x080003e4   Section        0  at32f403a_407_int.o(i.MemManage_Handler)
+    i.NMI_Handler                            0x080003e8   Section        0  at32f403a_407_int.o(i.NMI_Handler)
+    i.NVIC_EncodePriority                    0x080003ea   Section        0  at32f403a_407_wk_config.o(i.NVIC_EncodePriority)
+    NVIC_EncodePriority                      0x080003eb   Thumb Code    64  at32f403a_407_wk_config.o(i.NVIC_EncodePriority)
+    i.PackFloatArrayToBytes                  0x0800042a   Section        0  log.o(i.PackFloatArrayToBytes)
+    i.PendSV_Handler                         0x0800046a   Section        0  at32f403a_407_int.o(i.PendSV_Handler)
+    i.SVC_Handler                            0x0800046c   Section        0  at32f403a_407_int.o(i.SVC_Handler)
+    i.SysTick_Handler                        0x0800046e   Section        0  at32f403a_407_int.o(i.SysTick_Handler)
+    i.SystemInit                             0x08000470   Section        0  system_at32f403a_407.o(i.SystemInit)
+    i.USBFS_MAPL_IRQHandler                  0x080004e0   Section        0  at32f403a_407_int.o(i.USBFS_MAPL_IRQHandler)
+    i.UsageFault_Handler                     0x080004e8   Section        0  at32f403a_407_int.o(i.UsageFault_Handler)
+    i.__NVIC_GetPriorityGrouping             0x080004ec   Section        0  at32f403a_407_wk_config.o(i.__NVIC_GetPriorityGrouping)
+    __NVIC_GetPriorityGrouping               0x080004ed   Thumb Code    10  at32f403a_407_wk_config.o(i.__NVIC_GetPriorityGrouping)
+    i.__NVIC_SetPriority                     0x080004fc   Section        0  at32f403a_407_wk_config.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x080004fd   Thumb Code    32  at32f403a_407_wk_config.o(i.__NVIC_SetPriority)
+    i.acc_calibration_mode_enable            0x08000524   Section        0  at32f403a_407_acc.o(i.acc_calibration_mode_enable)
+    i.acc_write_c1                           0x08000554   Section        0  at32f403a_407_acc.o(i.acc_write_c1)
+    i.acc_write_c2                           0x08000560   Section        0  at32f403a_407_acc.o(i.acc_write_c2)
+    i.acc_write_c3                           0x0800056c   Section        0  at32f403a_407_acc.o(i.acc_write_c3)
+    i.cdc_struct_init                        0x08000578   Section        0  cdc_class.o(i.cdc_struct_init)
+    cdc_struct_init                          0x08000579   Thumb Code    50  cdc_class.o(i.cdc_struct_init)
+    i.class_clear_handler                    0x080005b0   Section        0  cdc_class.o(i.class_clear_handler)
+    class_clear_handler                      0x080005b1   Thumb Code    36  cdc_class.o(i.class_clear_handler)
+    i.class_ept0_rx_handler                  0x080005d4   Section        0  cdc_class.o(i.class_ept0_rx_handler)
+    class_ept0_rx_handler                    0x080005d5   Thumb Code    56  cdc_class.o(i.class_ept0_rx_handler)
+    i.class_ept0_tx_handler                  0x0800060c   Section        0  cdc_class.o(i.class_ept0_tx_handler)
+    class_ept0_tx_handler                    0x0800060d   Thumb Code     6  cdc_class.o(i.class_ept0_tx_handler)
+    i.class_event_handler                    0x08000612   Section        0  cdc_class.o(i.class_event_handler)
+    class_event_handler                      0x08000613   Thumb Code    30  cdc_class.o(i.class_event_handler)
+    i.class_in_handler                       0x08000630   Section        0  cdc_class.o(i.class_in_handler)
+    class_in_handler                         0x08000631   Thumb Code    22  cdc_class.o(i.class_in_handler)
+    i.class_init_handler                     0x08000646   Section        0  cdc_class.o(i.class_init_handler)
+    class_init_handler                       0x08000647   Thumb Code    74  cdc_class.o(i.class_init_handler)
+    i.class_out_handler                      0x08000690   Section        0  cdc_class.o(i.class_out_handler)
+    class_out_handler                        0x08000691   Thumb Code    42  cdc_class.o(i.class_out_handler)
+    i.class_setup_handler                    0x080006ba   Section        0  cdc_class.o(i.class_setup_handler)
+    class_setup_handler                      0x080006bb   Thumb Code   182  cdc_class.o(i.class_setup_handler)
+    i.class_sof_handler                      0x08000770   Section        0  cdc_class.o(i.class_sof_handler)
+    class_sof_handler                        0x08000771   Thumb Code     6  cdc_class.o(i.class_sof_handler)
+    i.crm_ahb_div_set                        0x08000778   Section        0  at32f403a_407_crm.o(i.crm_ahb_div_set)
+    i.crm_apb1_div_set                       0x0800078c   Section        0  at32f403a_407_crm.o(i.crm_apb1_div_set)
+    i.crm_apb2_div_set                       0x080007a0   Section        0  at32f403a_407_crm.o(i.crm_apb2_div_set)
+    i.crm_auto_step_mode_enable              0x080007b4   Section        0  at32f403a_407_crm.o(i.crm_auto_step_mode_enable)
+    i.crm_clock_source_enable                0x080007dc   Section        0  at32f403a_407_crm.o(i.crm_clock_source_enable)
+    i.crm_clocks_freq_get                    0x0800083c   Section        0  at32f403a_407_crm.o(i.crm_clocks_freq_get)
+    i.crm_flag_get                           0x08000968   Section        0  at32f403a_407_crm.o(i.crm_flag_get)
+    i.crm_hext_stable_wait                   0x08000998   Section        0  at32f403a_407_crm.o(i.crm_hext_stable_wait)
+    i.crm_hick_divider_select                0x080009c8   Section        0  at32f403a_407_crm.o(i.crm_hick_divider_select)
+    i.crm_hick_sclk_frequency_select         0x080009dc   Section        0  at32f403a_407_crm.o(i.crm_hick_sclk_frequency_select)
+    i.crm_periph_clock_enable                0x080009f8   Section        0  at32f403a_407_crm.o(i.crm_periph_clock_enable)
+    i.crm_pll_config                         0x08000a3c   Section        0  at32f403a_407_crm.o(i.crm_pll_config)
+    i.crm_reset                              0x08000ab8   Section        0  at32f403a_407_crm.o(i.crm_reset)
+    i.crm_sysclk_switch                      0x08000b10   Section        0  at32f403a_407_crm.o(i.crm_sysclk_switch)
+    i.crm_sysclk_switch_status_get           0x08000b4c   Section        0  at32f403a_407_crm.o(i.crm_sysclk_switch_status_get)
+    i.crm_usb_clock_source_select            0x08000b5c   Section        0  at32f403a_407_crm.o(i.crm_usb_clock_source_select)
+    i.crm_usb_interrupt_remapping_set        0x08000b7c   Section        0  at32f403a_407_crm.o(i.crm_usb_interrupt_remapping_set)
+    i.dma_channel_enable                     0x08000b90   Section        0  at32f403a_407_dma.o(i.dma_channel_enable)
+    i.dma_default_para_init                  0x08000b9a   Section        0  at32f403a_407_dma.o(i.dma_default_para_init)
+    i.dma_flag_clear                         0x08000bb4   Section        0  at32f403a_407_dma.o(i.dma_flag_clear)
+    i.dma_flag_get                           0x08000bd4   Section        0  at32f403a_407_dma.o(i.dma_flag_get)
+    i.dma_flexible_config                    0x08000c00   Section        0  at32f403a_407_dma.o(i.dma_flexible_config)
+    i.dma_init                               0x08000c98   Section        0  at32f403a_407_dma.o(i.dma_init)
+    i.dma_interrupt_enable                   0x08000cf4   Section        0  at32f403a_407_dma.o(i.dma_interrupt_enable)
+    i.dma_reset                              0x08000d08   Section        0  at32f403a_407_dma.o(i.dma_reset)
+    i.get_device_config_string               0x08000d78   Section        0  cdc_desc.o(i.get_device_config_string)
+    get_device_config_string                 0x08000d79   Thumb Code    22  cdc_desc.o(i.get_device_config_string)
+    i.get_device_configuration               0x08000db0   Section        0  cdc_desc.o(i.get_device_configuration)
+    get_device_configuration                 0x08000db1   Thumb Code     4  cdc_desc.o(i.get_device_configuration)
+    i.get_device_descriptor                  0x08000db8   Section        0  cdc_desc.o(i.get_device_descriptor)
+    get_device_descriptor                    0x08000db9   Thumb Code     4  cdc_desc.o(i.get_device_descriptor)
+    i.get_device_interface_string            0x08000dc0   Section        0  cdc_desc.o(i.get_device_interface_string)
+    get_device_interface_string              0x08000dc1   Thumb Code    22  cdc_desc.o(i.get_device_interface_string)
+    i.get_device_lang_id                     0x08000dfc   Section        0  cdc_desc.o(i.get_device_lang_id)
+    get_device_lang_id                       0x08000dfd   Thumb Code     4  cdc_desc.o(i.get_device_lang_id)
+    i.get_device_manufacturer_string         0x08000e04   Section        0  cdc_desc.o(i.get_device_manufacturer_string)
+    get_device_manufacturer_string           0x08000e05   Thumb Code    22  cdc_desc.o(i.get_device_manufacturer_string)
+    i.get_device_other_speed                 0x08000e2c   Section        0  cdc_desc.o(i.get_device_other_speed)
+    get_device_other_speed                   0x08000e2d   Thumb Code     4  cdc_desc.o(i.get_device_other_speed)
+    i.get_device_product_string              0x08000e30   Section        0  cdc_desc.o(i.get_device_product_string)
+    get_device_product_string                0x08000e31   Thumb Code    22  cdc_desc.o(i.get_device_product_string)
+    i.get_device_qualifier                   0x08000e68   Section        0  cdc_desc.o(i.get_device_qualifier)
+    get_device_qualifier                     0x08000e69   Thumb Code     4  cdc_desc.o(i.get_device_qualifier)
+    i.get_device_serial_string               0x08000e6c   Section        0  cdc_desc.o(i.get_device_serial_string)
+    get_device_serial_string                 0x08000e6d   Thumb Code    10  cdc_desc.o(i.get_device_serial_string)
+    i.get_serial_num                         0x08000e7c   Section        0  cdc_desc.o(i.get_serial_num)
+    get_serial_num                           0x08000e7d   Thumb Code    42  cdc_desc.o(i.get_serial_num)
+    i.gpio_bits_reset                        0x08000eb0   Section        0  at32f403a_407_gpio.o(i.gpio_bits_reset)
+    i.gpio_bits_set                          0x08000eb4   Section        0  at32f403a_407_gpio.o(i.gpio_bits_set)
+    i.gpio_default_para_init                 0x08000eb8   Section        0  at32f403a_407_gpio.o(i.gpio_default_para_init)
+    i.gpio_init                              0x08000ece   Section        0  at32f403a_407_gpio.o(i.gpio_init)
+    i.gpio_pin_remap_config                  0x08000f78   Section        0  at32f403a_407_gpio.o(i.gpio_pin_remap_config)
+    i.main                                   0x08000fc4   Section        0  main.o(i.main)
+    i.nvic_irq_enable                        0x08001040   Section        0  at32f403a_407_misc.o(i.nvic_irq_enable)
+    i.nvic_priority_group_config             0x08001108   Section        0  at32f403a_407_misc.o(i.nvic_priority_group_config)
+    i.spi_crc_enable                         0x08001130   Section        0  at32f403a_407_spi.o(i.spi_crc_enable)
+    i.spi_crc_polynomial_set                 0x0800113a   Section        0  at32f403a_407_spi.o(i.spi_crc_polynomial_set)
+    i.spi_default_para_init                  0x08001144   Section        0  at32f403a_407_spi.o(i.spi_default_para_init)
+    i.spi_enable                             0x0800115a   Section        0  at32f403a_407_spi.o(i.spi_enable)
+    i.spi_i2s_data_transmit                  0x08001164   Section        0  at32f403a_407_spi.o(i.spi_i2s_data_transmit)
+    i.spi_i2s_dma_receiver_enable            0x08001168   Section        0  at32f403a_407_spi.o(i.spi_i2s_dma_receiver_enable)
+    i.spi_i2s_dma_transmitter_enable         0x08001172   Section        0  at32f403a_407_spi.o(i.spi_i2s_dma_transmitter_enable)
+    i.spi_i2s_flag_get                       0x0800117c   Section        0  at32f403a_407_spi.o(i.spi_i2s_flag_get)
+    i.spi_init                               0x0800118c   Section        0  at32f403a_407_spi.o(i.spi_init)
+    i.system_core_clock_update               0x080012b0   Section        0  system_at32f403a_407.o(i.system_core_clock_update)
+    i.systick_clock_source_config            0x080013a8   Section        0  at32f403a_407_misc.o(i.systick_clock_source_config)
+    i.usb_buffer_free                        0x080013d0   Section        0  at32f403a_407_usb.o(i.usb_buffer_free)
+    i.usb_buffer_malloc                      0x080013dc   Section        0  at32f403a_407_usb.o(i.usb_buffer_malloc)
+    i.usb_connect                            0x080013f0   Section        0  at32f403a_407_usb.o(i.usb_connect)
+    i.usb_dev_init                           0x08001402   Section        0  at32f403a_407_usb.o(i.usb_dev_init)
+    i.usb_enter_suspend                      0x08001426   Section        0  at32f403a_407_usb.o(i.usb_enter_suspend)
+    i.usb_ept_close                          0x0800143c   Section        0  at32f403a_407_usb.o(i.usb_ept_close)
+    i.usb_ept_open                           0x08001678   Section        0  at32f403a_407_usb.o(i.usb_ept_open)
+    i.usb_exit_suspend                       0x08001b88   Section        0  at32f403a_407_usb.o(i.usb_exit_suspend)
+    i.usb_flag_clear                         0x08001b9a   Section        0  at32f403a_407_usb.o(i.usb_flag_clear)
+    i.usb_interrupt_enable                   0x08001ba0   Section        0  at32f403a_407_usb.o(i.usb_interrupt_enable)
+    i.usb_read_packet                        0x08001bb4   Section        0  at32f403a_407_usb.o(i.usb_read_packet)
+    i.usb_set_address                        0x08001be0   Section        0  at32f403a_407_usb.o(i.usb_set_address)
+    i.usb_vcp_cmd_process                    0x08001bf4   Section        0  cdc_class.o(i.usb_vcp_cmd_process)
+    usb_vcp_cmd_process                      0x08001bf5   Thumb Code   116  cdc_class.o(i.usb_vcp_cmd_process)
+    i.usb_vcp_get_rxdata                     0x08001c68   Section        0  cdc_class.o(i.usb_vcp_get_rxdata)
+    i.usb_vcp_send_data                      0x08001cb8   Section        0  cdc_class.o(i.usb_vcp_send_data)
+    i.usb_write_packet                       0x08001cf4   Section        0  at32f403a_407_usb.o(i.usb_write_packet)
+    i.usbd_clear_feature                     0x08001d20   Section        0  usbd_sdr.o(i.usbd_clear_feature)
+    usbd_clear_feature                       0x08001d21   Thumb Code    84  usbd_sdr.o(i.usbd_clear_feature)
+    i.usbd_clear_stall                       0x08001d74   Section        0  usbd_core.o(i.usbd_clear_stall)
+    i.usbd_connect                           0x08001ea0   Section        0  usbd_core.o(i.usbd_connect)
+    i.usbd_core_in_handler                   0x08001eac   Section        0  usbd_core.o(i.usbd_core_in_handler)
+    i.usbd_core_init                         0x08001f66   Section        0  usbd_core.o(i.usbd_core_init)
+    i.usbd_core_out_handler                  0x08001f92   Section        0  usbd_core.o(i.usbd_core_out_handler)
+    i.usbd_core_setup_handler                0x0800200a   Section        0  usbd_core.o(i.usbd_core_setup_handler)
+    i.usbd_ctrl_recv                         0x0800205e   Section        0  usbd_core.o(i.usbd_ctrl_recv)
+    i.usbd_ctrl_recv_status                  0x08002082   Section        0  usbd_core.o(i.usbd_ctrl_recv_status)
+    i.usbd_ctrl_send                         0x0800209a   Section        0  usbd_core.o(i.usbd_ctrl_send)
+    i.usbd_ctrl_send_status                  0x080020c2   Section        0  usbd_core.o(i.usbd_ctrl_send_status)
+    i.usbd_ctrl_unsupport                    0x080020da   Section        0  usbd_core.o(i.usbd_ctrl_unsupport)
+    i.usbd_device_request                    0x080020f0   Section        0  usbd_sdr.o(i.usbd_device_request)
+    i.usbd_endpoint_request                  0x08002170   Section        0  usbd_sdr.o(i.usbd_endpoint_request)
+    i.usbd_enter_suspend                     0x080022ee   Section        0  usbd_core.o(i.usbd_enter_suspend)
+    i.usbd_ept_buf_auto_define               0x080022fa   Section        0  usbd_core.o(i.usbd_ept_buf_auto_define)
+    i.usbd_ept_close                         0x0800233e   Section        0  usbd_core.o(i.usbd_ept_close)
+    i.usbd_ept_defaut_init                   0x0800236e   Section        0  usbd_core.o(i.usbd_ept_defaut_init)
+    i.usbd_ept_loop_handler                  0x08002432   Section        0  usbd_int.o(i.usbd_ept_loop_handler)
+    i.usbd_ept_open                          0x08002458   Section        0  usbd_core.o(i.usbd_ept_open)
+    i.usbd_ept_recv                          0x080024b0   Section        0  usbd_core.o(i.usbd_ept_recv)
+    i.usbd_ept_send                          0x08002524   Section        0  usbd_core.o(i.usbd_ept_send)
+    i.usbd_eptn_handler                      0x08002644   Section        0  usbd_int.o(i.usbd_eptn_handler)
+    i.usbd_get_configuration                 0x08002820   Section        0  usbd_sdr.o(i.usbd_get_configuration)
+    usbd_get_configuration                   0x08002821   Thumb Code    86  usbd_sdr.o(i.usbd_get_configuration)
+    i.usbd_get_descriptor                    0x08002876   Section        0  usbd_sdr.o(i.usbd_get_descriptor)
+    usbd_get_descriptor                      0x08002877   Thumb Code   284  usbd_sdr.o(i.usbd_get_descriptor)
+    i.usbd_get_recv_len                      0x08002992   Section        0  usbd_core.o(i.usbd_get_recv_len)
+    i.usbd_get_status                        0x080029a6   Section        0  usbd_sdr.o(i.usbd_get_status)
+    usbd_get_status                          0x080029a7   Thumb Code    68  usbd_sdr.o(i.usbd_get_status)
+    i.usbd_int_to_unicode                    0x080029ea   Section        0  cdc_desc.o(i.usbd_int_to_unicode)
+    usbd_int_to_unicode                      0x080029eb   Thumb Code    62  cdc_desc.o(i.usbd_int_to_unicode)
+    i.usbd_interface_request                 0x08002a28   Section        0  usbd_sdr.o(i.usbd_interface_request)
+    i.usbd_irq_handler                       0x08002a72   Section        0  usbd_int.o(i.usbd_irq_handler)
+    i.usbd_reset_handler                     0x08002b0e   Section        0  usbd_int.o(i.usbd_reset_handler)
+    i.usbd_set_address                       0x08002b54   Section        0  usbd_sdr.o(i.usbd_set_address)
+    usbd_set_address                         0x08002b55   Thumb Code    82  usbd_sdr.o(i.usbd_set_address)
+    i.usbd_set_configuration                 0x08002ba8   Section        0  usbd_sdr.o(i.usbd_set_configuration)
+    usbd_set_configuration                   0x08002ba9   Thumb Code   194  usbd_sdr.o(i.usbd_set_configuration)
+    i.usbd_set_feature                       0x08002c70   Section        0  usbd_sdr.o(i.usbd_set_feature)
+    usbd_set_feature                         0x08002c71   Thumb Code    50  usbd_sdr.o(i.usbd_set_feature)
+    i.usbd_set_stall                         0x08002ca4   Section        0  usbd_core.o(i.usbd_set_stall)
+    i.usbd_setup_request_parse               0x08002d2c   Section        0  usbd_sdr.o(i.usbd_setup_request_parse)
+    i.usbd_sof_handler                       0x08002d54   Section        0  usbd_int.o(i.usbd_sof_handler)
+    i.usbd_suspend_handler                   0x08002d68   Section        0  usbd_int.o(i.usbd_suspend_handler)
+    i.usbd_unicode_convert                   0x08002d92   Section        0  cdc_desc.o(i.usbd_unicode_convert)
+    usbd_unicode_convert                     0x08002d93   Thumb Code    60  cdc_desc.o(i.usbd_unicode_convert)
+    i.usbd_wakeup_handler                    0x08002dce   Section        0  usbd_int.o(i.usbd_wakeup_handler)
+    i.wk_acc_init                            0x08002df2   Section        0  wk_acc.o(i.wk_acc_init)
+    i.wk_debug_config                        0x08002e18   Section        0  wk_debug.o(i.wk_debug_config)
+    i.wk_dma1_channel1_init                  0x08002e28   Section        0  wk_dma.o(i.wk_dma1_channel1_init)
+    i.wk_dma1_channel2_init                  0x08002e7c   Section        0  wk_dma.o(i.wk_dma1_channel2_init)
+    i.wk_dma_channel_config                  0x08002ed0   Section        0  wk_dma.o(i.wk_dma_channel_config)
+    i.wk_gpio_config                         0x08002ed8   Section        0  wk_gpio.o(i.wk_gpio_config)
+    i.wk_nvic_config                         0x08002f14   Section        0  at32f403a_407_wk_config.o(i.wk_nvic_config)
+    i.wk_periph_clock_config                 0x08002fe8   Section        0  at32f403a_407_wk_config.o(i.wk_periph_clock_config)
+    i.wk_spi1_init                           0x08003040   Section        0  wk_spi.o(i.wk_spi1_init)
+    i.wk_system_clock_config                 0x0800311c   Section        0  at32f403a_407_wk_config.o(i.wk_system_clock_config)
+    i.wk_timebase_init                       0x080031b4   Section        0  wk_system.o(i.wk_timebase_init)
+    i.wk_usb_app_init                        0x080031f8   Section        0  usb_app.o(i.wk_usb_app_init)
+    i.wk_usb_app_task                        0x08003224   Section        0  usb_app.o(i.wk_usb_app_task)
+    i.wk_usbfs_init                          0x080032b4   Section        0  wk_usbfs.o(i.wk_usbfs_init)
+    i.wk_usbfs_irq_handler                   0x080032c4   Section        0  usb_app.o(i.wk_usbfs_irq_handler)
+    x$fpl$fpinit                             0x080032d4   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x080032d4   Number         0  fpinit.o(x$fpl$fpinit)
+    .constdata                               0x080032de   Section       40  at32f403a_407_crm.o(.constdata)
+    sclk_ahb_div_table                       0x080032de   Data          16  at32f403a_407_crm.o(.constdata)
+    ahb_apb1_div_table                       0x080032ee   Data           8  at32f403a_407_crm.o(.constdata)
+    ahb_apb2_div_table                       0x080032f6   Data           8  at32f403a_407_crm.o(.constdata)
+    adc_div_table                            0x080032fe   Data           8  at32f403a_407_crm.o(.constdata)
+    .constdata                               0x08003306   Section       16  system_at32f403a_407.o(.constdata)
+    sys_ahb_div_table                        0x08003306   Data          16  system_at32f403a_407.o(.constdata)
+    .data                                    0x20000000   Section        4  wk_system.o(.data)
+    .data                                    0x20000004   Section        1  usb_app.o(.data)
+    send_zero_packet                         0x20000004   Data           1  usb_app.o(.data)
+    .data                                    0x20000008   Section        6  at32f403a_407_usb.o(.data)
+    g_usb_offset_addr                        0x2000000c   Data           2  at32f403a_407_usb.o(.data)
+    .data                                    0x20000010   Section        4  system_at32f403a_407.o(.data)
+    .data                                    0x20000014   Section        1  usbd_sdr.o(.data)
+    config_value                             0x20000014   Data           1  usbd_sdr.o(.data)
+    .data                                    0x20000018   Section       28  mt6701.o(.data)
+    .data                                    0x20000034   Section       48  cdc_class.o(.data)
+    .data                                    0x20000064   Section      200  cdc_desc.o(.data)
+    g_usbd_descriptor                        0x2000008c   Data          18  cdc_desc.o(.data)
+    g_usbd_configuration                     0x200000a0   Data          67  cdc_desc.o(.data)
+    g_string_lang_id                         0x200000e4   Data           4  cdc_desc.o(.data)
+    g_string_serial                          0x200000e8   Data          26  cdc_desc.o(.data)
+    device_descriptor                        0x20000104   Data           8  cdc_desc.o(.data)
+    config_descriptor                        0x2000010c   Data           8  cdc_desc.o(.data)
+    langid_descriptor                        0x20000114   Data           8  cdc_desc.o(.data)
+    serial_descriptor                        0x2000011c   Data           8  cdc_desc.o(.data)
+    vp_desc                                  0x20000124   Data           8  cdc_desc.o(.data)
+    .bss                                     0x2000012c   Section     1068  usb_app.o(.bss)
+    .bss                                     0x20000558   Section       92  cdc_class.o(.bss)
+    .bss                                     0x200005b4   Section      256  cdc_desc.o(.bss)
+    g_usbd_desc_buffer                       0x200005b4   Data         256  cdc_desc.o(.bss)
+    .bss                                     0x200006b4   Section       96  libspace.o(.bss)
+    HEAP                                     0x20000718   Section      512  startup_at32f403a_407.o(HEAP)
+    Heap_Mem                                 0x20000718   Data         512  startup_at32f403a_407.o(HEAP)
+    STACK                                    0x20000918   Section     1024  startup_at32f403a_407.o(STACK)
+    Stack_Mem                                0x20000918   Data        1024  startup_at32f403a_407.o(STACK)
+    __initial_sp                             0x20000d18   Data           0  startup_at32f403a_407.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$UX$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __ARM_exceptions_init                     - Undefined Weak Reference
+    __alloca_initialize                       - Undefined Weak Reference
+    __arm_fini_                               - Undefined Weak Reference
+    __arm_preinit_                            - Undefined Weak Reference
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __rt_locale                               - Undefined Weak Reference
+    __sigvec_lookup                           - Undefined Weak Reference
+    _atexit_init                              - Undefined Weak Reference
+    _call_atexit_fns                          - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _fp_trap_init                             - Undefined Weak Reference
+    _fp_trap_shutdown                         - Undefined Weak Reference
+    _get_lc_collate                           - Undefined Weak Reference
+    _get_lc_ctype                             - Undefined Weak Reference
+    _get_lc_monetary                          - Undefined Weak Reference
+    _get_lc_numeric                           - Undefined Weak Reference
+    _get_lc_time                              - Undefined Weak Reference
+    _getenv_init                              - Undefined Weak Reference
+    _handle_redirection                       - Undefined Weak Reference
+    _init_alloc                               - Undefined Weak Reference
+    _init_user_alloc                          - Undefined Weak Reference
+    _initio                                   - Undefined Weak Reference
+    _rand_init                                - Undefined Weak Reference
+    _signal_finish                            - Undefined Weak Reference
+    _signal_init                              - Undefined Weak Reference
+    _terminate_alloc                          - Undefined Weak Reference
+    _terminate_user_alloc                     - Undefined Weak Reference
+    _terminateio                              - Undefined Weak Reference
+    __Vectors_Size                           0x00000184   Number         0  startup_at32f403a_407.o ABSOLUTE
+    __Vectors                                0x08000000   Data           4  startup_at32f403a_407.o(RESET)
+    __Vectors_End                            0x08000184   Data           0  startup_at32f403a_407.o(RESET)
+    __main                                   0x08000185   Thumb Code     8  __main.o(!!!main)
+    __scatterload                            0x0800018d   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_rt2                        0x0800018d   Thumb Code    44  __scatter.o(!!!scatter)
+    __scatterload_rt2_thumb_only             0x0800018d   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_null                       0x0800019b   Thumb Code     0  __scatter.o(!!!scatter)
+    __decompress                             0x080001c1   Thumb Code    90  __dczerorl2.o(!!dczerorl2)
+    __decompress1                            0x080001c1   Thumb Code     0  __dczerorl2.o(!!dczerorl2)
+    __scatterload_zeroinit                   0x0800021d   Thumb Code    28  __scatter_zi.o(!!handler_zi)
+    __rt_lib_init                            0x08000239   Thumb Code     0  libinit.o(.ARM.Collect$$libinit$$00000000)
+    __rt_lib_init_fp_1                       0x0800023b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000001)
+    __rt_lib_init_alloca_1                   0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    __rt_lib_init_argv_1                     0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    __rt_lib_init_atexit_1                   0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    __rt_lib_init_clock_1                    0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    __rt_lib_init_cpp_1                      0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    __rt_lib_init_exceptions_1               0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    __rt_lib_init_fp_trap_1                  0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    __rt_lib_init_getenv_1                   0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    __rt_lib_init_heap_1                     0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    __rt_lib_init_lc_collate_1               0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    __rt_lib_init_lc_ctype_1                 0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    __rt_lib_init_lc_monetary_1              0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    __rt_lib_init_lc_numeric_1               0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    __rt_lib_init_lc_time_1                  0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    __rt_lib_init_preinit_1                  0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    __rt_lib_init_rand_1                     0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    __rt_lib_init_return                     0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000033)
+    __rt_lib_init_signal_1                   0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    __rt_lib_init_stdio_1                    0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    __rt_lib_init_user_alloc_1               0x0800023f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    __rt_lib_shutdown                        0x08000241   Thumb Code     0  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    __rt_lib_shutdown_cpp_1                  0x08000243   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    __rt_lib_shutdown_fini_1                 0x08000243   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    __rt_lib_shutdown_fp_trap_1              0x08000243   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000009)
+    __rt_lib_shutdown_heap_1                 0x08000243   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000011)
+    __rt_lib_shutdown_return                 0x08000243   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000012)
+    __rt_lib_shutdown_signal_1               0x08000243   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    __rt_lib_shutdown_stdio_1                0x08000243   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000006)
+    __rt_lib_shutdown_user_alloc_1           0x08000243   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E)
+    __rt_entry                               0x08000245   Thumb Code     0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    __rt_entry_presh_1                       0x08000245   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    __rt_entry_sh                            0x08000245   Thumb Code     0  __rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    __rt_entry_li                            0x0800024b   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    __rt_entry_postsh_1                      0x0800024b   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    __rt_entry_main                          0x0800024f   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    __rt_entry_postli_1                      0x0800024f   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    __rt_exit                                0x08000257   Thumb Code     0  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    __rt_exit_ls                             0x08000259   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    __rt_exit_prels_1                        0x08000259   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    __rt_exit_exit                           0x0800025d   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    Reset_Handler                            0x08000265   Thumb Code     8  startup_at32f403a_407.o(.text)
+    ACC_IRQHandler                           0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    ADC1_2_IRQHandler                        0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    ADC3_IRQHandler                          0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    CAN1_RX1_IRQHandler                      0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    CAN1_SE_IRQHandler                       0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    CAN2_RX0_IRQHandler                      0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    CAN2_RX1_IRQHandler                      0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    CAN2_SE_IRQHandler                       0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    CAN2_TX_IRQHandler                       0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    CRM_IRQHandler                           0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    DMA1_Channel2_IRQHandler                 0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    DMA1_Channel3_IRQHandler                 0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    DMA1_Channel4_IRQHandler                 0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    DMA1_Channel5_IRQHandler                 0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    DMA1_Channel6_IRQHandler                 0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    DMA1_Channel7_IRQHandler                 0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    DMA2_Channel1_IRQHandler                 0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    DMA2_Channel2_IRQHandler                 0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    DMA2_Channel3_IRQHandler                 0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    DMA2_Channel4_5_IRQHandler               0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    DMA2_Channel6_7_IRQHandler               0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    EMAC_IRQHandler                          0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    EMAC_WKUP_IRQHandler                     0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    EXINT0_IRQHandler                        0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    EXINT15_10_IRQHandler                    0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    EXINT1_IRQHandler                        0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    EXINT2_IRQHandler                        0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    EXINT3_IRQHandler                        0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    EXINT4_IRQHandler                        0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    EXINT9_5_IRQHandler                      0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    FLASH_IRQHandler                         0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    I2C1_ERR_IRQHandler                      0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    I2C1_EVT_IRQHandler                      0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    I2C2_ERR_IRQHandler                      0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    I2C2_EVT_IRQHandler                      0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    I2C3_ERR_IRQHandler                      0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    I2C3_EVT_IRQHandler                      0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    PVM_IRQHandler                           0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    RTCAlarm_IRQHandler                      0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    RTC_IRQHandler                           0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    SDIO1_IRQHandler                         0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    SDIO2_IRQHandler                         0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    SPI1_IRQHandler                          0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    SPI2_I2S2EXT_IRQHandler                  0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    SPI3_I2S3EXT_IRQHandler                  0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    SPI4_IRQHandler                          0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    TAMPER_IRQHandler                        0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    TMR1_BRK_TMR9_IRQHandler                 0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    TMR1_CH_IRQHandler                       0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    TMR1_OVF_TMR10_IRQHandler                0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    TMR1_TRG_HALL_TMR11_IRQHandler           0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    TMR2_GLOBAL_IRQHandler                   0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    TMR3_GLOBAL_IRQHandler                   0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    TMR4_GLOBAL_IRQHandler                   0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    TMR5_GLOBAL_IRQHandler                   0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    TMR6_GLOBAL_IRQHandler                   0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    TMR7_GLOBAL_IRQHandler                   0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    TMR8_BRK_TMR12_IRQHandler                0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    TMR8_CH_IRQHandler                       0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    TMR8_OVF_TMR13_IRQHandler                0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    TMR8_TRG_HALL_TMR14_IRQHandler           0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    UART4_IRQHandler                         0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    UART5_IRQHandler                         0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    UART7_IRQHandler                         0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    UART8_IRQHandler                         0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    USART1_IRQHandler                        0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    USART2_IRQHandler                        0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    USART3_IRQHandler                        0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    USART6_IRQHandler                        0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    USBFSWakeUp_IRQHandler                   0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    USBFS_H_CAN1_TX_IRQHandler               0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    USBFS_L_CAN1_RX0_IRQHandler              0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    USBFS_MAPH_IRQHandler                    0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    WWDT_IRQHandler                          0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    XMC_IRQHandler                           0x0800027f   Thumb Code     0  startup_at32f403a_407.o(.text)
+    __user_initial_stackheap                 0x08000281   Thumb Code     0  startup_at32f403a_407.o(.text)
+    __use_two_region_memory                  0x080002a5   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x080002a7   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x080002a9   Thumb Code     2  heapauxi.o(.text)
+    __user_setup_stackheap                   0x080002ab   Thumb Code    74  sys_stackheap_outer.o(.text)
+    exit                                     0x080002f5   Thumb Code    18  exit.o(.text)
+    __user_libspace                          0x08000309   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x08000309   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x08000309   Thumb Code     0  libspace.o(.text)
+    _sys_exit                                0x08000311   Thumb Code     8  sys_exit.o(.text)
+    __I$use$semihosting                      0x0800031d   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x0800031d   Thumb Code     2  use_no_semi.o(.text)
+    BusFault_Handler                         0x0800031f   Thumb Code     4  at32f403a_407_int.o(i.BusFault_Handler)
+    __semihosting_library_function           0x0800031f   Thumb Code     0  indicate_semi.o(.text)
+    DMA1_Channel1_IRQHandler                 0x08000325   Thumb Code    52  at32f403a_407_int.o(i.DMA1_Channel1_IRQHandler)
+    DebugMon_Handler                         0x08000361   Thumb Code     2  at32f403a_407_int.o(i.DebugMon_Handler)
+    HardFault_Handler                        0x08000363   Thumb Code     4  at32f403a_407_int.o(i.HardFault_Handler)
+    MT6701_GetAngle                          0x08000369   Thumb Code    64  mt6701.o(i.MT6701_GetAngle)
+    MT6701_StartRead                         0x080003ad   Thumb Code    56  mt6701.o(i.MT6701_StartRead)
+    MemManage_Handler                        0x080003e5   Thumb Code     4  at32f403a_407_int.o(i.MemManage_Handler)
+    NMI_Handler                              0x080003e9   Thumb Code     2  at32f403a_407_int.o(i.NMI_Handler)
+    PackFloatArrayToBytes                    0x0800042b   Thumb Code    64  log.o(i.PackFloatArrayToBytes)
+    PendSV_Handler                           0x0800046b   Thumb Code     2  at32f403a_407_int.o(i.PendSV_Handler)
+    SVC_Handler                              0x0800046d   Thumb Code     2  at32f403a_407_int.o(i.SVC_Handler)
+    SysTick_Handler                          0x0800046f   Thumb Code     2  at32f403a_407_int.o(i.SysTick_Handler)
+    SystemInit                               0x08000471   Thumb Code   100  system_at32f403a_407.o(i.SystemInit)
+    USBFS_MAPL_IRQHandler                    0x080004e1   Thumb Code     8  at32f403a_407_int.o(i.USBFS_MAPL_IRQHandler)
+    UsageFault_Handler                       0x080004e9   Thumb Code     4  at32f403a_407_int.o(i.UsageFault_Handler)
+    acc_calibration_mode_enable              0x08000525   Thumb Code    44  at32f403a_407_acc.o(i.acc_calibration_mode_enable)
+    acc_write_c1                             0x08000555   Thumb Code     6  at32f403a_407_acc.o(i.acc_write_c1)
+    acc_write_c2                             0x08000561   Thumb Code     6  at32f403a_407_acc.o(i.acc_write_c2)
+    acc_write_c3                             0x0800056d   Thumb Code     6  at32f403a_407_acc.o(i.acc_write_c3)
+    crm_ahb_div_set                          0x08000779   Thumb Code    14  at32f403a_407_crm.o(i.crm_ahb_div_set)
+    crm_apb1_div_set                         0x0800078d   Thumb Code    14  at32f403a_407_crm.o(i.crm_apb1_div_set)
+    crm_apb2_div_set                         0x080007a1   Thumb Code    14  at32f403a_407_crm.o(i.crm_apb2_div_set)
+    crm_auto_step_mode_enable                0x080007b5   Thumb Code    34  at32f403a_407_crm.o(i.crm_auto_step_mode_enable)
+    crm_clock_source_enable                  0x080007dd   Thumb Code    90  at32f403a_407_crm.o(i.crm_clock_source_enable)
+    crm_clocks_freq_get                      0x0800083d   Thumb Code   268  at32f403a_407_crm.o(i.crm_clocks_freq_get)
+    crm_flag_get                             0x08000969   Thumb Code    42  at32f403a_407_crm.o(i.crm_flag_get)
+    crm_hext_stable_wait                     0x08000999   Thumb Code    46  at32f403a_407_crm.o(i.crm_hext_stable_wait)
+    crm_hick_divider_select                  0x080009c9   Thumb Code    14  at32f403a_407_crm.o(i.crm_hick_divider_select)
+    crm_hick_sclk_frequency_select           0x080009dd   Thumb Code    24  at32f403a_407_crm.o(i.crm_hick_sclk_frequency_select)
+    crm_periph_clock_enable                  0x080009f9   Thumb Code    62  at32f403a_407_crm.o(i.crm_periph_clock_enable)
+    crm_pll_config                           0x08000a3d   Thumb Code   118  at32f403a_407_crm.o(i.crm_pll_config)
+    crm_reset                                0x08000ab9   Thumb Code    80  at32f403a_407_crm.o(i.crm_reset)
+    crm_sysclk_switch                        0x08000b11   Thumb Code    54  at32f403a_407_crm.o(i.crm_sysclk_switch)
+    crm_sysclk_switch_status_get             0x08000b4d   Thumb Code    10  at32f403a_407_crm.o(i.crm_sysclk_switch_status_get)
+    crm_usb_clock_source_select              0x08000b5d   Thumb Code    26  at32f403a_407_crm.o(i.crm_usb_clock_source_select)
+    crm_usb_interrupt_remapping_set          0x08000b7d   Thumb Code    14  at32f403a_407_crm.o(i.crm_usb_interrupt_remapping_set)
+    dma_channel_enable                       0x08000b91   Thumb Code    10  at32f403a_407_dma.o(i.dma_channel_enable)
+    dma_default_para_init                    0x08000b9b   Thumb Code    24  at32f403a_407_dma.o(i.dma_default_para_init)
+    dma_flag_clear                           0x08000bb5   Thumb Code    22  at32f403a_407_dma.o(i.dma_flag_clear)
+    dma_flag_get                             0x08000bd5   Thumb Code    36  at32f403a_407_dma.o(i.dma_flag_get)
+    dma_flexible_config                      0x08000c01   Thumb Code   152  at32f403a_407_dma.o(i.dma_flexible_config)
+    dma_init                                 0x08000c99   Thumb Code    92  at32f403a_407_dma.o(i.dma_init)
+    dma_interrupt_enable                     0x08000cf5   Thumb Code    18  at32f403a_407_dma.o(i.dma_interrupt_enable)
+    dma_reset                                0x08000d09   Thumb Code   102  at32f403a_407_dma.o(i.dma_reset)
+    gpio_bits_reset                          0x08000eb1   Thumb Code     4  at32f403a_407_gpio.o(i.gpio_bits_reset)
+    gpio_bits_set                            0x08000eb5   Thumb Code     4  at32f403a_407_gpio.o(i.gpio_bits_set)
+    gpio_default_para_init                   0x08000eb9   Thumb Code    22  at32f403a_407_gpio.o(i.gpio_default_para_init)
+    gpio_init                                0x08000ecf   Thumb Code   168  at32f403a_407_gpio.o(i.gpio_init)
+    gpio_pin_remap_config                    0x08000f79   Thumb Code    70  at32f403a_407_gpio.o(i.gpio_pin_remap_config)
+    main                                     0x08000fc5   Thumb Code   112  main.o(i.main)
+    nvic_irq_enable                          0x08001041   Thumb Code   190  at32f403a_407_misc.o(i.nvic_irq_enable)
+    nvic_priority_group_config               0x08001109   Thumb Code    32  at32f403a_407_misc.o(i.nvic_priority_group_config)
+    spi_crc_enable                           0x08001131   Thumb Code    10  at32f403a_407_spi.o(i.spi_crc_enable)
+    spi_crc_polynomial_set                   0x0800113b   Thumb Code    10  at32f403a_407_spi.o(i.spi_crc_polynomial_set)
+    spi_default_para_init                    0x08001145   Thumb Code    22  at32f403a_407_spi.o(i.spi_default_para_init)
+    spi_enable                               0x0800115b   Thumb Code    10  at32f403a_407_spi.o(i.spi_enable)
+    spi_i2s_data_transmit                    0x08001165   Thumb Code     4  at32f403a_407_spi.o(i.spi_i2s_data_transmit)
+    spi_i2s_dma_receiver_enable              0x08001169   Thumb Code    10  at32f403a_407_spi.o(i.spi_i2s_dma_receiver_enable)
+    spi_i2s_dma_transmitter_enable           0x08001173   Thumb Code    10  at32f403a_407_spi.o(i.spi_i2s_dma_transmitter_enable)
+    spi_i2s_flag_get                         0x0800117d   Thumb Code    16  at32f403a_407_spi.o(i.spi_i2s_flag_get)
+    spi_init                                 0x0800118d   Thumb Code   292  at32f403a_407_spi.o(i.spi_init)
+    system_core_clock_update                 0x080012b1   Thumb Code   222  system_at32f403a_407.o(i.system_core_clock_update)
+    systick_clock_source_config              0x080013a9   Thumb Code    40  at32f403a_407_misc.o(i.systick_clock_source_config)
+    usb_buffer_free                          0x080013d1   Thumb Code     8  at32f403a_407_usb.o(i.usb_buffer_free)
+    usb_buffer_malloc                        0x080013dd   Thumb Code    16  at32f403a_407_usb.o(i.usb_buffer_malloc)
+    usb_connect                              0x080013f1   Thumb Code    18  at32f403a_407_usb.o(i.usb_connect)
+    usb_dev_init                             0x08001403   Thumb Code    36  at32f403a_407_usb.o(i.usb_dev_init)
+    usb_enter_suspend                        0x08001427   Thumb Code    22  at32f403a_407_usb.o(i.usb_enter_suspend)
+    usb_ept_close                            0x0800143d   Thumb Code   568  at32f403a_407_usb.o(i.usb_ept_close)
+    usb_ept_open                             0x08001679   Thumb Code  1292  at32f403a_407_usb.o(i.usb_ept_open)
+    usb_exit_suspend                         0x08001b89   Thumb Code    18  at32f403a_407_usb.o(i.usb_exit_suspend)
+    usb_flag_clear                           0x08001b9b   Thumb Code     6  at32f403a_407_usb.o(i.usb_flag_clear)
+    usb_interrupt_enable                     0x08001ba1   Thumb Code    20  at32f403a_407_usb.o(i.usb_interrupt_enable)
+    usb_read_packet                          0x08001bb5   Thumb Code    40  at32f403a_407_usb.o(i.usb_read_packet)
+    usb_set_address                          0x08001be1   Thumb Code    20  at32f403a_407_usb.o(i.usb_set_address)
+    usb_vcp_get_rxdata                       0x08001c69   Thumb Code    80  cdc_class.o(i.usb_vcp_get_rxdata)
+    usb_vcp_send_data                        0x08001cb9   Thumb Code    58  cdc_class.o(i.usb_vcp_send_data)
+    usb_write_packet                         0x08001cf5   Thumb Code    40  at32f403a_407_usb.o(i.usb_write_packet)
+    usbd_clear_stall                         0x08001d75   Thumb Code   294  usbd_core.o(i.usbd_clear_stall)
+    usbd_connect                             0x08001ea1   Thumb Code    12  usbd_core.o(i.usbd_connect)
+    usbd_core_in_handler                     0x08001ead   Thumb Code   186  usbd_core.o(i.usbd_core_in_handler)
+    usbd_core_init                           0x08001f67   Thumb Code    44  usbd_core.o(i.usbd_core_init)
+    usbd_core_out_handler                    0x08001f93   Thumb Code   120  usbd_core.o(i.usbd_core_out_handler)
+    usbd_core_setup_handler                  0x0800200b   Thumb Code    84  usbd_core.o(i.usbd_core_setup_handler)
+    usbd_ctrl_recv                           0x0800205f   Thumb Code    36  usbd_core.o(i.usbd_ctrl_recv)
+    usbd_ctrl_recv_status                    0x08002083   Thumb Code    24  usbd_core.o(i.usbd_ctrl_recv_status)
+    usbd_ctrl_send                           0x0800209b   Thumb Code    40  usbd_core.o(i.usbd_ctrl_send)
+    usbd_ctrl_send_status                    0x080020c3   Thumb Code    24  usbd_core.o(i.usbd_ctrl_send_status)
+    usbd_ctrl_unsupport                      0x080020db   Thumb Code    22  usbd_core.o(i.usbd_ctrl_unsupport)
+    usbd_device_request                      0x080020f1   Thumb Code   128  usbd_sdr.o(i.usbd_device_request)
+    usbd_endpoint_request                    0x08002171   Thumb Code   382  usbd_sdr.o(i.usbd_endpoint_request)
+    usbd_enter_suspend                       0x080022ef   Thumb Code    12  usbd_core.o(i.usbd_enter_suspend)
+    usbd_ept_buf_auto_define                 0x080022fb   Thumb Code    68  usbd_core.o(i.usbd_ept_buf_auto_define)
+    usbd_ept_close                           0x0800233f   Thumb Code    48  usbd_core.o(i.usbd_ept_close)
+    usbd_ept_defaut_init                     0x0800236f   Thumb Code   196  usbd_core.o(i.usbd_ept_defaut_init)
+    usbd_ept_loop_handler                    0x08002433   Thumb Code    38  usbd_int.o(i.usbd_ept_loop_handler)
+    usbd_ept_open                            0x08002459   Thumb Code    88  usbd_core.o(i.usbd_ept_open)
+    usbd_ept_recv                            0x080024b1   Thumb Code   112  usbd_core.o(i.usbd_ept_recv)
+    usbd_ept_send                            0x08002525   Thumb Code   276  usbd_core.o(i.usbd_ept_send)
+    usbd_eptn_handler                        0x08002645   Thumb Code   462  usbd_int.o(i.usbd_eptn_handler)
+    usbd_get_recv_len                        0x08002993   Thumb Code    20  usbd_core.o(i.usbd_get_recv_len)
+    usbd_interface_request                   0x08002a29   Thumb Code    74  usbd_sdr.o(i.usbd_interface_request)
+    usbd_irq_handler                         0x08002a73   Thumb Code   156  usbd_int.o(i.usbd_irq_handler)
+    usbd_reset_handler                       0x08002b0f   Thumb Code    70  usbd_int.o(i.usbd_reset_handler)
+    usbd_set_stall                           0x08002ca5   Thumb Code   132  usbd_core.o(i.usbd_set_stall)
+    usbd_setup_request_parse                 0x08002d2d   Thumb Code    40  usbd_sdr.o(i.usbd_setup_request_parse)
+    usbd_sof_handler                         0x08002d55   Thumb Code    20  usbd_int.o(i.usbd_sof_handler)
+    usbd_suspend_handler                     0x08002d69   Thumb Code    42  usbd_int.o(i.usbd_suspend_handler)
+    usbd_wakeup_handler                      0x08002dcf   Thumb Code    36  usbd_int.o(i.usbd_wakeup_handler)
+    wk_acc_init                              0x08002df3   Thumb Code    36  wk_acc.o(i.wk_acc_init)
+    wk_debug_config                          0x08002e19   Thumb Code    12  wk_debug.o(i.wk_debug_config)
+    wk_dma1_channel1_init                    0x08002e29   Thumb Code    78  wk_dma.o(i.wk_dma1_channel1_init)
+    wk_dma1_channel2_init                    0x08002e7d   Thumb Code    80  wk_dma.o(i.wk_dma1_channel2_init)
+    wk_dma_channel_config                    0x08002ed1   Thumb Code     8  wk_dma.o(i.wk_dma_channel_config)
+    wk_gpio_config                           0x08002ed9   Thumb Code    54  wk_gpio.o(i.wk_gpio_config)
+    wk_nvic_config                           0x08002f15   Thumb Code   212  at32f403a_407_wk_config.o(i.wk_nvic_config)
+    wk_periph_clock_config                   0x08002fe9   Thumb Code    80  at32f403a_407_wk_config.o(i.wk_periph_clock_config)
+    wk_spi1_init                             0x08003041   Thumb Code   212  wk_spi.o(i.wk_spi1_init)
+    wk_system_clock_config                   0x0800311d   Thumb Code   146  at32f403a_407_wk_config.o(i.wk_system_clock_config)
+    wk_timebase_init                         0x080031b5   Thumb Code    58  wk_system.o(i.wk_timebase_init)
+    wk_usb_app_init                          0x080031f9   Thumb Code    26  usb_app.o(i.wk_usb_app_init)
+    wk_usb_app_task                          0x08003225   Thumb Code   122  usb_app.o(i.wk_usb_app_task)
+    wk_usbfs_init                            0x080032b5   Thumb Code    16  wk_usbfs.o(i.wk_usbfs_init)
+    wk_usbfs_irq_handler                     0x080032c5   Thumb Code    10  usb_app.o(i.wk_usbfs_irq_handler)
+    _fp_init                                 0x080032d5   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x080032dd   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x080032dd   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x08003318   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08003338   Number         0  anon$$obj.o(Region$$Table)
+    ticks_count_us                           0x20000000   Data           4  wk_system.o(.data)
+    g_usb_packet_address                     0x20000008   Data           4  at32f403a_407_usb.o(.data)
+    system_core_clock                        0x20000010   Data           4  system_at32f403a_407.o(.data)
+    mt6701                                   0x20000018   Data          28  mt6701.o(.data)
+    linecoding                               0x20000034   Data           8  cdc_class.o(.data)
+    cdc_class_handler                        0x2000003c   Data          40  cdc_class.o(.data)
+    cdc_desc_handler                         0x20000064   Data          40  cdc_desc.o(.data)
+    usb_core_dev                             0x2000012c   Data         556  usb_app.o(.bss)
+    usbd_app_buffer_fs1                      0x20000358   Data         512  usb_app.o(.bss)
+    cdc_struct                               0x20000558   Data          92  cdc_class.o(.bss)
+    __libspace_start                         0x200006b4   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x20000714   Data           0  libspace.o(.bss)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x08000185
+
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00003464, Max: 0x00100000, ABSOLUTE, COMPRESSED[0x00003404])
+
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00003338, Max: 0x00100000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x08000000   0x08000000   0x00000184   Data   RO         1941    RESET               startup_at32f403a_407.o
+    0x08000184   0x08000184   0x00000008   Code   RO         2550  * !!!main             c_w.l(__main.o)
+    0x0800018c   0x0800018c   0x00000034   Code   RO         2711    !!!scatter          c_w.l(__scatter.o)
+    0x080001c0   0x080001c0   0x0000005a   Code   RO         2709    !!dczerorl2         c_w.l(__dczerorl2.o)
+    0x0800021a   0x0800021a   0x00000002   PAD
+    0x0800021c   0x0800021c   0x0000001c   Code   RO         2713    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x08000238   0x08000238   0x00000002   Code   RO         2577    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x0800023a   0x0800023a   0x00000004   Code   RO         2583    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2586    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2589    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2591    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2593    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2596    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2598    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2600    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2602    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2604    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2606    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2608    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2610    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2612    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2614    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2616    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2620    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2622    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2624    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000000   Code   RO         2626    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x0800023e   0x0800023e   0x00000002   Code   RO         2627    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x08000240   0x08000240   0x00000002   Code   RO         2647    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x08000242   0x08000242   0x00000000   Code   RO         2660    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x08000242   0x08000242   0x00000000   Code   RO         2662    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x08000242   0x08000242   0x00000000   Code   RO         2664    .ARM.Collect$$libshutdown$$00000006  c_w.l(libshutdown2.o)
+    0x08000242   0x08000242   0x00000000   Code   RO         2667    .ARM.Collect$$libshutdown$$00000009  c_w.l(libshutdown2.o)
+    0x08000242   0x08000242   0x00000000   Code   RO         2670    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x08000242   0x08000242   0x00000000   Code   RO         2672    .ARM.Collect$$libshutdown$$0000000E  c_w.l(libshutdown2.o)
+    0x08000242   0x08000242   0x00000000   Code   RO         2675    .ARM.Collect$$libshutdown$$00000011  c_w.l(libshutdown2.o)
+    0x08000242   0x08000242   0x00000002   Code   RO         2676    .ARM.Collect$$libshutdown$$00000012  c_w.l(libshutdown2.o)
+    0x08000244   0x08000244   0x00000000   Code   RO         2552    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x08000244   0x08000244   0x00000000   Code   RO         2554    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x08000244   0x08000244   0x00000006   Code   RO         2566    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x0800024a   0x0800024a   0x00000000   Code   RO         2556    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x0800024a   0x0800024a   0x00000004   Code   RO         2557    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x0800024e   0x0800024e   0x00000000   Code   RO         2559    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x0800024e   0x0800024e   0x00000008   Code   RO         2560    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x08000256   0x08000256   0x00000002   Code   RO         2581    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x08000258   0x08000258   0x00000000   Code   RO         2629    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x08000258   0x08000258   0x00000004   Code   RO         2630    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x0800025c   0x0800025c   0x00000006   Code   RO         2631    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x08000262   0x08000262   0x00000002   PAD
+    0x08000264   0x08000264   0x00000040   Code   RO         1942    .text               startup_at32f403a_407.o
+    0x080002a4   0x080002a4   0x00000006   Code   RO         2548    .text               c_w.l(heapauxi.o)
+    0x080002aa   0x080002aa   0x0000004a   Code   RO         2568    .text               c_w.l(sys_stackheap_outer.o)
+    0x080002f4   0x080002f4   0x00000012   Code   RO         2570    .text               c_w.l(exit.o)
+    0x08000306   0x08000306   0x00000002   PAD
+    0x08000308   0x08000308   0x00000008   Code   RO         2578    .text               c_w.l(libspace.o)
+    0x08000310   0x08000310   0x0000000c   Code   RO         2639    .text               c_w.l(sys_exit.o)
+    0x0800031c   0x0800031c   0x00000002   Code   RO         2650    .text               c_w.l(use_no_semi.o)
+    0x0800031e   0x0800031e   0x00000000   Code   RO         2652    .text               c_w.l(indicate_semi.o)
+    0x0800031e   0x0800031e   0x00000004   Code   RO          187    i.BusFault_Handler  at32f403a_407_int.o
+    0x08000322   0x08000322   0x00000002   PAD
+    0x08000324   0x08000324   0x0000003c   Code   RO          188    i.DMA1_Channel1_IRQHandler  at32f403a_407_int.o
+    0x08000360   0x08000360   0x00000002   Code   RO          189    i.DebugMon_Handler  at32f403a_407_int.o
+    0x08000362   0x08000362   0x00000004   Code   RO          190    i.HardFault_Handler  at32f403a_407_int.o
+    0x08000366   0x08000366   0x00000002   PAD
+    0x08000368   0x08000368   0x00000044   Code   RO         2331    i.MT6701_GetAngle   mt6701.o
+    0x080003ac   0x080003ac   0x00000038   Code   RO         2332    i.MT6701_StartRead  mt6701.o
+    0x080003e4   0x080003e4   0x00000004   Code   RO          191    i.MemManage_Handler  at32f403a_407_int.o
+    0x080003e8   0x080003e8   0x00000002   Code   RO          192    i.NMI_Handler       at32f403a_407_int.o
+    0x080003ea   0x080003ea   0x00000040   Code   RO          132    i.NVIC_EncodePriority  at32f403a_407_wk_config.o
+    0x0800042a   0x0800042a   0x00000040   Code   RO         2301    i.PackFloatArrayToBytes  log.o
+    0x0800046a   0x0800046a   0x00000002   Code   RO          193    i.PendSV_Handler    at32f403a_407_int.o
+    0x0800046c   0x0800046c   0x00000002   Code   RO          194    i.SVC_Handler       at32f403a_407_int.o
+    0x0800046e   0x0800046e   0x00000002   Code   RO          195    i.SysTick_Handler   at32f403a_407_int.o
+    0x08000470   0x08000470   0x00000070   Code   RO         1949    i.SystemInit        system_at32f403a_407.o
+    0x080004e0   0x080004e0   0x00000008   Code   RO          196    i.USBFS_MAPL_IRQHandler  at32f403a_407_int.o
+    0x080004e8   0x080004e8   0x00000004   Code   RO          197    i.UsageFault_Handler  at32f403a_407_int.o
+    0x080004ec   0x080004ec   0x00000010   Code   RO          133    i.__NVIC_GetPriorityGrouping  at32f403a_407_wk_config.o
+    0x080004fc   0x080004fc   0x00000028   Code   RO          134    i.__NVIC_SetPriority  at32f403a_407_wk_config.o
+    0x08000524   0x08000524   0x00000030   Code   RO         1810    i.acc_calibration_mode_enable  at32f403a_407_acc.o
+    0x08000554   0x08000554   0x0000000c   Code   RO         1821    i.acc_write_c1      at32f403a_407_acc.o
+    0x08000560   0x08000560   0x0000000c   Code   RO         1822    i.acc_write_c2      at32f403a_407_acc.o
+    0x0800056c   0x0800056c   0x0000000c   Code   RO         1823    i.acc_write_c3      at32f403a_407_acc.o
+    0x08000578   0x08000578   0x00000038   Code   RO         2367    i.cdc_struct_init   cdc_class.o
+    0x080005b0   0x080005b0   0x00000024   Code   RO         2368    i.class_clear_handler  cdc_class.o
+    0x080005d4   0x080005d4   0x00000038   Code   RO         2369    i.class_ept0_rx_handler  cdc_class.o
+    0x0800060c   0x0800060c   0x00000006   Code   RO         2370    i.class_ept0_tx_handler  cdc_class.o
+    0x08000612   0x08000612   0x0000001e   Code   RO         2371    i.class_event_handler  cdc_class.o
+    0x08000630   0x08000630   0x00000016   Code   RO         2372    i.class_in_handler  cdc_class.o
+    0x08000646   0x08000646   0x0000004a   Code   RO         2373    i.class_init_handler  cdc_class.o
+    0x08000690   0x08000690   0x0000002a   Code   RO         2374    i.class_out_handler  cdc_class.o
+    0x080006ba   0x080006ba   0x000000b6   Code   RO         2375    i.class_setup_handler  cdc_class.o
+    0x08000770   0x08000770   0x00000006   Code   RO         2376    i.class_sof_handler  cdc_class.o
+    0x08000776   0x08000776   0x00000002   PAD
+    0x08000778   0x08000778   0x00000014   Code   RO          539    i.crm_ahb_div_set   at32f403a_407_crm.o
+    0x0800078c   0x0800078c   0x00000014   Code   RO          540    i.crm_apb1_div_set  at32f403a_407_crm.o
+    0x080007a0   0x080007a0   0x00000014   Code   RO          541    i.crm_apb2_div_set  at32f403a_407_crm.o
+    0x080007b4   0x080007b4   0x00000028   Code   RO          542    i.crm_auto_step_mode_enable  at32f403a_407_crm.o
+    0x080007dc   0x080007dc   0x00000060   Code   RO          548    i.crm_clock_source_enable  at32f403a_407_crm.o
+    0x0800083c   0x0800083c   0x0000012c   Code   RO          549    i.crm_clocks_freq_get  at32f403a_407_crm.o
+    0x08000968   0x08000968   0x00000030   Code   RO          551    i.crm_flag_get      at32f403a_407_crm.o
+    0x08000998   0x08000998   0x0000002e   Code   RO          554    i.crm_hext_stable_wait  at32f403a_407_crm.o
+    0x080009c6   0x080009c6   0x00000002   PAD
+    0x080009c8   0x080009c8   0x00000014   Code   RO          557    i.crm_hick_divider_select  at32f403a_407_crm.o
+    0x080009dc   0x080009dc   0x0000001c   Code   RO          558    i.crm_hick_sclk_frequency_select  at32f403a_407_crm.o
+    0x080009f8   0x080009f8   0x00000044   Code   RO          562    i.crm_periph_clock_enable  at32f403a_407_crm.o
+    0x08000a3c   0x08000a3c   0x0000007c   Code   RO          565    i.crm_pll_config    at32f403a_407_crm.o
+    0x08000ab8   0x08000ab8   0x00000058   Code   RO          566    i.crm_reset         at32f403a_407_crm.o
+    0x08000b10   0x08000b10   0x0000003c   Code   RO          569    i.crm_sysclk_switch  at32f403a_407_crm.o
+    0x08000b4c   0x08000b4c   0x00000010   Code   RO          570    i.crm_sysclk_switch_status_get  at32f403a_407_crm.o
+    0x08000b5c   0x08000b5c   0x00000020   Code   RO          572    i.crm_usb_clock_source_select  at32f403a_407_crm.o
+    0x08000b7c   0x08000b7c   0x00000014   Code   RO          573    i.crm_usb_interrupt_remapping_set  at32f403a_407_crm.o
+    0x08000b90   0x08000b90   0x0000000a   Code   RO         1145    i.dma_channel_enable  at32f403a_407_dma.o
+    0x08000b9a   0x08000b9a   0x00000018   Code   RO         1148    i.dma_default_para_init  at32f403a_407_dma.o
+    0x08000bb2   0x08000bb2   0x00000002   PAD
+    0x08000bb4   0x08000bb4   0x00000020   Code   RO         1149    i.dma_flag_clear    at32f403a_407_dma.o
+    0x08000bd4   0x08000bd4   0x0000002c   Code   RO         1150    i.dma_flag_get      at32f403a_407_dma.o
+    0x08000c00   0x08000c00   0x00000098   Code   RO         1151    i.dma_flexible_config  at32f403a_407_dma.o
+    0x08000c98   0x08000c98   0x0000005c   Code   RO         1152    i.dma_init          at32f403a_407_dma.o
+    0x08000cf4   0x08000cf4   0x00000012   Code   RO         1153    i.dma_interrupt_enable  at32f403a_407_dma.o
+    0x08000d06   0x08000d06   0x00000002   PAD
+    0x08000d08   0x08000d08   0x00000070   Code   RO         1155    i.dma_reset         at32f403a_407_dma.o
+    0x08000d78   0x08000d78   0x00000038   Code   RO         2459    i.get_device_config_string  cdc_desc.o
+    0x08000db0   0x08000db0   0x00000008   Code   RO         2460    i.get_device_configuration  cdc_desc.o
+    0x08000db8   0x08000db8   0x00000008   Code   RO         2461    i.get_device_descriptor  cdc_desc.o
+    0x08000dc0   0x08000dc0   0x0000003c   Code   RO         2462    i.get_device_interface_string  cdc_desc.o
+    0x08000dfc   0x08000dfc   0x00000008   Code   RO         2463    i.get_device_lang_id  cdc_desc.o
+    0x08000e04   0x08000e04   0x00000028   Code   RO         2464    i.get_device_manufacturer_string  cdc_desc.o
+    0x08000e2c   0x08000e2c   0x00000004   Code   RO         2465    i.get_device_other_speed  cdc_desc.o
+    0x08000e30   0x08000e30   0x00000038   Code   RO         2466    i.get_device_product_string  cdc_desc.o
+    0x08000e68   0x08000e68   0x00000004   Code   RO         2467    i.get_device_qualifier  cdc_desc.o
+    0x08000e6c   0x08000e6c   0x00000010   Code   RO         2468    i.get_device_serial_string  cdc_desc.o
+    0x08000e7c   0x08000e7c   0x00000034   Code   RO         2469    i.get_serial_num    cdc_desc.o
+    0x08000eb0   0x08000eb0   0x00000004   Code   RO          773    i.gpio_bits_reset   at32f403a_407_gpio.o
+    0x08000eb4   0x08000eb4   0x00000004   Code   RO          774    i.gpio_bits_set     at32f403a_407_gpio.o
+    0x08000eb8   0x08000eb8   0x00000016   Code   RO          776    i.gpio_default_para_init  at32f403a_407_gpio.o
+    0x08000ece   0x08000ece   0x000000a8   Code   RO          780    i.gpio_init         at32f403a_407_gpio.o
+    0x08000f76   0x08000f76   0x00000002   PAD
+    0x08000f78   0x08000f78   0x0000004c   Code   RO          786    i.gpio_pin_remap_config  at32f403a_407_gpio.o
+    0x08000fc4   0x08000fc4   0x0000007c   Code   RO            4    i.main              main.o
+    0x08001040   0x08001040   0x000000c8   Code   RO         1603    i.nvic_irq_enable   at32f403a_407_misc.o
+    0x08001108   0x08001108   0x00000028   Code   RO         1605    i.nvic_priority_group_config  at32f403a_407_misc.o
+    0x08001130   0x08001130   0x0000000a   Code   RO          986    i.spi_crc_enable    at32f403a_407_spi.o
+    0x0800113a   0x0800113a   0x0000000a   Code   RO          989    i.spi_crc_polynomial_set  at32f403a_407_spi.o
+    0x08001144   0x08001144   0x00000016   Code   RO          991    i.spi_default_para_init  at32f403a_407_spi.o
+    0x0800115a   0x0800115a   0x0000000a   Code   RO          992    i.spi_enable        at32f403a_407_spi.o
+    0x08001164   0x08001164   0x00000004   Code   RO          997    i.spi_i2s_data_transmit  at32f403a_407_spi.o
+    0x08001168   0x08001168   0x0000000a   Code   RO          998    i.spi_i2s_dma_receiver_enable  at32f403a_407_spi.o
+    0x08001172   0x08001172   0x0000000a   Code   RO          999    i.spi_i2s_dma_transmitter_enable  at32f403a_407_spi.o
+    0x0800117c   0x0800117c   0x00000010   Code   RO         1001    i.spi_i2s_flag_get  at32f403a_407_spi.o
+    0x0800118c   0x0800118c   0x00000124   Code   RO         1005    i.spi_init          at32f403a_407_spi.o
+    0x080012b0   0x080012b0   0x000000f8   Code   RO         1950    i.system_core_clock_update  system_at32f403a_407.o
+    0x080013a8   0x080013a8   0x00000028   Code   RO         1608    i.systick_clock_source_config  at32f403a_407_misc.o
+    0x080013d0   0x080013d0   0x0000000c   Code   RO         1666    i.usb_buffer_free   at32f403a_407_usb.o
+    0x080013dc   0x080013dc   0x00000014   Code   RO         1667    i.usb_buffer_malloc  at32f403a_407_usb.o
+    0x080013f0   0x080013f0   0x00000012   Code   RO         1668    i.usb_connect       at32f403a_407_usb.o
+    0x08001402   0x08001402   0x00000024   Code   RO         1669    i.usb_dev_init      at32f403a_407_usb.o
+    0x08001426   0x08001426   0x00000016   Code   RO         1671    i.usb_enter_suspend  at32f403a_407_usb.o
+    0x0800143c   0x0800143c   0x0000023c   Code   RO         1672    i.usb_ept_close     at32f403a_407_usb.o
+    0x08001678   0x08001678   0x00000510   Code   RO         1673    i.usb_ept_open      at32f403a_407_usb.o
+    0x08001b88   0x08001b88   0x00000012   Code   RO         1675    i.usb_exit_suspend  at32f403a_407_usb.o
+    0x08001b9a   0x08001b9a   0x00000006   Code   RO         1676    i.usb_flag_clear    at32f403a_407_usb.o
+    0x08001ba0   0x08001ba0   0x00000014   Code   RO         1678    i.usb_interrupt_enable  at32f403a_407_usb.o
+    0x08001bb4   0x08001bb4   0x0000002c   Code   RO         1680    i.usb_read_packet   at32f403a_407_usb.o
+    0x08001be0   0x08001be0   0x00000014   Code   RO         1683    i.usb_set_address   at32f403a_407_usb.o
+    0x08001bf4   0x08001bf4   0x00000074   Code   RO         2377    i.usb_vcp_cmd_process  cdc_class.o
+    0x08001c68   0x08001c68   0x00000050   Code   RO         2378    i.usb_vcp_get_rxdata  cdc_class.o
+    0x08001cb8   0x08001cb8   0x0000003a   Code   RO         2379    i.usb_vcp_send_data  cdc_class.o
+    0x08001cf2   0x08001cf2   0x00000002   PAD
+    0x08001cf4   0x08001cf4   0x0000002c   Code   RO         1685    i.usb_write_packet  at32f403a_407_usb.o
+    0x08001d20   0x08001d20   0x00000054   Code   RO         2223    i.usbd_clear_feature  usbd_sdr.o
+    0x08001d74   0x08001d74   0x0000012c   Code   RO         1986    i.usbd_clear_stall  usbd_core.o
+    0x08001ea0   0x08001ea0   0x0000000c   Code   RO         1987    i.usbd_connect      usbd_core.o
+    0x08001eac   0x08001eac   0x000000ba   Code   RO         1989    i.usbd_core_in_handler  usbd_core.o
+    0x08001f66   0x08001f66   0x0000002c   Code   RO         1990    i.usbd_core_init    usbd_core.o
+    0x08001f92   0x08001f92   0x00000078   Code   RO         1991    i.usbd_core_out_handler  usbd_core.o
+    0x0800200a   0x0800200a   0x00000054   Code   RO         1992    i.usbd_core_setup_handler  usbd_core.o
+    0x0800205e   0x0800205e   0x00000024   Code   RO         1993    i.usbd_ctrl_recv    usbd_core.o
+    0x08002082   0x08002082   0x00000018   Code   RO         1994    i.usbd_ctrl_recv_status  usbd_core.o
+    0x0800209a   0x0800209a   0x00000028   Code   RO         1995    i.usbd_ctrl_send    usbd_core.o
+    0x080020c2   0x080020c2   0x00000018   Code   RO         1996    i.usbd_ctrl_send_status  usbd_core.o
+    0x080020da   0x080020da   0x00000016   Code   RO         1997    i.usbd_ctrl_unsupport  usbd_core.o
+    0x080020f0   0x080020f0   0x00000080   Code   RO         2224    i.usbd_device_request  usbd_sdr.o
+    0x08002170   0x08002170   0x0000017e   Code   RO         2225    i.usbd_endpoint_request  usbd_sdr.o
+    0x080022ee   0x080022ee   0x0000000c   Code   RO         1999    i.usbd_enter_suspend  usbd_core.o
+    0x080022fa   0x080022fa   0x00000044   Code   RO         2000    i.usbd_ept_buf_auto_define  usbd_core.o
+    0x0800233e   0x0800233e   0x00000030   Code   RO         2002    i.usbd_ept_close    usbd_core.o
+    0x0800236e   0x0800236e   0x000000c4   Code   RO         2004    i.usbd_ept_defaut_init  usbd_core.o
+    0x08002432   0x08002432   0x00000026   Code   RO         2163    i.usbd_ept_loop_handler  usbd_int.o
+    0x08002458   0x08002458   0x00000058   Code   RO         2005    i.usbd_ept_open     usbd_core.o
+    0x080024b0   0x080024b0   0x00000074   Code   RO         2006    i.usbd_ept_recv     usbd_core.o
+    0x08002524   0x08002524   0x00000120   Code   RO         2007    i.usbd_ept_send     usbd_core.o
+    0x08002644   0x08002644   0x000001dc   Code   RO         2164    i.usbd_eptn_handler  usbd_int.o
+    0x08002820   0x08002820   0x00000056   Code   RO         2226    i.usbd_get_configuration  usbd_sdr.o
+    0x08002876   0x08002876   0x0000011c   Code   RO         2227    i.usbd_get_descriptor  usbd_sdr.o
+    0x08002992   0x08002992   0x00000014   Code   RO         2008    i.usbd_get_recv_len  usbd_core.o
+    0x080029a6   0x080029a6   0x00000044   Code   RO         2228    i.usbd_get_status   usbd_sdr.o
+    0x080029ea   0x080029ea   0x0000003e   Code   RO         2470    i.usbd_int_to_unicode  cdc_desc.o
+    0x08002a28   0x08002a28   0x0000004a   Code   RO         2229    i.usbd_interface_request  usbd_sdr.o
+    0x08002a72   0x08002a72   0x0000009c   Code   RO         2165    i.usbd_irq_handler  usbd_int.o
+    0x08002b0e   0x08002b0e   0x00000046   Code   RO         2166    i.usbd_reset_handler  usbd_int.o
+    0x08002b54   0x08002b54   0x00000052   Code   RO         2230    i.usbd_set_address  usbd_sdr.o
+    0x08002ba6   0x08002ba6   0x00000002   PAD
+    0x08002ba8   0x08002ba8   0x000000c8   Code   RO         2231    i.usbd_set_configuration  usbd_sdr.o
+    0x08002c70   0x08002c70   0x00000032   Code   RO         2232    i.usbd_set_feature  usbd_sdr.o
+    0x08002ca2   0x08002ca2   0x00000002   PAD
+    0x08002ca4   0x08002ca4   0x00000088   Code   RO         2011    i.usbd_set_stall    usbd_core.o
+    0x08002d2c   0x08002d2c   0x00000028   Code   RO         2233    i.usbd_setup_request_parse  usbd_sdr.o
+    0x08002d54   0x08002d54   0x00000014   Code   RO         2167    i.usbd_sof_handler  usbd_int.o
+    0x08002d68   0x08002d68   0x0000002a   Code   RO         2168    i.usbd_suspend_handler  usbd_int.o
+    0x08002d92   0x08002d92   0x0000003c   Code   RO         2471    i.usbd_unicode_convert  cdc_desc.o
+    0x08002dce   0x08002dce   0x00000024   Code   RO         2169    i.usbd_wakeup_handler  usbd_int.o
+    0x08002df2   0x08002df2   0x00000024   Code   RO          430    i.wk_acc_init       wk_acc.o
+    0x08002e16   0x08002e16   0x00000002   PAD
+    0x08002e18   0x08002e18   0x00000010   Code   RO          313    i.wk_debug_config   wk_debug.o
+    0x08002e28   0x08002e28   0x00000054   Code   RO          478    i.wk_dma1_channel1_init  wk_dma.o
+    0x08002e7c   0x08002e7c   0x00000054   Code   RO          479    i.wk_dma1_channel2_init  wk_dma.o
+    0x08002ed0   0x08002ed0   0x00000008   Code   RO          480    i.wk_dma_channel_config  wk_dma.o
+    0x08002ed8   0x08002ed8   0x0000003c   Code   RO          514    i.wk_gpio_config    wk_gpio.o
+    0x08002f14   0x08002f14   0x000000d4   Code   RO          135    i.wk_nvic_config    at32f403a_407_wk_config.o
+    0x08002fe8   0x08002fe8   0x00000058   Code   RO          136    i.wk_periph_clock_config  at32f403a_407_wk_config.o
+    0x08003040   0x08003040   0x000000dc   Code   RO          454    i.wk_spi1_init      wk_spi.o
+    0x0800311c   0x0800311c   0x00000098   Code   RO          137    i.wk_system_clock_config  at32f403a_407_wk_config.o
+    0x080031b4   0x080031b4   0x00000044   Code   RO          276    i.wk_timebase_init  wk_system.o
+    0x080031f8   0x080031f8   0x0000002c   Code   RO          338    i.wk_usb_app_init   usb_app.o
+    0x08003224   0x08003224   0x00000090   Code   RO          339    i.wk_usb_app_task   usb_app.o
+    0x080032b4   0x080032b4   0x00000010   Code   RO          406    i.wk_usbfs_init     wk_usbfs.o
+    0x080032c4   0x080032c4   0x00000010   Code   RO          340    i.wk_usbfs_irq_handler  usb_app.o
+    0x080032d4   0x080032d4   0x0000000a   Code   RO         2637    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x080032de   0x080032de   0x00000028   Data   RO          574    .constdata          at32f403a_407_crm.o
+    0x08003306   0x08003306   0x00000010   Data   RO         1951    .constdata          system_at32f403a_407.o
+    0x08003316   0x08003316   0x00000002   PAD
+    0x08003318   0x08003318   0x00000020   Data   RO         2707    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08003338, Size: 0x00000d18, Max: 0x00018000, ABSOLUTE, COMPRESSED[0x000000cc])
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   COMPRESSED   0x00000004   Data   RW          277    .data               wk_system.o
+    0x20000004   COMPRESSED   0x00000001   Data   RW          342    .data               usb_app.o
+    0x20000005   COMPRESSED   0x00000003   PAD
+    0x20000008   COMPRESSED   0x00000006   Data   RW         1686    .data               at32f403a_407_usb.o
+    0x2000000e   COMPRESSED   0x00000002   PAD
+    0x20000010   COMPRESSED   0x00000004   Data   RW         1952    .data               system_at32f403a_407.o
+    0x20000014   COMPRESSED   0x00000001   Data   RW         2234    .data               usbd_sdr.o
+    0x20000015   COMPRESSED   0x00000003   PAD
+    0x20000018   COMPRESSED   0x0000001c   Data   RW         2333    .data               mt6701.o
+    0x20000034   COMPRESSED   0x00000030   Data   RW         2381    .data               cdc_class.o
+    0x20000064   COMPRESSED   0x000000c8   Data   RW         2473    .data               cdc_desc.o
+    0x2000012c        -       0x0000042c   Zero   RW          341    .bss                usb_app.o
+    0x20000558        -       0x0000005c   Zero   RW         2380    .bss                cdc_class.o
+    0x200005b4        -       0x00000100   Zero   RW         2472    .bss                cdc_desc.o
+    0x200006b4        -       0x00000060   Zero   RW         2579    .bss                c_w.l(libspace.o)
+    0x20000714   COMPRESSED   0x00000004   PAD
+    0x20000718        -       0x00000200   Zero   RW         1940    HEAP                startup_at32f403a_407.o
+    0x20000918        -       0x00000400   Zero   RW         1939    STACK               startup_at32f403a_407.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        84         22          0          0          0       2323   at32f403a_407_acc.o
+      1046        128         40          0          0      11127   at32f403a_407_crm.o
+       484         28          0          0          0       5445   at32f403a_407_dma.o
+       274          6          0          0          0       3907   at32f403a_407_gpio.o
+        94          8          0          0          0       5361   at32f403a_407_int.o
+       280         18          0          0          0      32692   at32f403a_407_misc.o
+       384          0          0          0          0       6004   at32f403a_407_spi.o
+      2128         36          0          6          0      18123   at32f403a_407_usb.o
+       572         28          0          0          0      33418   at32f403a_407_wk_config.o
+       764          6          0         48         92       9763   cdc_class.o
+       434        152          0        200        256       7503   cdc_desc.o
+        64          0          0          0          0       1156   log.o
+       124         12          0          0          0      59310   main.o
+       124          4          0         28          0       2330   mt6701.o
+        64         26        388          0       1536        828   startup_at32f403a_407.o
+       360         38         16          4          0       2240   system_at32f403a_407.o
+       204         46          0          1       1068       9430   usb_app.o
+      1864         26          0          0          0      15049   usbd_core.o
+       838         14          0          0          0       5348   usbd_int.o
+      1478         24          0          1          0       8630   usbd_sdr.o
+        36          0          0          0          0        486   wk_acc.o
+        16          4          0          0          0        486   wk_debug.o
+       176         10          0          0          0       2092   wk_dma.o
+        60          6          0          0          0        537   wk_gpio.o
+       220          8          0          0          0        663   wk_spi.o
+        68         10          0          4          0       1188   wk_system.o
+        16          0          0          0          0        484   wk_usbfs.o
+
+    ----------------------------------------------------------------------
+     12278        660        478        300       2952     245923   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        22          0          2          8          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+        90          0          0          0          0          0   __dczerorl2.o
+         8          0          0          0          0         68   __main.o
+         0          0          0          0          0          0   __rtentry.o
+        12          0          0          0          0          0   __rtentry2.o
+         6          0          0          0          0          0   __rtentry4.o
+        52          8          0          0          0          0   __scatter.o
+        28          0          0          0          0          0   __scatter_zi.o
+        18          0          0          0          0         80   exit.o
+         6          0          0          0          0        152   heapauxi.o
+         0          0          0          0          0          0   indicate_semi.o
+         2          0          0          0          0          0   libinit.o
+         6          0          0          0          0          0   libinit2.o
+         2          0          0          0          0          0   libshutdown.o
+         2          0          0          0          0          0   libshutdown2.o
+         8          4          0          0         96         68   libspace.o
+         2          0          0          0          0          0   rtexit.o
+        10          0          0          0          0          0   rtexit2.o
+        12          4          0          0          0         68   sys_exit.o
+        74          0          0          0          0         80   sys_stackheap_outer.o
+         2          0          0          0          0         68   use_no_semi.o
+        10          0          0          0          0        116   fpinit.o
+
+    ----------------------------------------------------------------------
+       356         16          0          0        100        700   Library Totals
+         6          0          0          0          4          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       340         16          0          0         96        584   c_w.l
+        10          0          0          0          0        116   fz_wm.l
+
+    ----------------------------------------------------------------------
+       356         16          0          0        100        700   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     12634        676        478        300       3052     231267   Grand Totals
+     12634        676        478        204       3052     231267   ELF Image Totals (compressed)
+     12634        676        478        204          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                13112 (  12.80kB)
+    Total RW  Size (RW Data + ZI Data)              3352 (   3.27kB)
+    Total ROM Size (Code + RO Data + RW Data)      13316 (  13.00kB)
+
+==============================================================================
+
