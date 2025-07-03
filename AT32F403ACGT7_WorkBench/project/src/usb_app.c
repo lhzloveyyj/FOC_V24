@@ -111,7 +111,7 @@ void wk_usb_app_task(void)
 
   /* add user code begin usb_app_task 1 */
 	uint8_t buffer[128];
-	float angle = MT6701_GetAngle(&mt6701);
+	float angle = ReadAngle();
 	float data[1] = {angle};
 	uint16_t len = PackFloatArrayToBytes(data, 1, buffer);
 	

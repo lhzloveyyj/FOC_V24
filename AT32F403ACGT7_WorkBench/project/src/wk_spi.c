@@ -90,9 +90,13 @@ void wk_spi1_init(void)
   spi_crc_polynomial_set(SPI1, 0x7);
   spi_crc_enable(SPI1, TRUE);
 
-  spi_i2s_dma_transmitter_enable(SPI1, TRUE);
-
-  spi_i2s_dma_receiver_enable(SPI1, TRUE);
+  /**
+   * Users need to configure SPI1 interrupt functions according to the actual application.
+   * 1. Call the below function to enable the corresponding SPI1 interrupt.
+   *     --spi_i2s_interrupt_enable(...)
+   * 2. Add the user's interrupt handler code into the below function in the at32f403a_407_int.c file.
+   *     --void SPI1_IRQHandler(void)
+   */
 
   /* add user code begin spi1_init 2 */
 

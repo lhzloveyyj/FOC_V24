@@ -13,7 +13,6 @@
 .\objects\at32f403a_407_misc.o: ..\inc\at32f403a_407_conf.h
 .\objects\at32f403a_407_misc.o: ..\..\libraries\drivers\inc\at32f403a_407_crm.h
 .\objects\at32f403a_407_misc.o: ..\..\libraries\drivers\inc\at32f403a_407_debug.h
-.\objects\at32f403a_407_misc.o: ..\..\libraries\drivers\inc\at32f403a_407_dma.h
 .\objects\at32f403a_407_misc.o: ..\..\libraries\drivers\inc\at32f403a_407_exint.h
 .\objects\at32f403a_407_misc.o: ..\..\libraries\drivers\inc\at32f403a_407_flash.h
 .\objects\at32f403a_407_misc.o: ..\..\libraries\drivers\inc\at32f403a_407_gpio.h

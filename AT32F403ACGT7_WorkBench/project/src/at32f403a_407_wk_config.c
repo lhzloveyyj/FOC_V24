@@ -153,9 +153,6 @@ void wk_system_clock_config(void)
   */
 void wk_periph_clock_config(void)
 {
-  /* enable dma1 periph clock */
-  crm_periph_clock_enable(CRM_DMA1_PERIPH_CLOCK, TRUE);
-
   /* enable iomux periph clock */
   crm_periph_clock_enable(CRM_IOMUX_PERIPH_CLOCK, TRUE);
 
@@ -194,7 +191,7 @@ void wk_nvic_config(void)
   NVIC_SetPriority(DebugMonitor_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), 0, 0));
   NVIC_SetPriority(PendSV_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), 0, 0));
   NVIC_SetPriority(SysTick_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), 15, 0));
-  nvic_irq_enable(DMA1_Channel1_IRQn, 0, 0);
+  nvic_irq_enable(SPI1_IRQn, 0, 0);
   nvic_irq_enable(USBFS_MAPL_IRQn, 0, 0);
 }
 

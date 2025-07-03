@@ -1,45 +1,42 @@
 #include "mt6701.h"  
 
-void MT6701_StartRead(MT6701_t *encoder)
+#define SPI1_CS1_L  gpio_bits_reset(GPIOB, GPIO_PINS_0);     //CS1_L
+#define SPI1_CS1_H  gpio_bits_set(GPIOB, GPIO_PINS_0);       //CS1_H
+
+unsigned char SPIx_ReadWriteByte(unsigned char byte)
 {
-    /* 拉低 CS */
-    gpio_bits_reset(encoder->CS_GPIO, encoder->CS_Pin);
-    
-    /* 清除标志 */
-    encoder->data_ready = 0;
-    
-    /* 使能 DMA */
-    dma_channel_enable(encoder->DMA_TX, TRUE);
-    dma_channel_enable(encoder->DMA_RX, TRUE);
-    
-    /* 启动 SPI 发送 (dummy byte) */
-    while (spi_i2s_flag_get(encoder->SPIx, SPI_I2S_TDBE_FLAG) == RESET);
-    spi_i2s_data_transmit(encoder->SPIx, 0x00);
+	unsigned short retry = 0;
+	
+	while (spi_i2s_flag_get(SPI1, SPI_I2S_TDBE_FLAG) == RESET)
+	{
+		if(++retry>200)return 0;
+	}
+	spi_i2s_data_transmit(SPI1, byte);
+	retry = 0;
+	while (spi_i2s_flag_get(SPI1, SPI_I2S_RDBF_FLAG) == RESET) 
+	{
+		if(++retry>200)return 0;
+	}
+	return spi_i2s_data_receive(SPI1);
 }
 
-float MT6701_GetAngle(MT6701_t *encoder)
+float ReadAngle(void)
 {
-    MT6701_StartRead(encoder);
-    
-    while (!encoder->data_ready);
-    
-    float angle = 0.0f;
-    if (encoder->data_ready)
-    {
-        /* 解析角度数据 */
-        uint32_t temp = ((uint16_t)encoder->rx_buf[0] << 6) | (encoder->rx_buf[1] >> 2);
-        //angle = ((float)temp * 360) / 16384.0f;
-        //angle = angle * 6.28318f / 360.0f;
-        angle = (float)temp;
-        /* 清除标志 */
-        //encoder->data_ready = 0;
-    }
-    
-    return angle;
+	uint8_t back1,back2,back3;
+	//uint8_t MagField;
+	uint32_t temp;
+	float angle ;
+	
+	SPI1_CS1_L;
+	back1 = SPIx_ReadWriteByte(0);
+	back2 = SPIx_ReadWriteByte(0);
+	back3 = SPIx_ReadWriteByte(0);
+	SPI1_CS1_H;
+	
+	temp = ((back1<<16)|(back2<<8)|back3)>>10;
+	//MagField=(temp>>6)&0x0F;
+	angle =((float)temp * 360)/16384.0f;
+	angle = angle * 6.28318f / 360.0f;
+	return angle;
 }
-
-MT6701_t mt6701 = {SPI1, GPIOB, GPIO_PINS_0, DMA1_CHANNEL2, DMA1_CHANNEL1, {0x00, 0x00, 0x00}, {0}, 0};
-
-
-
 

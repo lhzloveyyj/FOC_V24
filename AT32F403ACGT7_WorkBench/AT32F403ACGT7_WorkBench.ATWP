@@ -56,24 +56,11 @@
             <ModeSub name="FS_Device" value="CDC"/>
         </Mode>
     </USB_DEVICE>
-    <DMA>
-        <SPI1_RX>
-            <ParametersSub name="Instance" value="DMA1_Channel1"/>
-            <ParametersSub name="Mode" value="TRUE"/>
-            <ParametersSub name="Priority" value="DMA_PRIORITY_HIGH"/>
-        </SPI1_RX>
-        <SPI1_TX>
-            <ParametersSub name="Instance" value="DMA1_Channel2"/>
-            <ParametersSub name="Priority" value="DMA_PRIORITY_HIGH"/>
-        </SPI1_TX>
-    </DMA>
     <NVIC>
         <SysTick_Handler>1;15;0;0;0</SysTick_Handler>
         <FLASH_IRQHandler>0;0;0;0;0</FLASH_IRQHandler>
         <CRM_IRQHandler>0;0;0;0;0</CRM_IRQHandler>
-        <DMA1_Channel1_IRQHandler>1;0;0;0;0</DMA1_Channel1_IRQHandler>
-        <DMA1_Channel2_IRQHandler>0;0;0;0;0</DMA1_Channel2_IRQHandler>
-        <SPI1_IRQHandler>0;0;0;0;0</SPI1_IRQHandler>
+        <SPI1_IRQHandler>1;0;0;0;0</SPI1_IRQHandler>
         <USBFSWakeUp_IRQHandler>0;0;0;0;0</USBFSWakeUp_IRQHandler>
         <ACC_IRQHandler>0;0;0;0;0</ACC_IRQHandler>
         <USBFS_MAPH_IRQHandler>0;0;0;0;0</USBFS_MAPH_IRQHandler>

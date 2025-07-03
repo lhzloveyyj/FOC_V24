@@ -429,11 +429,6 @@
               <FilePath>..\src\wk_spi.c</FilePath>
             </File>
             <File>
-              <FileName>wk_dma.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\wk_dma.c</FilePath>
-            </File>
-            <File>
               <FileName>wk_gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\wk_gpio.c</FilePath>
@@ -462,11 +457,6 @@
               <FileName>at32f403a_407_spi.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\libraries\drivers\src\at32f403a_407_spi.c</FilePath>
-            </File>
-            <File>
-              <FileName>at32f403a_407_dma.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\drivers\src\at32f403a_407_dma.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_flash.c</FileName>

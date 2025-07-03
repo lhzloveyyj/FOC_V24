@@ -222,28 +222,18 @@ void SysTick_Handler(void)
 }
 
 /**
-  * @brief  this function handles DMA1 Channel 1 handler.
+  * @brief  this function handles SPI1 handler.
   * @param  none
   * @retval none
   */
-void DMA1_Channel1_IRQHandler(void)
+void SPI1_IRQHandler(void)
 {
-  /* add user code begin DMA1_Channel1_IRQ 0 */
-	if(dma_flag_get(DMA1_FDT1_FLAG) != RESET)
-	 {
-		dma_flag_clear(DMA1_FDT1_FLAG);
-	
-		 
-		dma_channel_enable(DMA1_CHANNEL2, FALSE);
-		dma_channel_enable(DMA1_CHANNEL1, FALSE);
-		 
-		 gpio_bits_set(mt6701.CS_GPIO, mt6701.CS_Pin);
-		 mt6701.data_ready = 1;
-	 }
-  /* add user code end DMA1_Channel1_IRQ 0 */
-  /* add user code begin DMA1_Channel1_IRQ 1 */
+  /* add user code begin SPI1_IRQ 0 */
 
-  /* add user code end DMA1_Channel1_IRQ 1 */
+  /* add user code end SPI1_IRQ 0 */
+  /* add user code begin SPI1_IRQ 1 */
+
+  /* add user code end SPI1_IRQ 1 */
 }
 
 /**
