@@ -38,7 +38,7 @@ extern "C" {
 
 /* private includes -------------------------------------------------------------*/
 /* add user code begin private includes */
-#include "MT6701.h"
+#include "FOC.h"
 /* add user code end private includes */
 
 /* exported types -------------------------------------------------------------*/
@@ -58,12 +58,12 @@ extern "C" {
 
 /* add user code begin dma define */
 /* user can only modify the dma define value */
-//#define DMA1_CHANNEL1_BUFFER_SIZE   1
-//#define DMA1_CHANNEL1_MEMORY_BASE_ADDR   (uint32_t)mt6701.rx_buf
+//#define DMA1_CHANNEL1_BUFFER_SIZE   2
+//#define DMA1_CHANNEL1_MEMORY_BASE_ADDR   (uint32_t)Motor_AD_Value
 //#define DMA1_CHANNEL1_PERIPHERAL_BASE_ADDR  0
 
-//#define DMA1_CHANNEL2_BUFFER_SIZE   3
-//#define DMA1_CHANNEL2_MEMORY_BASE_ADDR   (uint32_t)mt6701.tx_buf
+//#define DMA1_CHANNEL2_BUFFER_SIZE   0
+//#define DMA1_CHANNEL2_MEMORY_BASE_ADDR   0
 //#define DMA1_CHANNEL2_PERIPHERAL_BASE_ADDR   0
 
 //#define DMA1_CHANNEL3_BUFFER_SIZE   0

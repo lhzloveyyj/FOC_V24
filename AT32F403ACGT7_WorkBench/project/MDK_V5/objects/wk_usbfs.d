@@ -22,5 +22,7 @@
 .\objects\wk_usbfs.o: ..\..\libraries\drivers\inc\at32f403a_407_misc.h
 .\objects\wk_usbfs.o: ..\..\libraries\drivers\inc\at32f403a_407_pwc.h
 .\objects\wk_usbfs.o: ..\..\libraries\drivers\inc\at32f403a_407_spi.h
+.\objects\wk_usbfs.o: ..\..\libraries\drivers\inc\at32f403a_407_tmr.h
 .\objects\wk_usbfs.o: ..\..\libraries\drivers\inc\at32f403a_407_usb.h
-.\objects\wk_usbfs.o: ..\app\MT6701\MT6701.h
+.\objects\wk_usbfs.o: ..\app\FOC\FOC.h
+.\objects\wk_usbfs.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\math.h

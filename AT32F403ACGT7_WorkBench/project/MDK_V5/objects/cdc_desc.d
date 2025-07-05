@@ -21,6 +21,7 @@
 .\objects\cdc_desc.o: ..\..\libraries\drivers\inc\at32f403a_407_misc.h
 .\objects\cdc_desc.o: ..\..\libraries\drivers\inc\at32f403a_407_pwc.h
 .\objects\cdc_desc.o: ..\..\libraries\drivers\inc\at32f403a_407_spi.h
+.\objects\cdc_desc.o: ..\..\libraries\drivers\inc\at32f403a_407_tmr.h
 .\objects\cdc_desc.o: ..\..\libraries\drivers\inc\at32f403a_407_usb.h
 .\objects\cdc_desc.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\cdc_desc.o: ../../middlewares/usbd_drivers/inc/usbd_sdr.h

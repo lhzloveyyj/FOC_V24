@@ -29,6 +29,7 @@
 #include "wk_acc.h"
 #include "wk_debug.h"
 #include "wk_spi.h"
+#include "wk_tmr.h"
 #include "wk_usbfs.h"
 #include "wk_gpio.h"
 #include "usb_app.h"
@@ -36,7 +37,9 @@
 
 /* private includes ----------------------------------------------------------*/
 /* add user code begin private includes */
-
+#include "mt6701.h"
+#include "delay.h"
+#include "log.h"
 /* add user code end private includes */
 
 /* private typedef -----------------------------------------------------------*/
@@ -101,6 +104,12 @@ int main(void)
   /* init spi1 function. */
   wk_spi1_init();
 
+  /* init tmr1 function. */
+  wk_tmr1_init();
+
+  /* init tmr2 function. */
+  wk_tmr2_init();
+
   /* init acc function. */
   wk_acc_init();
 
@@ -111,6 +120,17 @@ int main(void)
   wk_usb_app_init();
 
   /* add user code begin 2 */
+  delay_init();
+  
+  delay_ms(2000);
+  
+  angle_init(MT6701_GetAngleWrapper);
+  
+   float angle = 0;
+    float Ud = 1.0f;  // 合适电压
+
+  
+  tmr_interrupt_enable(TMR2,TMR_OVF_INT,TRUE);
   /* add user code end 2 */
 
   while(1)
@@ -118,7 +138,7 @@ int main(void)
      wk_usb_app_task();
 
     /* add user code begin 3 */
-
+//	  usb_printf("i 呜呜呜 lhz\r\n");
     /* add user code end 3 */
   }
 }

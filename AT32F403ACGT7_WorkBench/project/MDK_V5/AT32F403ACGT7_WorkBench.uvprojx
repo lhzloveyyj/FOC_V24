@@ -189,7 +189,7 @@
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>AT32F403ACGT7,USE_STDPERIPH_DRIVER,AT_START_F403A_V1</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\libraries\drivers\inc;..\..\libraries\cmsis\cm4\core_support;..\..\libraries\cmsis\cm4\device_support;..\inc;../../middlewares/usbd_drivers/inc;..\tools\LOG;..\app\MT6701</IncludePath>
+              <IncludePath>..\..\libraries\drivers\inc;..\..\libraries\cmsis\cm4\core_support;..\..\libraries\cmsis\cm4\device_support;..\inc;../../middlewares/usbd_drivers/inc;..\tools\LOG;..\app\MT6701;..\tools\Math;..\app\Delay;..\app\Control;..\app\FOC</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -433,6 +433,11 @@
               <FileType>1</FileType>
               <FilePath>..\src\wk_gpio.c</FilePath>
             </File>
+            <File>
+              <FileName>wk_tmr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\wk_tmr.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -442,6 +447,11 @@
               <FileName>at32f403a_407_crm.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\libraries\drivers\src\at32f403a_407_crm.c</FilePath>
+            </File>
+            <File>
+              <FileName>at32f403a_407_tmr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\drivers\src\at32f403a_407_tmr.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_gpio.c</FileName>
@@ -533,6 +543,21 @@
               <FileType>1</FileType>
               <FilePath>..\tools\LOG\LOG.c</FilePath>
             </File>
+            <File>
+              <FileName>fast_sin.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\tools\Math\fast_sin.h</FilePath>
+            </File>
+            <File>
+              <FileName>filter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\tools\Math\filter.c</FilePath>
+            </File>
+            <File>
+              <FileName>filter.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\tools\Math\filter.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -542,6 +567,51 @@
               <FileName>mt6701.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\app\MT6701\mt6701.c</FilePath>
+            </File>
+            <File>
+              <FileName>FOC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\FOC\FOC.c</FilePath>
+            </File>
+            <File>
+              <FileName>FOC.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\app\FOC\FOC.h</FilePath>
+            </File>
+            <File>
+              <FileName>foc_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\app\FOC\foc_config.h</FilePath>
+            </File>
+            <File>
+              <FileName>SVPWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\FOC\SVPWM.c</FilePath>
+            </File>
+            <File>
+              <FileName>SVPWM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\app\FOC\SVPWM.h</FilePath>
+            </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\Delay\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\app\Delay\delay.h</FilePath>
+            </File>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\LED\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\app\LED\led.h</FilePath>
             </File>
           </Files>
         </Group>

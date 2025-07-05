@@ -70,7 +70,7 @@ extern "C" {
 /*#define RTC_MODULE_ENABLED----------------------*/
 /*#define SDIO_MODULE_ENABLED---------------------*/
 #define SPI_MODULE_ENABLED
-/*#define TMR_MODULE_ENABLED----------------------*/
+#define TMR_MODULE_ENABLED
 /*#define USART_MODULE_ENABLED--------------------*/
 #define USB_MODULE_ENABLED
 /*#define WDT_MODULE_ENABLED----------------------*/

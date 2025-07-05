@@ -9,7 +9,9 @@
 ".\objects\wk_acc.o"
 ".\objects\wk_spi.o"
 ".\objects\wk_gpio.o"
+".\objects\wk_tmr.o"
 ".\objects\at32f403a_407_crm.o"
+".\objects\at32f403a_407_tmr.o"
 ".\objects\at32f403a_407_gpio.o"
 ".\objects\at32f403a_407_pwc.o"
 ".\objects\at32f403a_407_spi.o"
@@ -25,10 +27,15 @@
 ".\objects\usbd_int.o"
 ".\objects\usbd_sdr.o"
 ".\objects\log.o"
+".\objects\filter.o"
 ".\objects\mt6701.o"
+".\objects\foc.o"
+".\objects\svpwm.o"
+".\objects\delay.o"
+".\objects\led.o"
 ".\objects\cdc_class.o"
 ".\objects\cdc_desc.o"
---strict --scatter ".\objects\AT32F403ACGT7_WorkBench.sct"
+--library_type=microlib --strict --scatter ".\objects\AT32F403ACGT7_WorkBench.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\listings\AT32F403ACGT7_WorkBench.map" -o .\objects\AT32F403ACGT7_WorkBench.axf

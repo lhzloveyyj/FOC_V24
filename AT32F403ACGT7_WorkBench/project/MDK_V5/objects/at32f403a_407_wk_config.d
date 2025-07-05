@@ -21,5 +21,7 @@
 .\objects\at32f403a_407_wk_config.o: ..\..\libraries\drivers\inc\at32f403a_407_misc.h
 .\objects\at32f403a_407_wk_config.o: ..\..\libraries\drivers\inc\at32f403a_407_pwc.h
 .\objects\at32f403a_407_wk_config.o: ..\..\libraries\drivers\inc\at32f403a_407_spi.h
+.\objects\at32f403a_407_wk_config.o: ..\..\libraries\drivers\inc\at32f403a_407_tmr.h
 .\objects\at32f403a_407_wk_config.o: ..\..\libraries\drivers\inc\at32f403a_407_usb.h
-.\objects\at32f403a_407_wk_config.o: ..\app\MT6701\MT6701.h
+.\objects\at32f403a_407_wk_config.o: ..\app\FOC\FOC.h
+.\objects\at32f403a_407_wk_config.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\math.h

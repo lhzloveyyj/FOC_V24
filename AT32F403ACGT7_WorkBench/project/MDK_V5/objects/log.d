@@ -1,7 +1,9 @@
 .\objects\log.o: ..\tools\LOG\LOG.c
 .\objects\log.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\log.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\string.h
-.\objects\log.o: ..\tools\LOG\LOG.h
+.\objects\log.o: ../../middlewares/usbd_drivers/inc/usbd_int.h
+.\objects\log.o: ../../middlewares/usbd_drivers/inc/usbd_core.h
+.\objects\log.o: ..\inc\usb_conf.h
 .\objects\log.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
 .\objects\log.o: ..\..\libraries\cmsis\cm4\core_support\core_cm4.h
 .\objects\log.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_version.h
@@ -21,4 +23,11 @@
 .\objects\log.o: ..\..\libraries\drivers\inc\at32f403a_407_misc.h
 .\objects\log.o: ..\..\libraries\drivers\inc\at32f403a_407_pwc.h
 .\objects\log.o: ..\..\libraries\drivers\inc\at32f403a_407_spi.h
+.\objects\log.o: ..\..\libraries\drivers\inc\at32f403a_407_tmr.h
 .\objects\log.o: ..\..\libraries\drivers\inc\at32f403a_407_usb.h
+.\objects\log.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\log.o: ../../middlewares/usbd_drivers/inc/usb_std.h
+.\objects\log.o: ..\inc\cdc_class.h
+.\objects\log.o: ..\inc\cdc_desc.h
+.\objects\log.o: ..\tools\LOG\LOG.h
+.\objects\log.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdarg.h

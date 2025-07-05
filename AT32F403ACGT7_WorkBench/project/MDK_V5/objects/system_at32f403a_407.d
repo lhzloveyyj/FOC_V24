@@ -19,4 +19,5 @@
 .\objects\system_at32f403a_407.o: ..\..\libraries\drivers\inc\at32f403a_407_misc.h
 .\objects\system_at32f403a_407.o: ..\..\libraries\drivers\inc\at32f403a_407_pwc.h
 .\objects\system_at32f403a_407.o: ..\..\libraries\drivers\inc\at32f403a_407_spi.h
+.\objects\system_at32f403a_407.o: ..\..\libraries\drivers\inc\at32f403a_407_tmr.h
 .\objects\system_at32f403a_407.o: ..\..\libraries\drivers\inc\at32f403a_407_usb.h

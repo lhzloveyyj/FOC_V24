@@ -21,6 +21,7 @@
 .\objects\usbd_core.o: ..\..\libraries\drivers\inc\at32f403a_407_misc.h
 .\objects\usbd_core.o: ..\..\libraries\drivers\inc\at32f403a_407_pwc.h
 .\objects\usbd_core.o: ..\..\libraries\drivers\inc\at32f403a_407_spi.h
+.\objects\usbd_core.o: ..\..\libraries\drivers\inc\at32f403a_407_tmr.h
 .\objects\usbd_core.o: ..\..\libraries\drivers\inc\at32f403a_407_usb.h
 .\objects\usbd_core.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\usbd_core.o: ../../middlewares/usbd_drivers/inc/usb_std.h
