@@ -25,36 +25,13 @@ SVpwm_State SVpwm_1 = {
 
 PSVpwm_State PSVpwm_1  = &SVpwm_1;
 
-SVpwm_State SVpwm_2 = {
-	.Ts = 1.0f	,
-	.sector = 0	,
-	.Ta = 0.0f	,
-	.Tb = 0.0f	,
-	.Tc = 0.0f	,
-	
-	.u1 = 0.0f	,
-	.u2 = 0.0f	,
-	.u3 = 0.0f	,
-	
-	.t1 = 0.0f	,
-	.t2 = 0.0f	,
-	.t3 = 0.0f	,
-	.t4 = 0.0f	,
-	.t5 = 0.0f	,
-	.t6 = 0.0f	,
-	.t7 = 0.0f	,
-	
-	.times = 0	,
-};
-
-PSVpwm_State PSVpwm_2  = &SVpwm_2;
 
 void SVpwm(PSVpwm_State PSVpwm, float U_alpha, float U_beta)
 {
-	PSVpwm->K = SQRT3 * PSVpwm->Ts / UDC ;
+	PSVpwm->K = FOC_SQRT3 * PSVpwm->Ts / UDC ;
 	PSVpwm->u1 = U_beta * PSVpwm->K;
-	PSVpwm->u2 = (SQRT3_2 * U_alpha - _1_2 * U_beta) * PSVpwm->K; // sqrt(3)/2 = 0.8660254
-	PSVpwm->u3 = (-SQRT3_2 * U_alpha - _1_2 * U_beta) * PSVpwm->K;
+	PSVpwm->u2 = (FOC_SQRT3 * U_alpha - _1_2 * U_beta) * PSVpwm->K; // sqrt(3)/2 = 0.8660254
+	PSVpwm->u3 = (-FOC_SQRT3 * U_alpha - _1_2 * U_beta) * PSVpwm->K;
 	
 	PSVpwm->sector = (PSVpwm->u1 > 0.0f) + ((PSVpwm->u2 > 0.0f) << 1) + ((PSVpwm->u3 > 0.0f) << 2); // sector = A + 2B + 4C
 	// 非零矢量和零矢量作用时间的计算

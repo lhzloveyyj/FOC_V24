@@ -2,7 +2,7 @@
 .\objects\wk_system.o: ..\inc\wk_system.h
 .\objects\wk_system.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
 .\objects\wk_system.o: ..\..\libraries\cmsis\cm4\core_support\core_cm4.h
-.\objects\wk_system.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\wk_system.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\wk_system.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_version.h
 .\objects\wk_system.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_compiler.h
 .\objects\wk_system.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_armcc.h

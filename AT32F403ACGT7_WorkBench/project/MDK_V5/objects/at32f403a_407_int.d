@@ -2,7 +2,7 @@
 .\objects\at32f403a_407_int.o: ..\inc\at32f403a_407_int.h
 .\objects\at32f403a_407_int.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
 .\objects\at32f403a_407_int.o: ..\..\libraries\cmsis\cm4\core_support\core_cm4.h
-.\objects\at32f403a_407_int.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\at32f403a_407_int.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\at32f403a_407_int.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_version.h
 .\objects\at32f403a_407_int.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_compiler.h
 .\objects\at32f403a_407_int.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_armcc.h
@@ -25,4 +25,4 @@
 .\objects\at32f403a_407_int.o: ..\inc\usb_app.h
 .\objects\at32f403a_407_int.o: ..\app\MT6701\MT6701.h
 .\objects\at32f403a_407_int.o: ..\app\FOC\foc.h
-.\objects\at32f403a_407_int.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\at32f403a_407_int.o: ..\app\FOC\svpwm.h

@@ -1,7 +1,7 @@
 .\objects\foc.o: ..\app\FOC\FOC.c
 .\objects\foc.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
 .\objects\foc.o: ..\..\libraries\cmsis\cm4\core_support\core_cm4.h
-.\objects\foc.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\foc.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\foc.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_version.h
 .\objects\foc.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_compiler.h
 .\objects\foc.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_armcc.h
@@ -22,9 +22,12 @@
 .\objects\foc.o: ..\..\libraries\drivers\inc\at32f403a_407_tmr.h
 .\objects\foc.o: ..\..\libraries\drivers\inc\at32f403a_407_usb.h
 .\objects\foc.o: ..\app\FOC\foc.h
-.\objects\foc.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\foc.o: ..\app\FOC\svpwm.h
+.\objects\foc.o: ..\app\FOC\foc_config.h
+.\objects\foc.o: D:\keil\ARM\ARMCC\Bin\..\include\math.h
+.\objects\foc.o: ..\tools\Math\my_math.h
 .\objects\foc.o: ..\tools\Math\fast_sin.h
 .\objects\foc.o: ..\app\Delay\delay.h
-.\objects\foc.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\foc.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\foc.o: ..\app\MT6701\mt6701.h
 .\objects\foc.o: ..\tools\LOG\log.h

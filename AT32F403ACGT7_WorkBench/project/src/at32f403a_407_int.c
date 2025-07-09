@@ -230,8 +230,8 @@ void SysTick_Handler(void)
 void TMR2_GLOBAL_IRQHandler(void)
 {
   /* add user code begin TMR2_GLOBAL_IRQ 0 */
-	MT6701_GetAngle(&mt6701);
-	setPhaseVoltage(0, 0, mt6701.angle);
+	//MT6701_GetAngle(&mt6701);
+	//setPhaseVoltage(0, 0, mt6701.angle);
 	tmr_flag_clear(TMR2, TMR_OVF_FLAG);
   /* add user code end TMR2_GLOBAL_IRQ 0 */
 

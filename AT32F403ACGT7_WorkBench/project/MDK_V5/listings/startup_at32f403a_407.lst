@@ -609,12 +609,12 @@ ARM Macro Assembler    Page 10
   390 0000001C                 END
               00000000 
               00000000 
-Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
-interwork --depend=.\objects\startup_at32f403a_407.d -o.\objects\startup_at32f4
-03a_407.o -ID:\downloads\MDK\keil5\pack\ArteryTek\AT32F403A_407_DFP\2.1.9\Devic
-e\Include --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 5
-39" --predefine="AT32F403ACGT7 SETA 1" --list=.\listings\startup_at32f403a_407.
-lst startup_at32f403a_407.s
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\startup_at32f403a_407.d -o.\objects\startup_at32f403a
+_407.o -I.\RTE\_AT32F403ACGT7_WorkBench -ID:\keil\ARM\PACK\ArteryTek\AT32F403A_
+407_DFP\2.2.0\Device\Include -ID:\keil\ARM\CMSIS\Include --predefine="__MICROLI
+B SETA 1" --predefine="__UVISION_VERSION SETA 524" --predefine="AT32F403ACGT7 S
+ETA 1" --list=.\listings\startup_at32f403a_407.lst startup_at32f403a_407.s
 
 
 

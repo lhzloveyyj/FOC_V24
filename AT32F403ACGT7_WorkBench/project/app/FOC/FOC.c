@@ -1,22 +1,15 @@
 #include "at32f403a_407.h"              // Device header
 #include "foc.h"
+#include "foc_config.h"
 #include "math.h"
+#include "my_math.h"
 #include "fast_sin.h"
 #include "delay.h"
 #include "stdio.h"
 #include "mt6701.h"
 #include "log.h"
 
-#define volatge_high 	24.0f				//电压限制值
-#define Udc 			24.0f				//母线电压
-#define sqrt3			1.732f				//根号3
-#define polePairs 	 	7 					// 电机的极对数
-#define _2PI 	 		6.28318f 			// 2PI
-#define _PI 	 		3.14159f 			// PI
-#define sqrt3_2			0.866f				//根号3/2
-#define _3PI_2			4.712388f			//PI/3
-#define EPSILON 		1e-6 				// 精度阈值
-#define time1_pwm		5000
+float g_udc = 0.0f;
 
 float  zero = 0.0f;	
 uint16_t AD_Value[2]={0};
@@ -30,122 +23,143 @@ typedef struct {
     float omega; // 电机角速度
 } MotorState;
 
-void setpwm(float Ua,float Ub,float Uc);
 
-//幅值限制函数
-float limit(float in_vo,float low,float high)
+/**
+ * @brief     将角度值归一化到 [0, 2π) 区间
+ * @param     angle   输入角度（单位：rad）
+ * @return    归一化后的角度值，范围为 [0, 2π)
+ */
+float NormalizeAngle(float angle)
 {
-	if(in_vo>=high)
-		in_vo=high;
-	else if(in_vo<=low)
-		in_vo=low;
-	else
-		in_vo=in_vo;
-	return in_vo;
-}
-
-// 把角度值归一化在 [0, 2pi]
-float Angle_limit(float angle)
-{
-    float a = fmod(angle, _2PI); // fmod()函数用于浮点数的取余运算
-    return a >= 0.0f ? a : (a + _2PI);
-}
-
-// 电角度 = 机械角度 * 极对数
-float _electricalAngle(float shaft_angle)
-{
-    return Angle_limit(shaft_angle * polePairs );
-}
-
-// 减去零电位并归一化
-float getCorrectedElectricalAngle(float shaft_angle)
-{
-    float elec_angle = _electricalAngle(shaft_angle);
-    // 减去零电位
-    float corr_angle = elec_angle - zero;
-	// 归一化到 [0, 2π)
-    corr_angle = Angle_limit(corr_angle);
-    
-	// 修正 2PI 问题
-    if (fabs(corr_angle - _2PI) < EPSILON) 
-        corr_angle = 0.0f;
-	
-    return corr_angle;
-}
-
-//Ud强拖
-void strong_drag(float Ud)
-{
-	float Ualpha=0.0f,Ubate=0.0f;
-	float Uq = 0.0f;
-	//求电角度
-	float angle_el = getCorrectedElectricalAngle(0.0f);
-	
-	//park逆变换
-	Ualpha = -Uq * fast_sin(angle_el) + Ud * fast_cos(angle_el);
-	Ubate  =  Uq * fast_cos(angle_el) + Ud * fast_sin(angle_el);
-	
-	//clarke逆变换
-	Ua = Ualpha + Udc/2;
-	Ub = (sqrt3 * Ubate - Ualpha)/2 + Udc/2;
-	Uc = (-sqrt3 * Ubate - Ualpha)/2 + Udc/2;
-	
-	setpwm(Ua,Ub,Uc);
+    float result = fmodf(angle, FOC_2PI);  // 使用浮点取余
+    return (result >= 0.0f) ? result : (result + FOC_2PI);
 }
 
 
-void angle_init(float (*read_angle_func)(void))
+/**
+ * @brief     计算电角度：电角度 = 机械角度 × 极对数，并归一化到 [0, 2π)
+ * @param     mechAngle   机械角度（单位：rad）
+ * @return    电角度（单位：rad），范围 [0, 2π)
+ */
+float CalculateElectricalAngle(float mechAngle)
 {
-	gpio_bits_reset(GPIOB, GPIO_PINS_3);
-	strong_drag(1.0f); // Ud强拖
-    delay_ms(2000);
+    float elecAngle = mechAngle * FOC_POLE_PAIRS;
+    return NormalizeAngle(elecAngle);
+}
 
-    // 多次采样减少抖动
-    float sum = 0;
-    int samples = 10;
-    for (int i = 0; i < samples; i++) {
-		/**************************************************/
-		//BUG : 不使用这个printf则零电位校准后不为0
-		/**************************************************/
-		_electricalAngle(read_angle_func());
-        sum += _electricalAngle(read_angle_func());
-        delay_ms(10); // 每次采样间隔 10ms
+/**
+ * @brief     施加恒定 Ud 电压进行强制对准（锁定电角度）
+ * @param     ud   d轴电压（单位：V）
+ */
+void MotorApplyStrongDrag(float ud)
+{
+    float uAlpha = 0.0f;
+    float uBeta = 0.0f;
+    float uq = 0.0f;
+
+    // 获取修正后的电角度（theta_e）
+    float angleEl = MotorGetCorrectedElecAngle(0.0f);
+
+    // Park 逆变换（dq -> αβ）
+    uAlpha = -uq * fast_sin(angleEl) + ud * fast_cos(angleEl);
+    uBeta  =  uq * fast_cos(angleEl) + ud * fast_sin(angleEl);
+
+    // Clarke 逆变换（αβ -> abc），带中点电压偏移
+    float ua = uAlpha + g_udc / 2.0f;
+    float ub = (FOC_SQRT3 * uBeta - uAlpha) / 2.0f + g_udc / 2.0f;
+    float uc = (-FOC_SQRT3 * uBeta - uAlpha) / 2.0f + g_udc / 2.0f;
+
+    MotorSetPwm(ua, ub, uc);
+}
+
+/**
+ * @brief     获取修正后的电角度（减去零电角度偏移并归一化到 [0, 2π)）
+ * @param     mechAngle    机械角度（单位：rad）
+ * @return    电角度（单位：rad），范围 [0, 2π)
+ */
+float AngleGetCorrectedElec(float mechAngle)
+{
+    float elecAngle = CalculateElectricalAngle(mechAngle);       // 电角度 = 机械角 × 极对数
+    float corrected = elecAngle - g_zeroOffset;             // 减去零电位偏移
+    corrected = NormalizeAngle(corrected);                  // 归一化到 [0, 2π)
+
+    // 修正 2π 问题：如果结果非常接近 2π，认为是 0
+    if (fabsf(corrected - FOC_2PI) < FOC_EPSILON) {
+        corrected = 0.0f;
     }
-    zero = sum / samples;
 
-    usb_printf("零电位角度： %f,%lf\r\n", zero,getCorrectedElectricalAngle(read_angle_func()));
-    usb_printf("初始化完成\r\n");
-	gpio_bits_set(GPIOB, GPIO_PINS_4);
+    return corrected;
 }
+
+/**
+ * @brief     角度模块初始化，采集零电角度偏移（调用强拖，进行多次平均）
+ * @param     readAngleFunc   用于读取机械角度的函数指针（单位：rad）
+ */
+void AngleInitZeroOffset(float (*readAngleFunc)(void))
+{
+    gpio_bits_reset(GPIOB, GPIO_PINS_3);  // 拉低启动引脚，表明开始初始化
+
+    MotorApplyStrongDrag(1.0f);           // 施加 Ud 强拖，固定转子磁极方向
+    delay_ms(2000);                       // 保持拖动 2 秒
+
+    // 多次采样以降低抖动影响
+    float sum = 0.0f;
+    const int sampleCount = 10;
+
+    for (int i = 0; i < sampleCount; i++) {
+        float elecAngle = CalculateElectricalAngle(readAngleFunc());
+        sum += elecAngle;
+        delay_ms(10);
+    }
+
+    g_zeroOffset = sum / sampleCount;  // 计算平均值作为零电角度
+    float corrected = AngleGetCorrectedElec(readAngleFunc());
+
+    usb_printf("零电位角度：%f, %lf\r\n", g_zeroOffset, corrected);
+    usb_printf("初始化完成\r\n");
+
+    gpio_bits_set(GPIOB, GPIO_PINS_4);  // 设置完成信号
+}
+
 
 void adc_tigger(int time_pwm)
 {
 	tmr_channel_value_set(TMR2, TMR_SELECT_CHANNEL_3, time_pwm-10);
 }
 
-float pwm_a=0,pwm_b=0,pwm_c=0;
-void setpwm(float Ua,float Ub,float Uc)
+float g_pwmA = 0.0f;
+float g_pwmB = 0.0f;
+float g_pwmC = 0.0f;
+
+/**
+ * @brief     设置三相 PWM 输出（Ua、Ub、Uc 为 SVPWM 输出电压）
+ * @param     ua   A相电压（单位：V）
+ * @param     ub   B相电压（单位：V）
+ * @param     uc   C相电压（单位：V）
+ */
+void MotorSetPwm(float ua, float ub, float uc)
 {
-	//输出限幅
-	Ua = limit(Ua,0.0f,volatge_high);
-	Ub = limit(Ub,0.0f,volatge_high);
-	Uc = limit(Uc,0.0f,volatge_high);
-	
-	//PWM限幅
-	pwm_a = limit(Ua / Udc , 0.0f , 1.0f);
-	pwm_b = limit(Ub / Udc , 0.0f , 1.0f);
-	pwm_c = limit(Uc / Udc , 0.0f , 1.0f);
-	
-	//PWM写入
-	tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_1, pwm_a * time1_pwm);
-	tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_2, pwm_b * time1_pwm);
-	tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_3, pwm_c * time1_pwm);
+    // 电压限幅保护（防止超出允许范围）
+    ua = LimitValue(ua, 0.0f, g_voltageHigh);
+    ub = LimitValue(ub, 0.0f, g_voltageHigh);
+    uc = LimitValue(uc, 0.0f, g_voltageHigh);
+
+    // 电压归一化到占空比 [0, 1]
+    g_pwmA = LimitValue(ua / g_udc, 0.0f, 1.0f);
+    g_pwmB = LimitValue(ub / g_udc, 0.0f, 1.0f);
+    g_pwmC = LimitValue(uc / g_udc, 0.0f, 1.0f);
+
+    // 输出到定时器 PWM 寄存器
+    tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_1, g_pwmA * FOC_ALL_DUTY);
+    tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_2, g_pwmB * FOC_ALL_DUTY);
+    tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_3, g_pwmC * FOC_ALL_DUTY);
 }
+
 
 // Clarke变换（电流）
 void clarke_transform(float Ia, float Ib, float *Ialpha, float *Ibeta) {
     *Ialpha = Ia;
-    *Ibeta = (1 / sqrt3) * (Ia + 2 * Ib);  // Clarke变换公式，线性组合
+    *Ibeta = (1 / FOC_SQRT3) * (Ia + 2 * Ib);  // Clarke变换公式，线性组合
 }
 
 // Park变换（电流）
@@ -161,34 +175,41 @@ float Ialpha=0.0f,Ibeta=0.0f;
 float Ua=0.0f,Ub=0.0f,Uc=0.0f;
 float Uq=0.0f,Ud=0.0f;
 float Iq=0.0f,Id=0.0f;
-void setPhaseVoltage(uint16_t Ia, uint16_t Ib, float angle)
+// FOC 控制主函数
+void FocContorl(PFOC_State pFOC, PSVpwm_State PSVpwm)
 {
-	//力矩限幅
-	Uq = limit(Uq,-Udc/2,Udc/2);
+	//计算电角度
+	getCorrectedElectricalAngle(pFOC);
 	
-	//求电角度
-	float angle_el = getCorrectedElectricalAngle(angle);
+	pFOC->current.ad_A = Motor1_AD_Value[1];
+	pFOC->current.ad_B = Motor1_AD_Value[0];
+
 	
-	//Clarke变换
-	//clarke_transform(Ia, Ib, &Ialpha, &Ibeta) ;
+	pFOC->Ia = (pFOC->current.ad_A - pFOC->current.voltage_a_offset)/4096.0f * ADC_REF_VOLTAGE * GAIN;
+	pFOC->Ib = (pFOC->current.ad_B - pFOC->current.voltage_a_offset)/4096.0f * ADC_REF_VOLTAGE * GAIN;
+	pFOC->Ia = 0 - pFOC->Ia - pFOC->Ib;
 	
-	//Park变换
-	//park_transform(Ialpha, Ibeta, angle_el, &Id, &Iq);
+	clarke_transform(pFOC) ;
+	park_transform(pFOC);
+	//PID控制器
+	pFOC->Ud = PI_Compute(&pi_Id, 0.0f, pFOC->Id);
+	pFOC->Uq = PI_Compute(&pi_Id, 0.0f, pFOC->Iq);
 	
-	Uq = 6.0f;
-	Ud = 0.0f;
+	pFOC->Ud = 0.0f;
+	pFOC->Uq = 2.0f;
+	//逆park变换
+	inv_park_transform(pFOC);
+    
+	SVpwm(PSVpwm, pFOC->Ualpha, pFOC->Ubeta);
 	
-	//park逆变换
-	Ualpha = -Uq * fast_sin(angle_el) + Ud * fast_cos(angle_el);
-	Ubate  =  Uq * fast_cos(angle_el) + Ud * fast_sin(angle_el);
+	//逆clarke变换
+	//inv_clarke_transform(pFOC);
 	
-	//clarke逆变换
-	Ua = Ualpha + Udc/2;
-	Ub = (sqrt3 * Ubate - Ualpha)/2 + Udc/2;
-	Uc = (-sqrt3 * Ubate - Ualpha)/2 + Udc/2;
-	
-	setpwm(Ua,Ub,Uc);
+	//设置SVPWM
+	setSVpwm(pFOC, PSVpwm);
 }
+
+
 
 
 

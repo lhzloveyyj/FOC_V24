@@ -1,9 +1,9 @@
 .\objects\at32f403a_407_wk_config.o: ..\src\at32f403a_407_wk_config.c
 .\objects\at32f403a_407_wk_config.o: ..\inc\at32f403a_407_wk_config.h
-.\objects\at32f403a_407_wk_config.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\at32f403a_407_wk_config.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\at32f403a_407_wk_config.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
 .\objects\at32f403a_407_wk_config.o: ..\..\libraries\cmsis\cm4\core_support\core_cm4.h
-.\objects\at32f403a_407_wk_config.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\at32f403a_407_wk_config.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\at32f403a_407_wk_config.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_version.h
 .\objects\at32f403a_407_wk_config.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_compiler.h
 .\objects\at32f403a_407_wk_config.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_armcc.h
@@ -24,4 +24,4 @@
 .\objects\at32f403a_407_wk_config.o: ..\..\libraries\drivers\inc\at32f403a_407_tmr.h
 .\objects\at32f403a_407_wk_config.o: ..\..\libraries\drivers\inc\at32f403a_407_usb.h
 .\objects\at32f403a_407_wk_config.o: ..\app\FOC\FOC.h
-.\objects\at32f403a_407_wk_config.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\at32f403a_407_wk_config.o: ..\app\FOC\svpwm.h

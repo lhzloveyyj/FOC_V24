@@ -2,7 +2,7 @@
 .\objects\delay.o: ..\app\Delay\delay.h
 .\objects\delay.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
 .\objects\delay.o: ..\..\libraries\cmsis\cm4\core_support\core_cm4.h
-.\objects\delay.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\delay.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\delay.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_version.h
 .\objects\delay.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_compiler.h
 .\objects\delay.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_armcc.h
