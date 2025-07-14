@@ -113,11 +113,11 @@ void wk_usb_app_task(void)
   /* add user code begin usb_app_task 1 */
 	uint8_t buffer[128];
 	//float data[1] = {mt6701.angle};
-	float data[3] = {Ua, Ub, Uc};
-	uint16_t len = PackFloatArrayToBytes(data, 3, buffer);
+	//float data[3] = {Ua, Ub, Uc};
+	//uint16_t len = PackFloatArrayToBytes(data, 3, buffer);
 	
 	
-	uint8_t A  = usb_vcp_send_data(&usb_core_dev, (uint8_t *)buffer, len);
+	//uint8_t A  = usb_vcp_send_data(&usb_core_dev, (uint8_t *)buffer, len);
 	
   /* add user code end usb_app_task 1 */
 

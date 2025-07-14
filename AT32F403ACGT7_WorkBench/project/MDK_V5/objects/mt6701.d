@@ -22,3 +22,4 @@
 .\objects\mt6701.o: ..\..\libraries\drivers\inc\at32f403a_407_spi.h
 .\objects\mt6701.o: ..\..\libraries\drivers\inc\at32f403a_407_tmr.h
 .\objects\mt6701.o: ..\..\libraries\drivers\inc\at32f403a_407_usb.h
+.\objects\mt6701.o: ..\app\FOC\foc_config.h

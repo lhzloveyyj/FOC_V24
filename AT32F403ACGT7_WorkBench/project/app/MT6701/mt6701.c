@@ -1,4 +1,5 @@
 #include "mt6701.h"
+#include "foc_config.h"
 
 #define MT6701_CS_LOW(gpio, pin)   gpio_bits_reset(gpio, pin)
 #define MT6701_CS_HIGH(gpio, pin)  gpio_bits_set(gpio, pin)

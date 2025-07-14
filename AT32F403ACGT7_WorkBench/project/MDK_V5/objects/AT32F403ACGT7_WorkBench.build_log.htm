@@ -27,62 +27,20 @@ Project File Date:  07/08/2025
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'D:\keil\ARM\ARMCC\Bin'
 Build target 'AT32F403ACGT7_WorkBench'
-compiling SVPWM.c...
-..\app\FOC\SVPWM.c(31): error:  #20: identifier "UDC" is undefined
-  	PSVpwm->K = 
-OC_SQRT3 * PSVpwm->Ts / UDC ;
-..\app\FOC\SVPWM.c(33): error:  #20: identifier "_1_2" is undefined
-  	PSVpwm->u2 = (
-OC_SQRT3 * U_alpha - _1_2 * U_beta) * PSVpwm->K; // sqrt(3)/2 = 0.8660254
-..\app\FOC\SVPWM.c: 0 warnings, 2 errors
-compiling mt6701.c...
-..\app\MT6701\mt6701.c(59): error:  #20: identifier "FOC_2PI" is undefined
-      encoder->angle = angleDeg * FOC_2PI / 360.0f;
-..\app\MT6701\mt6701.c: 0 warnings, 1 error
-compiling usb_app.c...
-../src/usb_app.c(116): error:  #20: identifier "Ua" is undefined
-  	float data[3] = {Ua, Ub, Uc};
-../src/usb_app.c(116): error:  #20: identifier "Ub" is undefined
-  	float data[3] = {Ua, Ub, Uc};
-../src/usb_app.c(116): error:  #20: identifier "Uc" is undefined
-  	float data[3] = {Ua, Ub, Uc};
-../src/usb_app.c: 0 warnings, 3 errors
 compiling FOC.c...
-..\app\FOC\FOC.c(61): warning:  #223-D: function "MotorGetCorrectedElecAngle" declared implicitly
-      float angleEl = MotorGetCorrectedElecAngle(0.0f);
-..\app\FOC\FOC.c(72): warning:  #223-D: function "MotorSetPwm" declared implicitly
-      MotorSetPwm(ua, ub, uc);
-..\app\FOC\FOC.c(83): error:  #20: identifier "g_zeroOffset" is undefined
+..\app\FOC\FOC.c(59): error:  #20: identifier "g_zeroOffset" is undefined
       float corrected = elecAngle - g_zeroOffset;             // 减去零电位偏�?
-..\app\FOC\FOC.c(115): error:  #20: identifier "g_zeroOffset" is undefined
+..\app\FOC\FOC.c(117): error:  #20: identifier "g_zeroOffset" is undefined
       g_zeroOffset = sum / sampleCount;  // 计算平均值作为零电角�?
-..\app\FOC\FOC.c(140): error:  #159: declaration is incompatible with previous "MotorSetPwm"  (declared at line 72)
-  void MotorSetPwm(float ua, float ub, float uc)
-..\app\FOC\FOC.c(143): error:  #20: identifier "g_voltageHigh" is undefined
-      ua = LimitValue(ua, 0.0f, g_voltageHigh);
-..\app\FOC\FOC.c(179): error:  #20: identifier "PFOC_State" is undefined
+..\app\FOC\FOC.c(181): error:  #20: identifier "PFOC_State" is undefined
   void FocContorl(PFOC_State pFOC, PSVpwm_State PSVpwm)
-..\app\FOC\FOC.c(182): warning:  #223-D: function "getCorrectedElectricalAngle" declared implicitly
-  	getCorrectedElectricalAngle(pFOC);
-..\app\FOC\FOC.c(184): error:  #20: identifier "Motor1_AD_Value" is undefined
-  	pFOC->current.ad_A = Motor1_AD_Value[1];
-..\app\FOC\FOC.c(188): error:  #20: identifier "ADC_REF_VOLTAGE" is undefined
-  	pFOC->Ia = (pFOC->current.ad_A - pFOC->current.voltage_a_offset)/4096.0f * ADC_REF_VOLTAGE * GAIN;
-..\app\FOC\FOC.c(188): error:  #20: identifier "GAIN" is undefined
-  	pFOC->Ia = (pFOC->current.ad_A - pFOC->current.voltage_a_offset)/4096.0f * ADC_REF_VOLTAGE * GAIN;
-..\app\FOC\FOC.c(192): error:  #165: too few arguments in function call
-  	clarke_transform(pFOC) ;
-..\app\FOC\FOC.c(193): error:  #165: too few arguments in function call
-  	park_transform(pFOC);
-..\app\FOC\FOC.c(195): warning:  #223-D: function "PI_Compute" declared implicitly
-  	pFOC->Ud = PI_Compute(&pi_Id, 0.0f, pFOC->Id);
-..\app\FOC\FOC.c(195): error:  #20: identifier "pi_Id" is undefined
-  	pFOC->Ud = PI_Compute(&pi_Id, 0.0f, pFOC->Id);
-..\app\FOC\FOC.c(201): warning:  #223-D: function "inv_park_transform" declared implicitly
+..\app\FOC\FOC.c(184): error:  #165: too few arguments in function call
+  	AngleGetCorrectedElec();
+..\app\FOC\FOC.c(203): warning:  #223-D: function "inv_park_transform" declared implicitly
   	inv_park_transform(pFOC);
-..\app\FOC\FOC.c(209): warning:  #223-D: function "setSVpwm" declared implicitly
+..\app\FOC\FOC.c(211): warning:  #223-D: function "setSVpwm" declared implicitly
   	setSVpwm(pFOC, PSVpwm);
-..\app\FOC\FOC.c: 6 warnings, 11 errors
+..\app\FOC\FOC.c: 2 warnings, 4 errors
 compiling main.c...
 ..\src\main.c(127): warning:  #223-D: function "angle_init" declared implicitly
     angle_init(MT6701_GetAngleWrapper);
@@ -93,7 +51,7 @@ compiling main.c...
 ..\src\main.c(130): warning:  #177-D: variable "Ud"  was declared but never referenced
       float Ud = 1.0f;  // 合适电�?
 ..\src\main.c: 3 warnings, 1 error
-".\objects\AT32F403ACGT7_WorkBench.axf" - 18 Error(s), 9 Warning(s).
+".\objects\AT32F403ACGT7_WorkBench.axf" - 5 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 

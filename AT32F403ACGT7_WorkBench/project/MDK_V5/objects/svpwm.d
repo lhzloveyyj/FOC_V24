@@ -22,4 +22,5 @@
 .\objects\svpwm.o: ..\..\libraries\drivers\inc\at32f403a_407_spi.h
 .\objects\svpwm.o: ..\..\libraries\drivers\inc\at32f403a_407_tmr.h
 .\objects\svpwm.o: ..\..\libraries\drivers\inc\at32f403a_407_usb.h
+.\objects\svpwm.o: ..\app\FOC\foc.h
 .\objects\svpwm.o: ..\app\FOC\foc_config.h

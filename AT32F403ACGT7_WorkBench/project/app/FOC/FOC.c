@@ -23,6 +23,7 @@ typedef struct {
     float omega; // 电机角速度
 } MotorState;
 
+void MotorSetPwm(float ua, float ub, float uc);
 
 /**
  * @brief     将角度值归一化到 [0, 2π) 区间
@@ -48,31 +49,6 @@ float CalculateElectricalAngle(float mechAngle)
 }
 
 /**
- * @brief     施加恒定 Ud 电压进行强制对准（锁定电角度）
- * @param     ud   d轴电压（单位：V）
- */
-void MotorApplyStrongDrag(float ud)
-{
-    float uAlpha = 0.0f;
-    float uBeta = 0.0f;
-    float uq = 0.0f;
-
-    // 获取修正后的电角度（theta_e）
-    float angleEl = MotorGetCorrectedElecAngle(0.0f);
-
-    // Park 逆变换（dq -> αβ）
-    uAlpha = -uq * fast_sin(angleEl) + ud * fast_cos(angleEl);
-    uBeta  =  uq * fast_cos(angleEl) + ud * fast_sin(angleEl);
-
-    // Clarke 逆变换（αβ -> abc），带中点电压偏移
-    float ua = uAlpha + g_udc / 2.0f;
-    float ub = (FOC_SQRT3 * uBeta - uAlpha) / 2.0f + g_udc / 2.0f;
-    float uc = (-FOC_SQRT3 * uBeta - uAlpha) / 2.0f + g_udc / 2.0f;
-
-    MotorSetPwm(ua, ub, uc);
-}
-
-/**
  * @brief     获取修正后的电角度（减去零电角度偏移并归一化到 [0, 2π)）
  * @param     mechAngle    机械角度（单位：rad）
  * @return    电角度（单位：rad），范围 [0, 2π)
@@ -90,6 +66,32 @@ float AngleGetCorrectedElec(float mechAngle)
 
     return corrected;
 }
+
+/**
+ * @brief     施加恒定 Ud 电压进行强制对准（锁定电角度）
+ * @param     ud   d轴电压（单位：V）
+ */
+void MotorApplyStrongDrag(float ud)
+{
+    float uAlpha = 0.0f;
+    float uBeta = 0.0f;
+    float uq = 0.0f;
+
+    // 获取修正后的电角度（theta_e）
+    float angleEl = AngleGetCorrectedElec(0.0f);
+
+    // Park 逆变换（dq -> αβ）
+    uAlpha = -uq * fast_sin(angleEl) + ud * fast_cos(angleEl);
+    uBeta  =  uq * fast_cos(angleEl) + ud * fast_sin(angleEl);
+
+    // Clarke 逆变换（αβ -> abc），带中点电压偏移
+    float ua = uAlpha + g_udc / 2.0f;
+    float ub = (FOC_SQRT3 * uBeta - uAlpha) / 2.0f + g_udc / 2.0f;
+    float uc = (-FOC_SQRT3 * uBeta - uAlpha) / 2.0f + g_udc / 2.0f;
+
+    MotorSetPwm(ua, ub, uc);
+}
+
 
 /**
  * @brief     角度模块初始化，采集零电角度偏移（调用强拖，进行多次平均）
@@ -140,9 +142,9 @@ float g_pwmC = 0.0f;
 void MotorSetPwm(float ua, float ub, float uc)
 {
     // 电压限幅保护（防止超出允许范围）
-    ua = LimitValue(ua, 0.0f, g_voltageHigh);
-    ub = LimitValue(ub, 0.0f, g_voltageHigh);
-    uc = LimitValue(uc, 0.0f, g_voltageHigh);
+    ua = LimitValue(ua, 0.0f, g_udc);
+    ub = LimitValue(ub, 0.0f, g_udc);
+    uc = LimitValue(uc, 0.0f, g_udc);
 
     // 电压归一化到占空比 [0, 1]
     g_pwmA = LimitValue(ua / g_udc, 0.0f, 1.0f);
@@ -179,21 +181,21 @@ float Iq=0.0f,Id=0.0f;
 void FocContorl(PFOC_State pFOC, PSVpwm_State PSVpwm)
 {
 	//计算电角度
-	getCorrectedElectricalAngle(pFOC);
+	AngleGetCorrectedElec();
 	
-	pFOC->current.ad_A = Motor1_AD_Value[1];
-	pFOC->current.ad_B = Motor1_AD_Value[0];
+	//pFOC->current.ad_A = Motor1_AD_Value[1];
+	//pFOC->current.ad_B = Motor1_AD_Value[0];
 
 	
-	pFOC->Ia = (pFOC->current.ad_A - pFOC->current.voltage_a_offset)/4096.0f * ADC_REF_VOLTAGE * GAIN;
-	pFOC->Ib = (pFOC->current.ad_B - pFOC->current.voltage_a_offset)/4096.0f * ADC_REF_VOLTAGE * GAIN;
-	pFOC->Ia = 0 - pFOC->Ia - pFOC->Ib;
+	//pFOC->Ia = (pFOC->current.ad_A - pFOC->current.voltage_a_offset)/4096.0f * ADC_REF_VOLTAGE * GAIN;
+	//pFOC->Ib = (pFOC->current.ad_B - pFOC->current.voltage_a_offset)/4096.0f * ADC_REF_VOLTAGE * GAIN;
+	//pFOC->Ia = 0 - pFOC->Ia - pFOC->Ib;
 	
-	clarke_transform(pFOC) ;
-	park_transform(pFOC);
+	//clarke_transform(pFOC) ;
+	//park_transform(pFOC);
 	//PID控制器
-	pFOC->Ud = PI_Compute(&pi_Id, 0.0f, pFOC->Id);
-	pFOC->Uq = PI_Compute(&pi_Id, 0.0f, pFOC->Iq);
+	//pFOC->Ud = PI_Compute(&pi_Id, 0.0f, pFOC->Id);
+	//pFOC->Uq = PI_Compute(&pi_Id, 0.0f, pFOC->Iq);
 	
 	pFOC->Ud = 0.0f;
 	pFOC->Uq = 2.0f;

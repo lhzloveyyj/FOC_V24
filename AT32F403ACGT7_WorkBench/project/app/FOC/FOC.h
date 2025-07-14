@@ -8,6 +8,7 @@
 extern "C" {
 #endif
 
+float g_udc ;
 /**
  * @brief 电流采样状态
  */

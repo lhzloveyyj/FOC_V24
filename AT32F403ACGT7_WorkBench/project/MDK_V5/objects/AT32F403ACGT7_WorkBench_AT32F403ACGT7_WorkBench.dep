@@ -1,5 +1,5 @@
 Dependencies for Project 'AT32F403ACGT7_WorkBench', Target 'AT32F403ACGT7_WorkBench': (DO NOT MODIFY !)
-F (..\src\main.c)(0x686CE53E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\src\main.c)(0x6874DF08)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (..\inc\at32f403a_407_wk_config.h)(0x686CCFD0)
 I (D:\keil\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h)(0x68672AD6)
@@ -23,7 +23,7 @@ I (..\..\libraries\drivers\inc\at32f403a_407_pwc.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_spi.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_tmr.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_usb.h)(0x68672AD6)
-I (..\app\FOC\FOC.h)(0x686CE173)
+I (..\app\FOC\FOC.h)(0x6874E133)
 I (..\app\FOC\svpwm.h)(0x686CCFD0)
 I (..\inc\wk_acc.h)(0x68672AD6)
 I (..\inc\wk_debug.h)(0x68672AD6)
@@ -60,7 +60,7 @@ I (..\..\libraries\drivers\inc\at32f403a_407_pwc.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_spi.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_tmr.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_usb.h)(0x68672AD6)
-I (..\app\FOC\FOC.h)(0x686CE173)
+I (..\app\FOC\FOC.h)(0x6874E133)
 I (..\app\FOC\svpwm.h)(0x686CCFD0)
 F (..\src\at32f403a_407_int.c)(0x686CE952)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\at32f403a_407_int.o --omf_browse .\objects\at32f403a_407_int.crf --depend .\objects\at32f403a_407_int.d)
 I (..\inc\at32f403a_407_int.h)(0x686CCFD0)
@@ -87,7 +87,7 @@ I (..\..\libraries\drivers\inc\at32f403a_407_tmr.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_usb.h)(0x68672AD6)
 I (..\inc\usb_app.h)(0x68672AD6)
 I (..\app\MT6701\MT6701.h)(0x686CE259)
-I (..\app\FOC\foc.h)(0x686CE173)
+I (..\app\FOC\foc.h)(0x6874E133)
 I (..\app\FOC\svpwm.h)(0x686CCFD0)
 F (..\src\wk_system.c)(0x68672AD6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\wk_system.o --omf_browse .\objects\wk_system.crf --depend .\objects\wk_system.d)
 I (..\inc\wk_system.h)(0x68672AD6)
@@ -137,9 +137,9 @@ I (..\..\libraries\drivers\inc\at32f403a_407_pwc.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_spi.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_tmr.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_usb.h)(0x68672AD6)
-I (..\app\FOC\FOC.h)(0x686CE173)
+I (..\app\FOC\FOC.h)(0x6874E133)
 I (..\app\FOC\svpwm.h)(0x686CCFD0)
-F (../src/usb_app.c)(0x686CCFD0)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\usb_app.o --omf_browse .\objects\usb_app.crf --depend .\objects\usb_app.d)
+F (../src/usb_app.c)(0x6874E04F)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\usb_app.o --omf_browse .\objects\usb_app.crf --depend .\objects\usb_app.d)
 I (..\inc\usb_conf.h)(0x68672AD6)
 I (..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h)(0x68672AD6)
 I (..\..\libraries\cmsis\cm4\core_support\core_cm4.h)(0x68672AD6)
@@ -171,7 +171,7 @@ I (..\inc\cdc_class.h)(0x68672AD6)
 I (..\inc\cdc_desc.h)(0x68672AD6)
 I (..\tools\LOG\LOG.h)(0x686CCFD0)
 I (..\app\MT6701\MT6701.h)(0x686CE259)
-I (..\app\FOC\FOC.h)(0x686CE173)
+I (..\app\FOC\FOC.h)(0x6874E133)
 I (..\app\FOC\svpwm.h)(0x686CCFD0)
 F (..\src\wk_usbfs.c)(0x68672AD6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\wk_usbfs.o --omf_browse .\objects\wk_usbfs.crf --depend .\objects\wk_usbfs.d)
 I (..\inc\wk_usbfs.h)(0x68672AD6)
@@ -198,7 +198,7 @@ I (..\..\libraries\drivers\inc\at32f403a_407_pwc.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_spi.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_tmr.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_usb.h)(0x68672AD6)
-I (..\app\FOC\FOC.h)(0x686CE173)
+I (..\app\FOC\FOC.h)(0x6874E133)
 I (..\app\FOC\svpwm.h)(0x686CCFD0)
 F (..\src\wk_acc.c)(0x68672AD6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\wk_acc.o --omf_browse .\objects\wk_acc.crf --depend .\objects\wk_acc.d)
 I (..\inc\wk_acc.h)(0x68672AD6)
@@ -225,7 +225,7 @@ I (..\..\libraries\drivers\inc\at32f403a_407_pwc.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_spi.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_tmr.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_usb.h)(0x68672AD6)
-I (..\app\FOC\FOC.h)(0x686CE173)
+I (..\app\FOC\FOC.h)(0x6874E133)
 I (..\app\FOC\svpwm.h)(0x686CCFD0)
 F (..\src\wk_spi.c)(0x686CCFD0)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\wk_spi.o --omf_browse .\objects\wk_spi.crf --depend .\objects\wk_spi.d)
 I (..\inc\wk_spi.h)(0x68672AD6)
@@ -252,7 +252,7 @@ I (..\..\libraries\drivers\inc\at32f403a_407_pwc.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_spi.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_tmr.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_usb.h)(0x68672AD6)
-I (..\app\FOC\FOC.h)(0x686CE173)
+I (..\app\FOC\FOC.h)(0x6874E133)
 I (..\app\FOC\svpwm.h)(0x686CCFD0)
 F (..\src\wk_gpio.c)(0x686CCFD0)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\wk_gpio.o --omf_browse .\objects\wk_gpio.crf --depend .\objects\wk_gpio.d)
 I (..\inc\wk_gpio.h)(0x68672AD6)
@@ -279,7 +279,7 @@ I (..\..\libraries\drivers\inc\at32f403a_407_pwc.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_spi.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_tmr.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_usb.h)(0x68672AD6)
-I (..\app\FOC\FOC.h)(0x686CE173)
+I (..\app\FOC\FOC.h)(0x6874E133)
 I (..\app\FOC\svpwm.h)(0x686CCFD0)
 F (..\src\wk_tmr.c)(0x686CCFD0)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\wk_tmr.o --omf_browse .\objects\wk_tmr.crf --depend .\objects\wk_tmr.d)
 I (..\inc\wk_tmr.h)(0x686CCFD0)
@@ -306,7 +306,7 @@ I (..\..\libraries\drivers\inc\at32f403a_407_pwc.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_spi.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_tmr.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_usb.h)(0x68672AD6)
-I (..\app\FOC\FOC.h)(0x686CE173)
+I (..\app\FOC\FOC.h)(0x6874E133)
 I (..\app\FOC\svpwm.h)(0x686CCFD0)
 F (..\..\libraries\drivers\src\at32f403a_407_crm.c)(0x68672AD6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\at32f403a_407_crm.o --omf_browse .\objects\at32f403a_407_crm.crf --depend .\objects\at32f403a_407_crm.d)
 I (..\inc\at32f403a_407_conf.h)(0x686CCFD0)
@@ -734,7 +734,7 @@ I (..\..\libraries\drivers\inc\at32f403a_407_pwc.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_spi.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_tmr.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_usb.h)(0x68672AD6)
-F (..\app\MT6701\mt6701.c)(0x686CE239)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\mt6701.o --omf_browse .\objects\mt6701.crf --depend .\objects\mt6701.d)
+F (..\app\MT6701\mt6701.c)(0x6874DF92)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\mt6701.o --omf_browse .\objects\mt6701.crf --depend .\objects\mt6701.d)
 I (..\app\MT6701\mt6701.h)(0x686CE259)
 I (..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h)(0x68672AD6)
 I (..\..\libraries\cmsis\cm4\core_support\core_cm4.h)(0x68672AD6)
@@ -757,7 +757,8 @@ I (..\..\libraries\drivers\inc\at32f403a_407_pwc.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_spi.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_tmr.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_usb.h)(0x68672AD6)
-F (..\app\FOC\FOC.c)(0x686CEFE6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\foc.o --omf_browse .\objects\foc.crf --depend .\objects\foc.d)
+I (..\app\FOC\foc_config.h)(0x6874E0E1)
+F (..\app\FOC\FOC.c)(0x6874E26C)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\foc.o --omf_browse .\objects\foc.crf --depend .\objects\foc.d)
 I (..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h)(0x68672AD6)
 I (..\..\libraries\cmsis\cm4\core_support\core_cm4.h)(0x68672AD6)
 I (D:\keil\ARM\ARMCC\include\stdint.h)(0x588B8344)
@@ -779,9 +780,9 @@ I (..\..\libraries\drivers\inc\at32f403a_407_pwc.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_spi.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_tmr.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_usb.h)(0x68672AD6)
-I (..\app\FOC\foc.h)(0x686CE173)
+I (..\app\FOC\foc.h)(0x6874E133)
 I (..\app\FOC\svpwm.h)(0x686CCFD0)
-I (..\app\FOC\foc_config.h)(0x686CEC7B)
+I (..\app\FOC\foc_config.h)(0x6874E0E1)
 I (D:\keil\ARM\ARMCC\include\math.h)(0x588B8344)
 I (..\tools\Math\my_math.h)(0x686CECCF)
 I (..\tools\Math\fast_sin.h)(0x686CCFD0)
@@ -789,9 +790,9 @@ I (..\app\Delay\delay.h)(0x686CCFD0)
 I (D:\keil\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (..\app\MT6701\mt6701.h)(0x686CE259)
 I (..\tools\LOG\log.h)(0x686CCFD0)
-F (..\app\FOC\FOC.h)(0x686CE173)()
-F (..\app\FOC\foc_config.h)(0x686CEC7B)()
-F (..\app\FOC\SVPWM.c)(0x686CE44F)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\svpwm.o --omf_browse .\objects\svpwm.crf --depend .\objects\svpwm.d)
+F (..\app\FOC\FOC.h)(0x6874E133)()
+F (..\app\FOC\foc_config.h)(0x6874E0E1)()
+F (..\app\FOC\SVPWM.c)(0x6874E151)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\svpwm.o --omf_browse .\objects\svpwm.crf --depend .\objects\svpwm.d)
 I (..\app\FOC\SVPWM.h)(0x686CCFD0)
 I (..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h)(0x68672AD6)
 I (..\..\libraries\cmsis\cm4\core_support\core_cm4.h)(0x68672AD6)
@@ -814,7 +815,8 @@ I (..\..\libraries\drivers\inc\at32f403a_407_pwc.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_spi.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_tmr.h)(0x68672AD6)
 I (..\..\libraries\drivers\inc\at32f403a_407_usb.h)(0x68672AD6)
-I (..\app\FOC\foc_config.h)(0x686CEC7B)
+I (..\app\FOC\foc.h)(0x6874E133)
+I (..\app\FOC\foc_config.h)(0x6874E0E1)
 F (..\app\FOC\SVPWM.h)(0x686CCFD0)()
 F (..\app\Delay\delay.c)(0x686CCFD0)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ../../middlewares/usbd_drivers/inc -I ..\tools\LOG -I ..\app\MT6701 -I ..\tools\Math -I ..\app\Delay -I ..\app\Control -I ..\app\FOC-I.\RTE\_AT32F403ACGT7_WorkBench-ID:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include-ID:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DAT32F403ACGT7 -DAT32F403ACGT7 -DUSE_STDPERIPH_DRIVER -DAT_START_F403A_V1-o .\objects\delay.o --omf_browse .\objects\delay.crf --depend .\objects\delay.d)
 I (..\app\Delay\delay.h)(0x686CCFD0)
