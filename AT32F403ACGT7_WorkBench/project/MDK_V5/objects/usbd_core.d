@@ -3,7 +3,7 @@
 .\objects\usbd_core.o: ..\inc\usb_conf.h
 .\objects\usbd_core.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
 .\objects\usbd_core.o: ..\..\libraries\cmsis\cm4\core_support\core_cm4.h
-.\objects\usbd_core.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\usbd_core.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\usbd_core.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_version.h
 .\objects\usbd_core.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_compiler.h
 .\objects\usbd_core.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_armcc.h
@@ -23,6 +23,6 @@
 .\objects\usbd_core.o: ..\..\libraries\drivers\inc\at32f403a_407_spi.h
 .\objects\usbd_core.o: ..\..\libraries\drivers\inc\at32f403a_407_tmr.h
 .\objects\usbd_core.o: ..\..\libraries\drivers\inc\at32f403a_407_usb.h
-.\objects\usbd_core.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\usbd_core.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\usbd_core.o: ../../middlewares/usbd_drivers/inc/usb_std.h
 .\objects\usbd_core.o: ../../middlewares/usbd_drivers/inc/usbd_sdr.h

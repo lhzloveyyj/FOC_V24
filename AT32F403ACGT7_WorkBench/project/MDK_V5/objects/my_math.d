@@ -2,7 +2,7 @@
 .\objects\my_math.o: ..\tools\Math\my_math.h
 .\objects\my_math.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
 .\objects\my_math.o: ..\..\libraries\cmsis\cm4\core_support\core_cm4.h
-.\objects\my_math.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\my_math.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\my_math.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_version.h
 .\objects\my_math.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_compiler.h
 .\objects\my_math.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_armcc.h
@@ -10,15 +10,14 @@
 .\objects\my_math.o: ..\..\libraries\cmsis\cm4\device_support\system_at32f403a_407.h
 .\objects\my_math.o: ..\..\libraries\drivers\inc\at32f403a_407_def.h
 .\objects\my_math.o: ..\inc\at32f403a_407_conf.h
-.\objects\my_math.o: ..\..\libraries\drivers\inc\at32f403a_407_acc.h
-.\objects\my_math.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
 .\objects\my_math.o: ..\..\libraries\drivers\inc\at32f403a_407_crm.h
+.\objects\my_math.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
 .\objects\my_math.o: ..\..\libraries\drivers\inc\at32f403a_407_debug.h
-.\objects\my_math.o: ..\..\libraries\drivers\inc\at32f403a_407_exint.h
+.\objects\my_math.o: ..\..\libraries\drivers\inc\at32f403a_407_dma.h
 .\objects\my_math.o: ..\..\libraries\drivers\inc\at32f403a_407_flash.h
 .\objects\my_math.o: ..\..\libraries\drivers\inc\at32f403a_407_gpio.h
 .\objects\my_math.o: ..\..\libraries\drivers\inc\at32f403a_407_misc.h
 .\objects\my_math.o: ..\..\libraries\drivers\inc\at32f403a_407_pwc.h
 .\objects\my_math.o: ..\..\libraries\drivers\inc\at32f403a_407_spi.h
 .\objects\my_math.o: ..\..\libraries\drivers\inc\at32f403a_407_tmr.h
-.\objects\my_math.o: ..\..\libraries\drivers\inc\at32f403a_407_usb.h
+.\objects\my_math.o: ..\..\libraries\drivers\inc\at32f403a_407_usart.h

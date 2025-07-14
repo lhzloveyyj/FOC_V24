@@ -3,69 +3,47 @@
 <pre>
 <h1>�Vision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: ��Vision V5.24.2.0
-Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: 1 Administrator, 1, LIC=32B1Q-NUMDN-45MT5-GSCT6-ESB4L-45YCX
+IDE-Version: ��Vision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 11 11, 11, LIC=65ISZ-J4DIT-564Q2-9TCFG-AMN3X-J39U5
  
 Tool Versions:
-Toolchain:       MDK-ARM Plus  Version: 5.24.1
-Toolchain Path:  D:\keil\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.06 update 5 (build 528)
-Assembler:       Armasm.exe V5.06 update 5 (build 528)
-Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
-Library Manager: ArmAr.exe V5.06 update 5 (build 528)
-Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
-CPU DLL:         SARMCM3.DLL V5.24.1
-Dialog DLL:      DCM.DLL V1.16.0.0
-Target DLL:      CMSIS_AGDI.dll V1.28.3.0
-Dialog DLL:      TCM.DLL V1.32.0.0
+Toolchain:       MDK-ARM Plus  Version: 5.39.0.0
+Toolchain Path:  D:\downloads\MDK\keil5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      CMSIS_AGDI.dll V1.33.16.0
+Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 E:\github\FOC_V24\AT32F403ACGT7_WorkBench\project\MDK_V5\AT32F403ACGT7_WorkBench.uvprojx
-Project File Date:  07/08/2025
+Project File Date:  07/14/2025
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'D:\keil\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\downloads\MDK\keil5\ARM\ARMCC\Bin'
 Build target 'AT32F403ACGT7_WorkBench'
 compiling FOC.c...
-..\app\FOC\FOC.c(59): error:  #20: identifier "g_zeroOffset" is undefined
-      float corrected = elecAngle - g_zeroOffset;             // 减去零电位偏�?
-..\app\FOC\FOC.c(117): error:  #20: identifier "g_zeroOffset" is undefined
-      g_zeroOffset = sum / sampleCount;  // 计算平均值作为零电角�?
-..\app\FOC\FOC.c(181): error:  #20: identifier "PFOC_State" is undefined
-  void FocContorl(PFOC_State pFOC, PSVpwm_State PSVpwm)
-..\app\FOC\FOC.c(184): error:  #165: too few arguments in function call
-  	AngleGetCorrectedElec();
-..\app\FOC\FOC.c(203): warning:  #223-D: function "inv_park_transform" declared implicitly
-  	inv_park_transform(pFOC);
-..\app\FOC\FOC.c(211): warning:  #223-D: function "setSVpwm" declared implicitly
-  	setSVpwm(pFOC, PSVpwm);
-..\app\FOC\FOC.c: 2 warnings, 4 errors
-compiling main.c...
-..\src\main.c(127): warning:  #223-D: function "angle_init" declared implicitly
-    angle_init(MT6701_GetAngleWrapper);
-..\src\main.c(127): error:  #20: identifier "MT6701_GetAngleWrapper" is undefined
-    angle_init(MT6701_GetAngleWrapper);
-..\src\main.c(129): warning:  #177-D: variable "angle"  was declared but never referenced
-     float angle = 0;
-..\src\main.c(130): warning:  #177-D: variable "Ud"  was declared but never referenced
-      float Ud = 1.0f;  // 合适电�?
-..\src\main.c: 3 warnings, 1 error
-".\objects\AT32F403ACGT7_WorkBench.axf" - 5 Error(s), 5 Warning(s).
+linking...
+Program Size: Code=12708 RO-data=476 RW-data=208 ZI-data=1200  
+FromELF: creating hex file...
+".\objects\AT32F403ACGT7_WorkBench.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ArteryTek
                 
-                ArteryTek.AT32F403A_407_DFP.2.2.0
+                ArteryTek::AT32F403A_407_DFP@2.1.9
                 ArteryTek AT32F403A_407 Series Device Support,Drivers
 
 <h2>Collection of Component include folders:</h2>
-  .\RTE\_AT32F403ACGT7_WorkBench
-  D:\keil\ARM\PACK\ArteryTek\AT32F403A_407_DFP\2.2.0\Device\Include
+  D:/downloads/MDK/keil5/pack/ArteryTek/AT32F403A_407_DFP/2.1.9/Device/Include
 
 <h2>Collection of Component Files used:</h2>
-Target not created.
 Build Time Elapsed:  00:00:00
 </pre>
 </body>

@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 
-float g_udc ;
+extern float g_udc ;
 /**
  * @brief 电流采样状态
  */
@@ -27,8 +27,8 @@ typedef struct {
 
     float uAlpha, uBeta;        // 电压 αβ
     float iAlpha, iBeta;        // 电流 αβ
-    float ia, ib;               // 电流AB
-    float ua, ub, uc;           // 电压ABC
+    float ia, ib, ic;           // 电流 ABC
+    float ua, ub, uc;           // 电压 ABC
     float uq, ud;               // 电压 dq
     float iq, id;               // 电流 dq
 
@@ -37,15 +37,25 @@ typedef struct {
     float correctedAngle;       // 修正后的电角度
     float zeroOffset;           // 零电角度偏移
 
-    float (*GetMechanicalAngle)(void);                     // 获取机械角度函数指针
-    void (*SetPwmCallback)(float pwmA, float pwmB, float pwmC); // 设置PWM函数指针
+    //PIDController idPID;        // d轴电流 PID
+    //PIDController iqPID;        // q轴电流 PID
+
+    float speedLastAngle;       // 上次电角度（用于计算速度）
+    float speed;                // 实际速度
+    //PIDController speedPID;     // 速度 PID 控制器
+
+    void (*setPwmCallback)(float pwmA, float pwmB, float pwmC); // 设置PWM函数指针
 } FocState;
 
-typedef FocState* PFocState;
+
+typedef FocState *PFocState;
 
 extern uint16_t g_motorAdValues[2];  // ADC 原始值数组（外部使用）
 
 extern PFocState g_pMotor;          // 电机 FOC 状态对象指针
+
+void AngleInitZeroOffset(void);
+void FocContorl(PFocState pFOC);
 
 #ifdef __cplusplus
 }

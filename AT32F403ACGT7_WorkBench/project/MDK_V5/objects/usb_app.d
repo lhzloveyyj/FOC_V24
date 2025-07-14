@@ -2,7 +2,7 @@
 .\objects\usb_app.o: ..\inc\usb_conf.h
 .\objects\usb_app.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
 .\objects\usb_app.o: ..\..\libraries\cmsis\cm4\core_support\core_cm4.h
-.\objects\usb_app.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\usb_app.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\usb_app.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_version.h
 .\objects\usb_app.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_compiler.h
 .\objects\usb_app.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_armcc.h
@@ -22,7 +22,7 @@
 .\objects\usb_app.o: ..\..\libraries\drivers\inc\at32f403a_407_spi.h
 .\objects\usb_app.o: ..\..\libraries\drivers\inc\at32f403a_407_tmr.h
 .\objects\usb_app.o: ..\..\libraries\drivers\inc\at32f403a_407_usb.h
-.\objects\usb_app.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\usb_app.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\usb_app.o: ..\inc\wk_system.h
 .\objects\usb_app.o: ../../middlewares/usbd_drivers/inc/usbd_int.h
 .\objects\usb_app.o: ../../middlewares/usbd_drivers/inc/usbd_core.h

@@ -8,11 +8,6 @@
         <MCUName>AT32F403ACGT7</MCUName>
         <MCUPackage>LQFP48</MCUPackage>
     </MCUInfo>
-    <ACC>
-        <Mode>
-            <ModeSub name="ACC_State" value="TRUE"/>
-        </Mode>
-    </ACC>
     <CRM>
         <Mode>
             <ModeSub name="HEXT" value="HEXT-External-Oscillator"/>
@@ -73,30 +68,40 @@
             <ParametersSub name="Period" value="2399"/>
         </Parameters>
     </TMR2>
-    <USBFS>
+    <USART1>
         <Mode>
-            <ModeSub name="Device" value="TRUE"/>
+            <ModeSub name="Mode" value="Asynchronous"/>
         </Mode>
-    </USBFS>
-    <USB_DEVICE>
-        <Mode>
-            <ModeSub name="FS_Device" value="CDC"/>
-        </Mode>
-    </USB_DEVICE>
+        <Parameters>
+            <ParametersSub name="BaudRate" value="2000000"/>
+            <ParametersSub name="RealBaudRate" value="2000000"/>
+        </Parameters>
+    </USART1>
+    <DMA>
+        <USART1_RX>
+            <ParametersSub name="Instance" value="DMA1_Channel1"/>
+            <ParametersSub name="Mode" value="TRUE"/>
+            <ParametersSub name="Priority" value="DMA_PRIORITY_HIGH"/>
+        </USART1_RX>
+        <USART1_TX>
+            <ParametersSub name="Instance" value="DMA1_Channel2"/>
+            <ParametersSub name="Mode" value="TRUE"/>
+            <ParametersSub name="Priority" value="DMA_PRIORITY_HIGH"/>
+        </USART1_TX>
+    </DMA>
     <NVIC>
         <SysTick_Handler>1;15;0;0;0</SysTick_Handler>
         <FLASH_IRQHandler>0;0;0;0;0</FLASH_IRQHandler>
         <CRM_IRQHandler>0;0;0;0;0</CRM_IRQHandler>
+        <DMA1_Channel1_IRQHandler>0;0;0;0;0</DMA1_Channel1_IRQHandler>
+        <DMA1_Channel2_IRQHandler>1;0;0;0;0</DMA1_Channel2_IRQHandler>
         <TMR1_BRK_TMR9_IRQHandler>0;0;0;0;0</TMR1_BRK_TMR9_IRQHandler>
         <TMR1_OVF_TMR10_IRQHandler>0;0;0;0;0</TMR1_OVF_TMR10_IRQHandler>
         <TMR1_TRG_HALL_TMR11_IRQHandler>0;0;0;0;0</TMR1_TRG_HALL_TMR11_IRQHandler>
         <TMR1_CH_IRQHandler>0;0;0;0;0</TMR1_CH_IRQHandler>
         <TMR2_GLOBAL_IRQHandler>1;0;0;0;0</TMR2_GLOBAL_IRQHandler>
         <SPI1_IRQHandler>1;0;0;0;0</SPI1_IRQHandler>
-        <USBFSWakeUp_IRQHandler>0;0;0;0;0</USBFSWakeUp_IRQHandler>
-        <ACC_IRQHandler>0;0;0;0;0</ACC_IRQHandler>
-        <USBFS_MAPH_IRQHandler>0;0;0;0;0</USBFS_MAPH_IRQHandler>
-        <USBFS_MAPL_IRQHandler>1;0;0;0;0</USBFS_MAPL_IRQHandler>
+        <USART1_IRQHandler>1;0;0;0;0</USART1_IRQHandler>
     </NVIC>
     <GPIO>
         <Signal SignalName="TMR1_CH1C" PinName="PB13">
@@ -151,12 +156,12 @@
         <PinSub pinname="PA8" signalname="TMR1_CH1" signaltype="2"/>
         <PinSub pinname="PA9" signalname="TMR1_CH2" signaltype="2"/>
         <PinSub pinname="PA10" signalname="TMR1_CH3" signaltype="2"/>
-        <PinSub pinname="PA11" signalname="USBFS_D-" signaltype="2"/>
-        <PinSub pinname="PA12" signalname="USBFS_D+" signaltype="2"/>
         <PinSub pinname="PA13" signalname="DEBUG_JTMS_SWDIO" signaltype="2"/>
         <PinSub pinname="PA14" signalname="DEBUG_JTCK_SWCLK" signaltype="2"/>
         <PinSub pinname="PB3" signalname="GPIO_Output" signaltype="3"/>
         <PinSub pinname="PB4" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PB6" signalname="USART1_TX" signaltype="2"/>
+        <PinSub pinname="PB7" signalname="USART1_RX" signaltype="2"/>
     </PINInfo>
     <ProjectInfomation>
         <ProjectName>AT32F403ACGT7_WorkBench</ProjectName>

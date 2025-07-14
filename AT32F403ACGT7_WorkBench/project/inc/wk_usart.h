@@ -1,7 +1,7 @@
 /* add user code begin Header */
 /**
   **************************************************************************
-  * @file     wk_acc.h
+  * @file     wk_usart.h
   * @brief    header file of work bench config
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -25,8 +25,8 @@
 /* add user code end Header */
 
 /* define to prevent recursive inclusion -----------------------------------*/
-#ifndef __WK_ACC_H
-#define __WK_ACC_H
+#ifndef __WK_USART_H
+#define __WK_USART_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -57,8 +57,8 @@ extern "C" {
 
 /* exported functions ------------------------------------------------------- */
 
-  /* init acc function. */
-  void wk_acc_init(void);
+  /* init usart1 function. */
+  void wk_usart1_init(void);
 
 /* add user code begin exported functions */
 

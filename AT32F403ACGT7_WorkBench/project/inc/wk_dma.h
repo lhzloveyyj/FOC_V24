@@ -1,8 +1,8 @@
 /* add user code begin Header */
 /**
   **************************************************************************
-  * @file     usb_app.h
-  * @brief    usb application config header file
+  * @file     wk_dma.h
+  * @brief    header file of work bench config
   **************************************************************************
   *                       Copyright notice & Disclaimer
   *
@@ -24,23 +24,21 @@
   */
 /* add user code end Header */
 
-/* define to prevent recursive inclusion -------------------------------------*/
-#ifndef __USB_APP_H
-#define __USB_APP_H
+/* define to prevent recursive inclusion -----------------------------------*/
+#ifndef __WK_DMA_H
+#define __WK_DMA_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+/* includes -----------------------------------------------------------------------*/
+#include "at32f403a_407_wk_config.h"
+
 /* private includes -------------------------------------------------------------*/
 /* add user code begin private includes */
 
 /* add user code end private includes */
-
-/* private define ------------------------------------------------------------*/
-/* add user code begin private define */
-
-/* add user code end private define */
 
 /* exported types -------------------------------------------------------------*/
 /* add user code begin exported types */
@@ -57,11 +55,17 @@ extern "C" {
 
 /* add user code end exported macro */
 
-void wk_usb_app_init(void);
+/* exported functions ------------------------------------------------------- */
 
-void wk_usb_app_task(void);
+  /* init dma1 channel1 */
+  void wk_dma1_channel1_init(void);
 
-void wk_usbfs_irq_handler(void);
+  /* init dma1 channel2 */
+  void wk_dma1_channel2_init(void);
+
+  /* config dma channel transfer parameter */
+  /* user need to modify parameters memory_base_addr and buffer_size */
+  void wk_dma_channel_config(dma_channel_type* dmax_channely, uint32_t peripheral_base_addr, uint32_t memory_base_addr, uint16_t buffer_size);
 
 /* add user code begin exported functions */
 

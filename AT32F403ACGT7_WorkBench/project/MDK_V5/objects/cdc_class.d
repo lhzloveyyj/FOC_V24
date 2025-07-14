@@ -3,7 +3,7 @@
 .\objects\cdc_class.o: ..\inc\usb_conf.h
 .\objects\cdc_class.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
 .\objects\cdc_class.o: ..\..\libraries\cmsis\cm4\core_support\core_cm4.h
-.\objects\cdc_class.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\cdc_class.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\cdc_class.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_version.h
 .\objects\cdc_class.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_compiler.h
 .\objects\cdc_class.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_armcc.h
@@ -23,7 +23,7 @@
 .\objects\cdc_class.o: ..\..\libraries\drivers\inc\at32f403a_407_spi.h
 .\objects\cdc_class.o: ..\..\libraries\drivers\inc\at32f403a_407_tmr.h
 .\objects\cdc_class.o: ..\..\libraries\drivers\inc\at32f403a_407_usb.h
-.\objects\cdc_class.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\cdc_class.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\cdc_class.o: ../../middlewares/usbd_drivers/inc/usb_std.h
 .\objects\cdc_class.o: ..\inc\cdc_class.h
 .\objects\cdc_class.o: ..\inc\cdc_desc.h

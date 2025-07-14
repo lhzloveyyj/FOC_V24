@@ -10,13 +10,13 @@
       <TargetName>AT32F403ACGT7_WorkBench</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060528::V5.06 update 5 (build 528)::ARMCC</pCCUsed>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>-AT32F403ACGT7</Device>
           <Vendor>ArteryTek</Vendor>
-          <PackID>ArteryTek.AT32F403A_407_DFP.2.2.0</PackID>
+          <PackID>ArteryTek.AT32F403A_407_DFP.2.1.9</PackID>
           <Cpu>IRAM(0x20000000,0x18000) IROM(0x08000000,0x100000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
@@ -183,6 +183,9 @@
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
             <RvdsVP>2</RvdsVP>
+            <RvdsMve>0</RvdsMve>
+            <RvdsCdeCp>0</RvdsCdeCp>
+            <nBranchProt>0</nBranchProt>
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
@@ -323,6 +326,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -335,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>AT32F403ACGT7,USE_STDPERIPH_DRIVER,AT_START_F403A_V1</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\libraries\drivers\inc;..\..\libraries\cmsis\cm4\core_support;..\..\libraries\cmsis\cm4\device_support;..\inc;../../middlewares/usbd_drivers/inc;..\tools\LOG;..\app\MT6701;..\tools\Math;..\app\Delay;..\app\Control;..\app\FOC</IncludePath>
+              <IncludePath>..\..\libraries\drivers\inc;..\..\libraries\cmsis\cm4\core_support;..\..\libraries\cmsis\cm4\device_support;..\inc;..\tools\LOG;..\app\MT6701;..\tools\Math;..\app\Delay;..\app\Control;..\app\FOC;..\app\USART1</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -348,7 +352,7 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
-            <uClangAs>0</uClangAs>
+            <ClangAsOpt>4</ClangAsOpt>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
@@ -405,21 +409,6 @@
               <FilePath>..\src\wk_debug.c</FilePath>
             </File>
             <File>
-              <FileName>usb_app.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../src/usb_app.c</FilePath>
-            </File>
-            <File>
-              <FileName>wk_usbfs.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\wk_usbfs.c</FilePath>
-            </File>
-            <File>
-              <FileName>wk_acc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\wk_acc.c</FilePath>
-            </File>
-            <File>
               <FileName>wk_spi.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\wk_spi.c</FilePath>
@@ -433,6 +422,16 @@
               <FileName>wk_tmr.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\wk_tmr.c</FilePath>
+            </File>
+            <File>
+              <FileName>wk_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\wk_usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>wk_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\wk_dma.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -455,6 +454,11 @@
               <FilePath>..\..\libraries\drivers\src\at32f403a_407_gpio.c</FilePath>
             </File>
             <File>
+              <FileName>at32f403a_407_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\drivers\src\at32f403a_407_usart.c</FilePath>
+            </File>
+            <File>
               <FileName>at32f403a_407_pwc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\libraries\drivers\src\at32f403a_407_pwc.c</FilePath>
@@ -465,29 +469,19 @@
               <FilePath>..\..\libraries\drivers\src\at32f403a_407_spi.c</FilePath>
             </File>
             <File>
+              <FileName>at32f403a_407_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\drivers\src\at32f403a_407_dma.c</FilePath>
+            </File>
+            <File>
               <FileName>at32f403a_407_flash.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\libraries\drivers\src\at32f403a_407_flash.c</FilePath>
             </File>
             <File>
-              <FileName>at32f403a_407_exint.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\drivers\src\at32f403a_407_exint.c</FilePath>
-            </File>
-            <File>
               <FileName>at32f403a_407_misc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\libraries\drivers\src\at32f403a_407_misc.c</FilePath>
-            </File>
-            <File>
-              <FileName>at32f403a_407_usb.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\drivers\src\at32f403a_407_usb.c</FilePath>
-            </File>
-            <File>
-              <FileName>at32f403a_407_acc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\drivers\src\at32f403a_407_acc.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_debug.c</FileName>
@@ -508,26 +502,6 @@
               <FileName>system_at32f403a_407.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\libraries\cmsis\cm4\device_support\system_at32f403a_407.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>middlewares/usbd_driver</GroupName>
-          <Files>
-            <File>
-              <FileName>usbd_core.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../middlewares/usbd_drivers/src/usbd_core.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_int.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../middlewares/usbd_drivers/src/usbd_int.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_sdr.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../middlewares/usbd_drivers/src/usbd_sdr.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -614,20 +588,10 @@
               <FileType>5</FileType>
               <FilePath>..\app\LED\led.h</FilePath>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>usbd_class</GroupName>
-          <Files>
             <File>
-              <FileName>cdc_class.c</FileName>
+              <FileName>usart_1.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../src/cdc_class.c</FilePath>
-            </File>
-            <File>
-              <FileName>cdc_desc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../src/cdc_desc.c</FilePath>
+              <FilePath>..\app\USART1\usart_1.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -67,9 +67,10 @@ void PendSV_Handler(void);
 
 void SysTick_Handler(void);
 
+void DMA1_Channel2_IRQHandler(void);
 void TMR2_GLOBAL_IRQHandler(void);
 void SPI1_IRQHandler(void);
-void USBFS_MAPL_IRQHandler(void);
+void USART1_IRQHandler(void);
 /* add user code begin exported functions */
 
 /* add user code end exported functions */

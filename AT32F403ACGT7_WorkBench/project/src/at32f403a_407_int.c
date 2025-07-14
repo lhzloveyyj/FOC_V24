@@ -26,11 +26,11 @@
 
 /* includes ------------------------------------------------------------------*/
 #include "at32f403a_407_int.h"
-#include "usb_app.h"
 /* private includes ----------------------------------------------------------*/
 /* add user code begin private includes */
 #include "MT6701.h"
 #include "foc.h"
+#include "usart_1.h"
 /* add user code end private includes */
 
 /* private typedef -----------------------------------------------------------*/
@@ -223,6 +223,26 @@ void SysTick_Handler(void)
 }
 
 /**
+  * @brief  this function handles DMA1 Channel 2 handler.
+  * @param  none
+  * @retval none
+  */
+void DMA1_Channel2_IRQHandler(void)
+{
+  /* add user code begin DMA1_Channel2_IRQ 0 */
+	if(dma_interrupt_flag_get(DMA1_FDT2_FLAG))
+	{
+		usart1_tx_dma_status = 1;
+		dma_flag_clear(DMA1_FDT2_FLAG);
+		dma_channel_enable(DMA1_CHANNEL2, FALSE);
+  }
+  /* add user code end DMA1_Channel2_IRQ 0 */
+  /* add user code begin DMA1_Channel2_IRQ 1 */
+
+  /* add user code end DMA1_Channel2_IRQ 1 */
+}
+
+/**
   * @brief  this function handles TMR2 handler.
   * @param  none
   * @retval none
@@ -230,8 +250,7 @@ void SysTick_Handler(void)
 void TMR2_GLOBAL_IRQHandler(void)
 {
   /* add user code begin TMR2_GLOBAL_IRQ 0 */
-	//MT6701_GetAngle(&mt6701);
-	//setPhaseVoltage(0, 0, mt6701.angle);
+	FocContorl(g_pMotor);
 	tmr_flag_clear(TMR2, TMR_OVF_FLAG);
   /* add user code end TMR2_GLOBAL_IRQ 0 */
 
@@ -257,21 +276,18 @@ void SPI1_IRQHandler(void)
 }
 
 /**
-  * @brief  this function handles USB Map Low handler.
+  * @brief  this function handles USART1 handler.
   * @param  none
   * @retval none
   */
-void USBFS_MAPL_IRQHandler(void)
+void USART1_IRQHandler(void)
 {
-  /* add user code begin USBFS_MAPL_IRQ 0 */
+  /* add user code begin USART1_IRQ 0 */
 
-  /* add user code end USBFS_MAPL_IRQ 0 */
+  /* add user code end USART1_IRQ 0 */
+  /* add user code begin USART1_IRQ 1 */
 
-  wk_usbfs_irq_handler();
-
-  /* add user code begin USBFS_MAPL_IRQ 1 */
-
-  /* add user code end USBFS_MAPL_IRQ 1 */
+  /* add user code end USART1_IRQ 1 */
 }
 
 /* add user code begin 1 */

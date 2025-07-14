@@ -39,6 +39,7 @@ extern "C" {
 /* private includes -------------------------------------------------------------*/
 /* add user code begin private includes */
 #include "FOC.h"
+#include "usart_1.h"
 /* add user code end private includes */
 
 /* exported types -------------------------------------------------------------*/
@@ -58,12 +59,12 @@ extern "C" {
 
 /* add user code begin dma define */
 /* user can only modify the dma define value */
-//#define DMA1_CHANNEL1_BUFFER_SIZE   2
-//#define DMA1_CHANNEL1_MEMORY_BASE_ADDR   (uint32_t)Motor_AD_Value
+#define DMA1_CHANNEL1_BUFFER_SIZE   RX_BUFFER_SIZE
+#define DMA1_CHANNEL1_MEMORY_BASE_ADDR   (uint32_t)uart1_rx_buffer
 //#define DMA1_CHANNEL1_PERIPHERAL_BASE_ADDR  0
 
-//#define DMA1_CHANNEL2_BUFFER_SIZE   0
-//#define DMA1_CHANNEL2_MEMORY_BASE_ADDR   0
+#define DMA1_CHANNEL2_BUFFER_SIZE   RX_BUFFER_SIZE  
+#define DMA1_CHANNEL2_MEMORY_BASE_ADDR   (uint32_t)uart1_tx_buffer
 //#define DMA1_CHANNEL2_PERIPHERAL_BASE_ADDR   0
 
 //#define DMA1_CHANNEL3_BUFFER_SIZE   0

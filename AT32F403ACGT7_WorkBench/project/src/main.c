@@ -26,13 +26,12 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "at32f403a_407_wk_config.h"
-#include "wk_acc.h"
 #include "wk_debug.h"
 #include "wk_spi.h"
 #include "wk_tmr.h"
-#include "wk_usbfs.h"
+#include "wk_usart.h"
+#include "wk_dma.h"
 #include "wk_gpio.h"
-#include "usb_app.h"
 #include "wk_system.h"
 
 /* private includes ----------------------------------------------------------*/
@@ -40,6 +39,7 @@
 #include "mt6701.h"
 #include "delay.h"
 #include "log.h"
+#include "foc.h"
 /* add user code end private includes */
 
 /* private typedef -----------------------------------------------------------*/
@@ -101,6 +101,29 @@ int main(void)
   /* init gpio function. */
   wk_gpio_config();
 
+  /* init dma1 channel1 */
+  wk_dma1_channel1_init();
+  /* config dma channel transfer parameter */
+  /* user need to modify define values DMAx_CHANNELy_XXX_BASE_ADDR and DMAx_CHANNELy_BUFFER_SIZE in at32xxx_wk_config.h */
+  wk_dma_channel_config(DMA1_CHANNEL1, 
+                        (uint32_t)&USART1->dt, 
+                        DMA1_CHANNEL1_MEMORY_BASE_ADDR, 
+                        DMA1_CHANNEL1_BUFFER_SIZE);
+  dma_channel_enable(DMA1_CHANNEL1, TRUE);
+
+  /* init dma1 channel2 */
+  wk_dma1_channel2_init();
+  /* config dma channel transfer parameter */
+  /* user need to modify define values DMAx_CHANNELy_XXX_BASE_ADDR and DMAx_CHANNELy_BUFFER_SIZE in at32xxx_wk_config.h */
+  wk_dma_channel_config(DMA1_CHANNEL2, 
+                        (uint32_t)&USART1->dt, 
+                        DMA1_CHANNEL2_MEMORY_BASE_ADDR, 
+                        DMA1_CHANNEL2_BUFFER_SIZE);
+  dma_channel_enable(DMA1_CHANNEL2, TRUE);
+
+  /* init usart1 function. */
+  wk_usart1_init();
+
   /* init spi1 function. */
   wk_spi1_init();
 
@@ -110,35 +133,27 @@ int main(void)
   /* init tmr2 function. */
   wk_tmr2_init();
 
-  /* init acc function. */
-  wk_acc_init();
-
-  /* init usbfs function. */
-  wk_usbfs_init();
-
-  /* init usb app function. */
-  wk_usb_app_init();
-
   /* add user code begin 2 */
   delay_init();
   
-  delay_ms(2000);
+  //USART1_TX_DMA
+  dma_interrupt_enable(DMA1_CHANNEL2, DMA_FDT_INT, TRUE);
+  //USART_1_RX
+  usart_interrupt_enable(USART1, USART_IDLE_INT, TRUE);
   
-  angle_init(MT6701_GetAngleWrapper);
-  
-   float angle = 0;
-    float Ud = 1.0f;  // 合适电压
-
+  delay_ms(1000);
+ 
+  AngleInitZeroOffset();
   
   tmr_interrupt_enable(TMR2,TMR_OVF_INT,TRUE);
   /* add user code end 2 */
 
   while(1)
   {
-     wk_usb_app_task();
-
     /* add user code begin 3 */
-//	  usb_printf("i 呜呜呜 lhz\r\n");
+	  //printf("mechanicalAngle is %lf\r\n",g_pMotor->mechanicalAngle);
+	  printf("correctedAngle is %lf\r\n",g_pMotor->correctedAngle);
+	  //delay_ms(500);
     /* add user code end 3 */
   }
 }

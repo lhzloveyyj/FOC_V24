@@ -51,7 +51,7 @@ extern "C" {
 #define LEXT_VALUE                       ((uint32_t)32768)   /*!< value of the low speed exernal clock in hz */
 
 /* module define -------------------------------------------------------------*/
-#define ACC_MODULE_ENABLED
+/*#define ACC_MODULE_ENABLED----------------------*/
 /*#define ADC_MODULE_ENABLED----------------------*/
 /*#define BPR_MODULE_ENABLED----------------------*/
 /*#define CAN_MODULE_ENABLED----------------------*/
@@ -59,9 +59,9 @@ extern "C" {
 #define CRM_MODULE_ENABLED
 /*#define DAC_MODULE_ENABLED----------------------*/
 #define DEBUG_MODULE_ENABLED
-/*#define DMA_MODULE_ENABLED----------------------*/
+#define DMA_MODULE_ENABLED
 /*#define EMAC_MODULE_ENABLED---------------------*/
-#define EXINT_MODULE_ENABLED
+/*#define EXINT_MODULE_ENABLED--------------------*/
 #define FLASH_MODULE_ENABLED
 #define GPIO_MODULE_ENABLED
 /*#define I2C_MODULE_ENABLED----------------------*/
@@ -71,8 +71,8 @@ extern "C" {
 /*#define SDIO_MODULE_ENABLED---------------------*/
 #define SPI_MODULE_ENABLED
 #define TMR_MODULE_ENABLED
-/*#define USART_MODULE_ENABLED--------------------*/
-#define USB_MODULE_ENABLED
+#define USART_MODULE_ENABLED
+/*#define USB_MODULE_ENABLED----------------------*/
 /*#define WDT_MODULE_ENABLED----------------------*/
 /*#define WWDT_MODULE_ENABLED---------------------*/
 /*#define XMC_MODULE_ENABLED----------------------*/

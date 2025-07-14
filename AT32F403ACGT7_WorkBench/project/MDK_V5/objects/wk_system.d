@@ -2,7 +2,7 @@
 .\objects\wk_system.o: ..\inc\wk_system.h
 .\objects\wk_system.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
 .\objects\wk_system.o: ..\..\libraries\cmsis\cm4\core_support\core_cm4.h
-.\objects\wk_system.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\wk_system.o: D:\downloads\MDK\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\wk_system.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_version.h
 .\objects\wk_system.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_compiler.h
 .\objects\wk_system.o: ..\..\libraries\cmsis\cm4\core_support\cmsis_armcc.h
@@ -10,15 +10,14 @@
 .\objects\wk_system.o: ..\..\libraries\cmsis\cm4\device_support\system_at32f403a_407.h
 .\objects\wk_system.o: ..\..\libraries\drivers\inc\at32f403a_407_def.h
 .\objects\wk_system.o: ..\inc\at32f403a_407_conf.h
-.\objects\wk_system.o: ..\..\libraries\drivers\inc\at32f403a_407_acc.h
-.\objects\wk_system.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
 .\objects\wk_system.o: ..\..\libraries\drivers\inc\at32f403a_407_crm.h
+.\objects\wk_system.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
 .\objects\wk_system.o: ..\..\libraries\drivers\inc\at32f403a_407_debug.h
-.\objects\wk_system.o: ..\..\libraries\drivers\inc\at32f403a_407_exint.h
+.\objects\wk_system.o: ..\..\libraries\drivers\inc\at32f403a_407_dma.h
 .\objects\wk_system.o: ..\..\libraries\drivers\inc\at32f403a_407_flash.h
 .\objects\wk_system.o: ..\..\libraries\drivers\inc\at32f403a_407_gpio.h
 .\objects\wk_system.o: ..\..\libraries\drivers\inc\at32f403a_407_misc.h
 .\objects\wk_system.o: ..\..\libraries\drivers\inc\at32f403a_407_pwc.h
 .\objects\wk_system.o: ..\..\libraries\drivers\inc\at32f403a_407_spi.h
 .\objects\wk_system.o: ..\..\libraries\drivers\inc\at32f403a_407_tmr.h
-.\objects\wk_system.o: ..\..\libraries\drivers\inc\at32f403a_407_usb.h
+.\objects\wk_system.o: ..\..\libraries\drivers\inc\at32f403a_407_usart.h

@@ -9,19 +9,50 @@
 #include "mt6701.h"
 #include "log.h"
 
-float g_udc = 0.0f;
+/*******************************全局变量***************************/
+float g_udc = 24.0f;
+float g_zeroOffset = 0.0f;
 
 float  zero = 0.0f;	
 uint16_t AD_Value[2]={0};
 
-typedef struct {
-    float i_d;  // d轴电流
-    float i_q;  // q轴电流
-    float v_d;  // d轴电压
-    float v_q;  // q轴电压
-    float theta; // 电机角度
-    float omega; // 电机角速度
-} MotorState;
+/*******************************************************************/
+
+/*****************定义电机1的FOC状态结构体*************************/
+FocState Motor = {
+    // current 可视情况初始化
+//  .current = {
+//      .ad_A = 0,
+//      .ad_B = 0,
+//      .voltage_a_offset = 0,
+//      .voltage_b_offset = 0,
+//      .Mflag = 1
+//  },
+
+    .uAlpha = 0.0f, .uBeta = 0.0f, 	
+    .iAlpha = 0.0f, .iBeta = 0.0f, 	
+    .ia = 0.0f, .ib = 0.0f, .ic = 0.0f,			
+    .ua = 0.0f, .ub = 0.0f, .uc = 0.0f, 		
+    .uq = 0.0f, .ud = 0.0f, 			
+    .iq = 0.0f, .id = 0.0f, 			
+
+    .mechanicalAngle = 0.0f,
+    .electricalAngle = 0.0f,
+    .correctedAngle = 0.0f,
+    .zeroOffset = 0.0f,
+
+    //.idPID = {0},
+    //.iqPID = {0},
+
+    .speedLastAngle = 0.0f,
+    .speed = 0.0f,
+    //.speedPID = {0},
+
+    .setPwmCallback = NULL  // 或者设为具体函数名
+};
+
+
+PFocState g_pMotor = &Motor;
 
 void MotorSetPwm(float ua, float ub, float uc);
 
@@ -97,30 +128,34 @@ void MotorApplyStrongDrag(float ud)
  * @brief     角度模块初始化，采集零电角度偏移（调用强拖，进行多次平均）
  * @param     readAngleFunc   用于读取机械角度的函数指针（单位：rad）
  */
-void AngleInitZeroOffset(float (*readAngleFunc)(void))
+void AngleInitZeroOffset(void)
 {
-    gpio_bits_reset(GPIOB, GPIO_PINS_3);  // 拉低启动引脚，表明开始初始化
+    gpio_bits_reset(GPIOB, GPIO_PINS_3);  // 开启设置LED
 
     MotorApplyStrongDrag(1.0f);           // 施加 Ud 强拖，固定转子磁极方向
-    delay_ms(2000);                       // 保持拖动 2 秒
+    delay_ms(1500);                       // 保持拖动 2 秒
 
     // 多次采样以降低抖动影响
     float sum = 0.0f;
     const int sampleCount = 10;
+	float mechanicalAngle = 0.0f;
 
     for (int i = 0; i < sampleCount; i++) {
-        float elecAngle = CalculateElectricalAngle(readAngleFunc());
+		mechanicalAngle = Mt6701GetAngleWrapper();
+        float elecAngle = CalculateElectricalAngle(mechanicalAngle);
         sum += elecAngle;
         delay_ms(10);
     }
-
+	
+	mechanicalAngle = Mt6701GetAngleWrapper();
     g_zeroOffset = sum / sampleCount;  // 计算平均值作为零电角度
-    float corrected = AngleGetCorrectedElec(readAngleFunc());
+    float corrected = AngleGetCorrectedElec(mechanicalAngle);
 
-    usb_printf("零电位角度：%f, %lf\r\n", g_zeroOffset, corrected);
-    usb_printf("初始化完成\r\n");
+    printf("零电位角度：%f, %lf\r\n", g_zeroOffset, corrected);
+    printf("初始化完成\r\n");
 
     gpio_bits_set(GPIOB, GPIO_PINS_4);  // 设置完成信号
+	MotorApplyStrongDrag(0.0f);
 }
 
 
@@ -170,6 +205,31 @@ void park_transform(float Ialpha, float Ibeta, float angle_el, float *Id, float 
     *Iq = -Ialpha * fast_sin(angle_el) + Ibeta * fast_cos(angle_el);
 }
 
+/******************************************************************************
+  函数说明：逆Park变换
+  @brief  将dq坐标系的电压转换为αβ坐标系，以便进行SVPWM计算
+  @param  pFOC 指向FOC状态结构体的指针
+  @retval 无
+******************************************************************************/
+static void inv_park_transform(float Uq, float Ud, float corr_angle, float *Out_Ualpha, float *Out_Ubeta)
+{
+	*Out_Ualpha = -Uq * fast_sin(corr_angle) + Ud * fast_cos(corr_angle);
+	*Out_Ubeta  =  Uq * fast_cos(corr_angle) + Ud * fast_sin(corr_angle);
+}
+
+/******************************************************************************
+  函数说明：逆Clarke变换
+  @brief  将αβ坐标系的电压转换为三相电压，适用于PWM输出
+  @param  pFOC 指向FOC状态结构体的指针
+  @retval 无
+******************************************************************************/
+static void inv_clarke_transform(float Ualpha, float Ubeta, float *Out_Ua, float *Out_Ub, float *Out_Uc)
+{
+	*Out_Ua = Ualpha + g_udc/2;
+	*Out_Ub = (FOC_SQRT3 * Ubeta - Ualpha)/2 + g_udc/2;
+	*Out_Uc = (-FOC_SQRT3 * Ubeta - Ualpha)/2 + g_udc/2;
+}
+
 // FOC核心函数：输入Uq、Ud和电角度，输出三路PWM
 float Ualpha=0.0f,Ubate=0.0f;
 float Ialpha=0.0f,Ibeta=0.0f;
@@ -178,10 +238,13 @@ float Ua=0.0f,Ub=0.0f,Uc=0.0f;
 float Uq=0.0f,Ud=0.0f;
 float Iq=0.0f,Id=0.0f;
 // FOC 控制主函数
-void FocContorl(PFOC_State pFOC, PSVpwm_State PSVpwm)
+void FocContorl(PFocState pFOC)
 {
+	//获取机械角度
+	pFOC->mechanicalAngle = Mt6701GetAngleWrapper();
+	
 	//计算电角度
-	AngleGetCorrectedElec();
+	pFOC->correctedAngle = AngleGetCorrectedElec(pFOC->mechanicalAngle);
 	
 	//pFOC->current.ad_A = Motor1_AD_Value[1];
 	//pFOC->current.ad_B = Motor1_AD_Value[0];
@@ -197,18 +260,21 @@ void FocContorl(PFOC_State pFOC, PSVpwm_State PSVpwm)
 	//pFOC->Ud = PI_Compute(&pi_Id, 0.0f, pFOC->Id);
 	//pFOC->Uq = PI_Compute(&pi_Id, 0.0f, pFOC->Iq);
 	
-	pFOC->Ud = 0.0f;
-	pFOC->Uq = 2.0f;
+	pFOC->ud = 0.0f;
+	pFOC->uq = 12.0f;
+	
 	//逆park变换
-	inv_park_transform(pFOC);
+	inv_park_transform(pFOC->uq, pFOC->ud, pFOC->correctedAngle, &(pFOC->uAlpha), &(pFOC->uBeta));
     
-	SVpwm(PSVpwm, pFOC->Ualpha, pFOC->Ubeta);
+	//SVpwm(PSVpwm, pFOC->Ualpha, pFOC->Ubeta);
 	
 	//逆clarke变换
-	//inv_clarke_transform(pFOC);
+	inv_clarke_transform(pFOC->uAlpha, pFOC->uBeta , &(pFOC->ua), &(pFOC->ub), &(pFOC->uc));
 	
+	//设置PWM
+	MotorSetPwm(pFOC->ua, pFOC->ub, pFOC->uc);
 	//设置SVPWM
-	setSVpwm(pFOC, PSVpwm);
+	//setSVpwm(pFOC, PSVpwm);
 }
 
 
