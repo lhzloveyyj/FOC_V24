@@ -11,8 +11,9 @@
 .\objects\main.o: ..\..\libraries\cmsis\cm4\device_support\system_at32f403a_407.h
 .\objects\main.o: ..\..\libraries\drivers\inc\at32f403a_407_def.h
 .\objects\main.o: ..\inc\at32f403a_407_conf.h
-.\objects\main.o: ..\..\libraries\drivers\inc\at32f403a_407_crm.h
+.\objects\main.o: ..\..\libraries\drivers\inc\at32f403a_407_adc.h
 .\objects\main.o: ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h
+.\objects\main.o: ..\..\libraries\drivers\inc\at32f403a_407_crm.h
 .\objects\main.o: ..\..\libraries\drivers\inc\at32f403a_407_debug.h
 .\objects\main.o: ..\..\libraries\drivers\inc\at32f403a_407_dma.h
 .\objects\main.o: ..\..\libraries\drivers\inc\at32f403a_407_flash.h
@@ -25,6 +26,7 @@
 .\objects\main.o: ..\app\FOC\FOC.h
 .\objects\main.o: ..\app\FOC\svpwm.h
 .\objects\main.o: ..\app\USART1\usart_1.h
+.\objects\main.o: ..\inc\wk_adc.h
 .\objects\main.o: ..\inc\wk_debug.h
 .\objects\main.o: ..\inc\wk_spi.h
 .\objects\main.o: ..\inc\wk_tmr.h

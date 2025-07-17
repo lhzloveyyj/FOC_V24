@@ -50,12 +50,13 @@ typedef struct {
 
 typedef FocState *PFocState;
 
-extern uint16_t g_motorAdValues[2];  // ADC 原始值数组（外部使用）
+extern uint16_t g_motorAdValues[3];  // ADC 原始值数组（外部使用）
 
 extern PFocState g_pMotor;          // 电机 FOC 状态对象指针
+extern int cnt;
 
 void AngleInitZeroOffset(void);
-void FocContorl(PFocState pFOC);
+void FocContorl(PFocState pFOC,  PSVpwm_State PSVpwm);
 
 #ifdef __cplusplus
 }

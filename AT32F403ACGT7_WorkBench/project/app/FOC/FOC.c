@@ -14,7 +14,9 @@ float g_udc = 24.0f;
 float g_zeroOffset = 0.0f;
 
 float  zero = 0.0f;	
-uint16_t AD_Value[2]={0};
+uint16_t g_motorAdValues[3]={0};
+
+int cnt =0;
 
 /*******************************************************************/
 
@@ -132,7 +134,7 @@ void AngleInitZeroOffset(void)
 {
     gpio_bits_reset(GPIOB, GPIO_PINS_3);  // 开启设置LED
 
-    MotorApplyStrongDrag(1.0f);           // 施加 Ud 强拖，固定转子磁极方向
+    MotorApplyStrongDrag(FOC_STRONGDRAG);           // 施加 Ud 强拖，固定转子磁极方向
     delay_ms(1500);                       // 保持拖动 2 秒
 
     // 多次采样以降低抖动影响
@@ -168,6 +170,23 @@ float g_pwmA = 0.0f;
 float g_pwmB = 0.0f;
 float g_pwmC = 0.0f;
 
+/******************************************************************************
+  函数说明：电机 PWM输出设置函数
+  @brief  根据输入占空比设置电机1三相PWM输出
+  @param  pwm_a 相A占空比
+  @param  pwm_b 相B占空比
+  @param  pwm_c 相C占空比
+  @retval 无
+******************************************************************************/
+static void setpwm_channel(float pwm_a, float pwm_b, float pwm_c)
+{
+	tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_1, pwm_a * FOC_ALL_DUTY);
+    tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_2, pwm_b * FOC_ALL_DUTY);
+    tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_3, pwm_c * FOC_ALL_DUTY);
+	
+	tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_4, FOC_ALL_DUTY * 0.95f);
+}
+
 /**
  * @brief     设置三相 PWM 输出（Ua、Ub、Uc 为 SVPWM 输出电压）
  * @param     ua   A相电压（单位：V）
@@ -187,9 +206,7 @@ void MotorSetPwm(float ua, float ub, float uc)
     g_pwmC = LimitValue(uc / g_udc, 0.0f, 1.0f);
 
     // 输出到定时器 PWM 寄存器
-    tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_1, g_pwmA * FOC_ALL_DUTY);
-    tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_2, g_pwmB * FOC_ALL_DUTY);
-    tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_3, g_pwmC * FOC_ALL_DUTY);
+    setpwm_channel(g_pwmA, g_pwmB, g_pwmC);
 }
 
 
@@ -203,6 +220,19 @@ void clarke_transform(float Ia, float Ib, float *Ialpha, float *Ibeta) {
 void park_transform(float Ialpha, float Ibeta, float angle_el, float *Id, float *Iq) {
     *Id = Ialpha * fast_cos(angle_el) + Ibeta * fast_sin(angle_el);  // Park变换公式
     *Iq = -Ialpha * fast_sin(angle_el) + Ibeta * fast_cos(angle_el);
+}
+
+/******************************************************************************
+  函数说明：设置SVPWM输出
+  @brief  根据SVPWM算法计算结果设置PWM输出
+  @param  pFOC 指向FOC状态结构体的指针
+  @param  PSVpwm 指向SVPWM状态结构体的指针
+  @retval 无
+******************************************************************************/
+static void setSVpwm(PSVpwm_State PSVpwm)
+{
+	
+    setpwm_channel(PSVpwm->Ta, PSVpwm->Tb, PSVpwm->Tc);
 }
 
 /******************************************************************************
@@ -230,15 +260,8 @@ static void inv_clarke_transform(float Ualpha, float Ubeta, float *Out_Ua, float
 	*Out_Uc = (-FOC_SQRT3 * Ubeta - Ualpha)/2 + g_udc/2;
 }
 
-// FOC核心函数：输入Uq、Ud和电角度，输出三路PWM
-float Ualpha=0.0f,Ubate=0.0f;
-float Ialpha=0.0f,Ibeta=0.0f;
-
-float Ua=0.0f,Ub=0.0f,Uc=0.0f;
-float Uq=0.0f,Ud=0.0f;
-float Iq=0.0f,Id=0.0f;
 // FOC 控制主函数
-void FocContorl(PFocState pFOC)
+void FocContorl(PFocState pFOC,  PSVpwm_State PSVpwm)
 {
 	//获取机械角度
 	pFOC->mechanicalAngle = Mt6701GetAngleWrapper();
@@ -261,20 +284,21 @@ void FocContorl(PFocState pFOC)
 	//pFOC->Uq = PI_Compute(&pi_Id, 0.0f, pFOC->Iq);
 	
 	pFOC->ud = 0.0f;
-	pFOC->uq = 12.0f;
+	pFOC->uq = 6.0f;
 	
 	//逆park变换
 	inv_park_transform(pFOC->uq, pFOC->ud, pFOC->correctedAngle, &(pFOC->uAlpha), &(pFOC->uBeta));
-    
-	//SVpwm(PSVpwm, pFOC->Ualpha, pFOC->Ubeta);
 	
 	//逆clarke变换
 	inv_clarke_transform(pFOC->uAlpha, pFOC->uBeta , &(pFOC->ua), &(pFOC->ub), &(pFOC->uc));
 	
 	//设置PWM
 	MotorSetPwm(pFOC->ua, pFOC->ub, pFOC->uc);
+	
+	//SVpwm(PSVpwm, pFOC->uAlpha, pFOC->uBeta);
+	
 	//设置SVPWM
-	//setSVpwm(pFOC, PSVpwm);
+	//setSVpwm(PSVpwm);
 }
 
 

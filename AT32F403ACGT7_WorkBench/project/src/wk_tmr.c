@@ -108,6 +108,14 @@ void wk_tmr1_init(void)
   gpio_init_struct.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
   gpio_init(GPIOA, &gpio_init_struct);
 
+  /* configure the CH4 pin */
+  gpio_init_struct.gpio_pins = GPIO_PINS_11;
+  gpio_init_struct.gpio_mode = GPIO_MODE_MUX;
+  gpio_init_struct.gpio_out_type = GPIO_OUTPUT_PUSH_PULL;
+  gpio_init_struct.gpio_pull = GPIO_PULL_NONE;
+  gpio_init_struct.gpio_drive_strength = GPIO_DRIVE_STRENGTH_MODERATE;
+  gpio_init(GPIOA, &gpio_init_struct);
+
   /* configure counter settings */
   tmr_cnt_dir_set(TMR1, TMR_COUNT_TWO_WAY_1);
   tmr_clock_source_div_set(TMR1, TMR_CLOCK_DIV1);
@@ -117,7 +125,7 @@ void wk_tmr1_init(void)
 
   /* configure primary mode settings */
   tmr_sub_sync_mode_set(TMR1, FALSE);
-  tmr_primary_mode_select(TMR1, TMR_PRIMARY_SEL_RESET);
+  tmr_primary_mode_select(TMR1, TMR_PRIMARY_SEL_C4ORAW);
 
   /* configure channel 1 output settings */
   tmr_output_struct.oc_mode = TMR_OUTPUT_CONTROL_PWM_MODE_A;
@@ -215,7 +223,7 @@ void wk_tmr2_init(void)
   tmr_cnt_dir_set(TMR2, TMR_COUNT_UP);
   tmr_clock_source_div_set(TMR2, TMR_CLOCK_DIV1);
   tmr_period_buffer_enable(TMR2, FALSE);
-  tmr_base_init(TMR2, 2399, 0);
+  tmr_base_init(TMR2, 9999, 23);
 
   /* configure primary mode settings */
   tmr_sub_sync_mode_set(TMR2, FALSE);

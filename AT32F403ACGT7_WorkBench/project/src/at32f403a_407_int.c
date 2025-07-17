@@ -243,6 +243,25 @@ void DMA1_Channel2_IRQHandler(void)
 }
 
 /**
+  * @brief  this function handles DMA1 Channel 3 handler.
+  * @param  none
+  * @retval none
+  */
+void DMA1_Channel3_IRQHandler(void)
+{
+  /* add user code begin DMA1_Channel3_IRQ 0 */
+	if(dma_flag_get(DMA1_FDT3_FLAG) != RESET)
+	 {
+		dma_flag_clear(DMA1_FDT3_FLAG);
+		FocContorl(g_pMotor, PSVpwm);
+	 }
+  /* add user code end DMA1_Channel3_IRQ 0 */
+  /* add user code begin DMA1_Channel3_IRQ 1 */
+
+  /* add user code end DMA1_Channel3_IRQ 1 */
+}
+
+/**
   * @brief  this function handles TMR2 handler.
   * @param  none
   * @retval none
@@ -250,7 +269,7 @@ void DMA1_Channel2_IRQHandler(void)
 void TMR2_GLOBAL_IRQHandler(void)
 {
   /* add user code begin TMR2_GLOBAL_IRQ 0 */
-	FocContorl(g_pMotor);
+	
 	tmr_flag_clear(TMR2, TMR_OVF_FLAG);
   /* add user code end TMR2_GLOBAL_IRQ 0 */
 
@@ -258,21 +277,6 @@ void TMR2_GLOBAL_IRQHandler(void)
   /* add user code begin TMR2_GLOBAL_IRQ 1 */
 
   /* add user code end TMR2_GLOBAL_IRQ 1 */
-}
-
-/**
-  * @brief  this function handles SPI1 handler.
-  * @param  none
-  * @retval none
-  */
-void SPI1_IRQHandler(void)
-{
-  /* add user code begin SPI1_IRQ 0 */
-
-  /* add user code end SPI1_IRQ 0 */
-  /* add user code begin SPI1_IRQ 1 */
-
-  /* add user code end SPI1_IRQ 1 */
 }
 
 /**

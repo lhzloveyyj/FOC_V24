@@ -8,6 +8,23 @@
         <MCUName>AT32F403ACGT7</MCUName>
         <MCUPackage>LQFP48</MCUPackage>
     </MCUInfo>
+    <ADC1>
+        <Mode>
+            <ModeSub name="IN0" value="TRUE"/>
+            <ModeSub name="IN1" value="TRUE"/>
+            <ModeSub name="IN2" value="TRUE"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="OrdinaryTriggerSource" value="ADC12_ORDINARY_TRIG_TMR1TRGOUT"/>
+            <ParametersSub name="NbrOfOrdinarySequence" value="3"/>
+            <ParametersSub name="Channel_OrdinarySequence_1" value="ADC_CHANNEL_0"/>
+            <ParametersSub name="SamplingTime_OrdinarySequence_1" value="ADC_SAMPLETIME_7_5"/>
+            <ParametersSub name="Channel_OrdinarySequence_2" value="ADC_CHANNEL_1"/>
+            <ParametersSub name="SamplingTime_OrdinarySequence_2" value="ADC_SAMPLETIME_7_5"/>
+            <ParametersSub name="Channel_OrdinarySequence_3" value="ADC_CHANNEL_2"/>
+            <ParametersSub name="SamplingTime_OrdinarySequence_3" value="ADC_SAMPLETIME_7_5"/>
+        </Parameters>
+    </ADC1>
     <CRM>
         <Mode>
             <ModeSub name="HEXT" value="HEXT-External-Oscillator"/>
@@ -45,13 +62,14 @@
             <ModeSub name="Channel1 mode" value="Output_CH1_CH1C"/>
             <ModeSub name="Channel2 mode" value="Output_CH2_CH2C"/>
             <ModeSub name="Channel3 mode" value="Output_CH3_CH3C"/>
-            <ModeSub name="Channel4 mode" value="Output_without_pin"/>
+            <ModeSub name="Channel4 mode" value="Output_CH4"/>
             <ModeSub name="Activated" value="TRUE"/>
             <ModeSub name="Enable BRK pin" value="TRUE"/>
         </Mode>
         <Parameters>
             <ParametersSub name="CounterDirection" value="TMR_COUNT_TWO_WAY_1"/>
             <ParametersSub name="Period" value="4999"/>
+            <ParametersSub name="Primary_TMR_output" value="TMR_PRIMARY_SEL_C4ORAW"/>
             <ParametersSub name="DeadTime" value="50"/>
             <ParametersSub name="DeadTimeValue" value="208"/>
             <ParametersSub name="OCMode_1" value="TMR_OUTPUT_CONTROL_PWM_MODE_A"/>
@@ -65,7 +83,8 @@
             <ModeSub name="Activated" value="TRUE"/>
         </Mode>
         <Parameters>
-            <ParametersSub name="Period" value="2399"/>
+            <ParametersSub name="DividerValue" value="23"/>
+            <ParametersSub name="Period" value="9999"/>
         </Parameters>
     </TMR2>
     <USART1>
@@ -78,6 +97,9 @@
         </Parameters>
     </USART1>
     <DMA>
+        <ADC1>
+            <ParametersSub name="Instance" value="DMA1_Channel3"/>
+        </ADC1>
         <USART1_RX>
             <ParametersSub name="Instance" value="DMA1_Channel1"/>
             <ParametersSub name="Mode" value="TRUE"/>
@@ -95,12 +117,14 @@
         <CRM_IRQHandler>0;0;0;0;0</CRM_IRQHandler>
         <DMA1_Channel1_IRQHandler>0;0;0;0;0</DMA1_Channel1_IRQHandler>
         <DMA1_Channel2_IRQHandler>1;0;0;0;0</DMA1_Channel2_IRQHandler>
+        <DMA1_Channel3_IRQHandler>1;0;0;0;0</DMA1_Channel3_IRQHandler>
+        <ADC1_2_IRQHandler>0;0;0;0;0</ADC1_2_IRQHandler>
         <TMR1_BRK_TMR9_IRQHandler>0;0;0;0;0</TMR1_BRK_TMR9_IRQHandler>
         <TMR1_OVF_TMR10_IRQHandler>0;0;0;0;0</TMR1_OVF_TMR10_IRQHandler>
         <TMR1_TRG_HALL_TMR11_IRQHandler>0;0;0;0;0</TMR1_TRG_HALL_TMR11_IRQHandler>
         <TMR1_CH_IRQHandler>0;0;0;0;0</TMR1_CH_IRQHandler>
         <TMR2_GLOBAL_IRQHandler>1;0;0;0;0</TMR2_GLOBAL_IRQHandler>
-        <SPI1_IRQHandler>1;0;0;0;0</SPI1_IRQHandler>
+        <SPI1_IRQHandler>0;0;0;0;0</SPI1_IRQHandler>
         <USART1_IRQHandler>1;0;0;0;0</USART1_IRQHandler>
     </NVIC>
     <GPIO>
@@ -145,6 +169,9 @@
     <PINInfo>
         <PinSub pinname="PD0/HEXT_IN" signalname="CRM_HEXT_IN" signaltype="2"/>
         <PinSub pinname="PD1/HEXT_OUT" signalname="CRM_HEXT_OUT" signaltype="2"/>
+        <PinSub pinname="PA0" signalname="ADC1_IN0" signaltype="2"/>
+        <PinSub pinname="PA1" signalname="ADC1_IN1" signaltype="2"/>
+        <PinSub pinname="PA2" signalname="ADC1_IN2" signaltype="2"/>
         <PinSub pinname="PA5" signalname="SPI1_SCK" signaltype="2"/>
         <PinSub pinname="PA6" signalname="SPI1_MISO" signaltype="2"/>
         <PinSub pinname="PA7" signalname="SPI1_MOSI" signaltype="2"/>
@@ -156,6 +183,8 @@
         <PinSub pinname="PA8" signalname="TMR1_CH1" signaltype="2"/>
         <PinSub pinname="PA9" signalname="TMR1_CH2" signaltype="2"/>
         <PinSub pinname="PA10" signalname="TMR1_CH3" signaltype="2"/>
+        <PinSub pinname="PA11" signalname="TMR1_CH4" signaltype="2"/>
+        <PinSub pinname="PA12" signalname="GPIO_Output" signaltype="3"/>
         <PinSub pinname="PA13" signalname="DEBUG_JTMS_SWDIO" signaltype="2"/>
         <PinSub pinname="PA14" signalname="DEBUG_JTCK_SWCLK" signaltype="2"/>
         <PinSub pinname="PB3" signalname="GPIO_Output" signaltype="3"/>
@@ -175,6 +204,6 @@
         <MinHeapSize>0x200</MinHeapSize>
         <MinStackSize>0x400</MinStackSize>
         <UseFirmware>true</UseFirmware>
-        <PackageVersion>V2.2.0</PackageVersion>
+        <PackageVersion>V2.2.1</PackageVersion>
     </ProjectInfomation>
 </Root>

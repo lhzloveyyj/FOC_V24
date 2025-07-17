@@ -2,7 +2,7 @@
 #include "foc.h"
 #include "foc_config.h"
 
-SVpwm_State SVpwm_1 = {
+SVpwm_State TpSVpwm = {
 	.Ts = 1.0f	,
 	.sector = 0	,
 	.Ta = 0.0f	,
@@ -24,7 +24,7 @@ SVpwm_State SVpwm_1 = {
 	.times = 0	,
 };
 
-PSVpwm_State PSVpwm_1  = &SVpwm_1;
+PSVpwm_State PSVpwm  = &TpSVpwm;
 
 
 void SVpwm(PSVpwm_State PSVpwm, float U_alpha, float U_beta)
