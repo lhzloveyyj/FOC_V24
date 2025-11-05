@@ -32,7 +32,7 @@
 /* add user code end 0 */
 
 /**
-  * @brief  init dma1 channel1 for "usart1_rx"
+  * @brief  init dma1 channel1 for "usart3_rx"
   * @param  none
   * @retval none
   */
@@ -52,18 +52,18 @@ void wk_dma1_channel1_init(void)
   dma_init_struct.peripheral_data_width = DMA_PERIPHERAL_DATA_WIDTH_BYTE;
   dma_init_struct.peripheral_inc_enable = FALSE;
   dma_init_struct.priority = DMA_PRIORITY_HIGH;
-  dma_init_struct.loop_mode_enable = TRUE;
+  dma_init_struct.loop_mode_enable = FALSE;
   dma_init(DMA1_CHANNEL1, &dma_init_struct);
 
   /* flexible function enable */
-  dma_flexible_config(DMA1, FLEX_CHANNEL1, DMA_FLEXIBLE_UART1_RX);
+  dma_flexible_config(DMA1, FLEX_CHANNEL1, DMA_FLEXIBLE_UART3_RX);
   /* add user code begin dma1_channel1 1 */
 
   /* add user code end dma1_channel1 1 */
 }
 
 /**
-  * @brief  init dma1 channel2 for "usart1_tx"
+  * @brief  init dma1 channel2 for "usart3_tx"
   * @param  none
   * @retval none
   */
@@ -83,11 +83,11 @@ void wk_dma1_channel2_init(void)
   dma_init_struct.peripheral_data_width = DMA_PERIPHERAL_DATA_WIDTH_BYTE;
   dma_init_struct.peripheral_inc_enable = FALSE;
   dma_init_struct.priority = DMA_PRIORITY_HIGH;
-  dma_init_struct.loop_mode_enable = TRUE;
+  dma_init_struct.loop_mode_enable = FALSE;
   dma_init(DMA1_CHANNEL2, &dma_init_struct);
 
   /* flexible function enable */
-  dma_flexible_config(DMA1, FLEX_CHANNEL2, DMA_FLEXIBLE_UART1_TX);
+  dma_flexible_config(DMA1, FLEX_CHANNEL2, DMA_FLEXIBLE_UART3_TX);
   /**
    * Users need to configure DMA1 interrupt functions according to the actual application.
    * 1. Call the below function to enable the corresponding DMA1 interrupt.

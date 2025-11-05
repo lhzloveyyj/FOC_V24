@@ -232,7 +232,7 @@ void DMA1_Channel2_IRQHandler(void)
   /* add user code begin DMA1_Channel2_IRQ 0 */
 	if(dma_interrupt_flag_get(DMA1_FDT2_FLAG))
 	{
-		usart1_tx_dma_status = 1;
+		usart3_tx_dma_status = 1;
 		dma_flag_clear(DMA1_FDT2_FLAG);
 		dma_channel_enable(DMA1_CHANNEL2, FALSE);
   }
@@ -280,18 +280,18 @@ void TMR2_GLOBAL_IRQHandler(void)
 }
 
 /**
-  * @brief  this function handles USART1 handler.
+  * @brief  this function handles USART3 handler.
   * @param  none
   * @retval none
   */
-void USART1_IRQHandler(void)
+void USART3_IRQHandler(void)
 {
-  /* add user code begin USART1_IRQ 0 */
+  /* add user code begin USART3_IRQ 0 */
 
-  /* add user code end USART1_IRQ 0 */
-  /* add user code begin USART1_IRQ 1 */
+  /* add user code end USART3_IRQ 0 */
+  /* add user code begin USART3_IRQ 1 */
 
-  /* add user code end USART1_IRQ 1 */
+  /* add user code end USART3_IRQ 1 */
 }
 
 /* add user code begin 1 */

@@ -102,12 +102,15 @@ int main(void)
   /* init gpio function. */
   wk_gpio_config();
 
+  /* init adc1 function. */
+  wk_adc1_init();
+
   /* init dma1 channel1 */
   wk_dma1_channel1_init();
   /* config dma channel transfer parameter */
   /* user need to modify define values DMAx_CHANNELy_XXX_BASE_ADDR and DMAx_CHANNELy_BUFFER_SIZE in at32xxx_wk_config.h */
   wk_dma_channel_config(DMA1_CHANNEL1, 
-                        (uint32_t)&USART1->dt, 
+                        (uint32_t)&USART3->dt, 
                         DMA1_CHANNEL1_MEMORY_BASE_ADDR, 
                         DMA1_CHANNEL1_BUFFER_SIZE);
   dma_channel_enable(DMA1_CHANNEL1, TRUE);
@@ -117,7 +120,7 @@ int main(void)
   /* config dma channel transfer parameter */
   /* user need to modify define values DMAx_CHANNELy_XXX_BASE_ADDR and DMAx_CHANNELy_BUFFER_SIZE in at32xxx_wk_config.h */
   wk_dma_channel_config(DMA1_CHANNEL2, 
-                        (uint32_t)&USART1->dt, 
+                        (uint32_t)&USART3->dt, 
                         DMA1_CHANNEL2_MEMORY_BASE_ADDR, 
                         DMA1_CHANNEL2_BUFFER_SIZE);
   dma_channel_enable(DMA1_CHANNEL2, TRUE);
@@ -135,11 +138,11 @@ int main(void)
   /* init usart1 function. */
   wk_usart1_init();
 
+  /* init usart3 function. */
+  wk_usart3_init();
+
   /* init spi1 function. */
   wk_spi1_init();
-
-  /* init adc1 function. */
-  wk_adc1_init();
 
   /* init tmr1 function. */
   wk_tmr1_init();
@@ -150,10 +153,10 @@ int main(void)
   /* add user code begin 2 */
   delay_init();
   
-  //USART1_TX_DMA
+  //USART3_TX_DMA
   dma_interrupt_enable(DMA1_CHANNEL2, DMA_FDT_INT, TRUE);
-  //USART_1_RX
-  usart_interrupt_enable(USART1, USART_IDLE_INT, TRUE);
+  //USART_3_RX
+  usart_interrupt_enable(USART3, USART_IDLE_INT, TRUE);
   
   delay_ms(1000);
  
@@ -162,24 +165,25 @@ int main(void)
   tmr_interrupt_enable(TMR2,TMR_OVF_INT,TRUE);
   
   dma_interrupt_enable(DMA1_CHANNEL3, DMA_FDT_INT, TRUE);
+		
   /* add user code end 2 */
 
   while(1)
   {
     /* add user code begin 3 */
-	  //printf("mechanicalAngle is %lf\r\n",g_pMotor->mechanicalAngle);
+//	  printf("mechanicalAngle is %lf\r\n",g_pMotor->mechanicalAngle);
 	  //float Uabc[3] = {g_pMotor->ua, g_pMotor->ub, g_pMotor->uc};
 	  //float Uqd[2] = {g_pMotor->uq, g_pMotor->ud};
 	  //float Ualpha_Ubeta[2] = {g_pMotor->uAlpha, g_pMotor->uBeta};
-	  //float Tabc[3] = {PSVpwm->Ta,PSVpwm->Tb,PSVpwm->Tc};
+	  float Tabc[3] = {PSVpwm->Ta,PSVpwm->Tb,PSVpwm->Tc};
 	  //float sector[1] = {PSVpwm->sector};
 	  
-	  //USART1_SendFloatArray(Tabc, 3);
+	  USART3_SendFloatArray(Tabc, 3);
 //	  tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_1, 0.5 * 5000);
 //	  tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_2, 0.9 * 5000);
 //      tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_3, 0.1 * 5000);
 //	  tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_4,  100);
-	  printf("%d,%d,%d\r\n",g_motorAdValues[0], g_motorAdValues[1], g_motorAdValues[2]);
+	  //printf("%d,%d,%d\r\n",g_motorAdValues[0], g_motorAdValues[1], g_motorAdValues[2]);
 	  //printf("%d\r\n",cnt);
 	  //delay_ms(500);
     /* add user code end 3 */

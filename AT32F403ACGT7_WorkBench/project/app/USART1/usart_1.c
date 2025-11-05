@@ -3,11 +3,11 @@
 #include <string.h>
 #include <stdlib.h>
 
-uint8_t uart1_tx_buffer[USART1_TX_BUFFER_SIZE] = {0};
-volatile uint8_t usart1_tx_dma_status = 0;
+uint8_t uart3_tx_buffer[USART3_TX_BUFFER_SIZE] = {0};
+volatile uint8_t usart3_tx_dma_status = 0;
 
-uint8_t uart1_rx_buffer[RX_BUFFER_SIZE] = {0};
-volatile uint8_t usart1_rx_dma_status = 0;
+uint8_t uart3_rx_buffer[RX_BUFFER_SIZE] = {0};
+volatile uint8_t usart3_rx_dma_status = 0;
 
 volatile uint8_t rx1_flag = 0;
 
@@ -52,23 +52,23 @@ int fputc(int ch, FILE *f)
 }
 
 
-void USART1_SendFloatArray(float *data, uint8_t size) {
+void USART3_SendFloatArray(float *data, uint8_t size) {
 
 	
     uint8_t *bytePtr = (uint8_t *)data; 
     
   
     for (uint8_t i = 0; i < size * 4; i++) {
-        uart1_tx_buffer[i] = bytePtr[i];
+        uart3_tx_buffer[i] = bytePtr[i];
     }
 
 
-    uart1_tx_buffer[size * 4] = 0x00;
-    uart1_tx_buffer[size * 4 + 1] = 0x00;
-    uart1_tx_buffer[size * 4 + 2] = 0x80;
-    uart1_tx_buffer[size * 4 + 3] = 0x7F;
+    uart3_tx_buffer[size * 4] = 0x00;
+    uart3_tx_buffer[size * 4 + 1] = 0x00;
+    uart3_tx_buffer[size * 4 + 2] = 0x80;
+    uart3_tx_buffer[size * 4 + 3] = 0x7F;
 	
-	while(usart1_tx_dma_status == 0){};
+	while(usart3_tx_dma_status == 0){};
 
     dma_channel_enable(DMA1_CHANNEL2, TRUE);
 }

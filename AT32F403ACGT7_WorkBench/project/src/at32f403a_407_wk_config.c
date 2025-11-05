@@ -182,6 +182,9 @@ void wk_periph_clock_config(void)
 
   /* enable tmr2 periph clock */
   crm_periph_clock_enable(CRM_TMR2_PERIPH_CLOCK, TRUE);
+
+  /* enable usart3 periph clock */
+  crm_periph_clock_enable(CRM_USART3_PERIPH_CLOCK, TRUE);
 }
 
 /**
@@ -203,7 +206,7 @@ void wk_nvic_config(void)
   nvic_irq_enable(DMA1_Channel2_IRQn, 0, 0);
   nvic_irq_enable(DMA1_Channel3_IRQn, 0, 0);
   nvic_irq_enable(TMR2_GLOBAL_IRQn, 0, 0);
-  nvic_irq_enable(USART1_IRQn, 0, 0);
+  nvic_irq_enable(USART3_IRQn, 0, 0);
 }
 
 /* add user code begin 1 */
